@@ -1,0 +1,44 @@
+name: Dashboard Build
+
+on:
+  workflow_run:
+    workflows: ["Trading Cycle", "Learn Cycle"]
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Build Dashboard HTML
+      env:
+        MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        SEC_EDGAR_USER_AGENT: ${{ secrets.SEC_EDGAR_USER_AGENT }}
+      run: python src/dashboard_builder.py
+
+    - name: Commit and Push Rendered Dashboard
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add docs/
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update dashboard rendered assets [skip ci]" && git push)

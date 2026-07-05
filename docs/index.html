@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TBE — Trades Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>TBE — Autonomous Investment Dashboard</h1>
+        <nav>
+            <a href="index.html" class="active">Trades Log</a>
+            <a href="system.html">System State</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="summary-grid">
+            <div class="card">
+                <div class="card-title">Total Realized P&L</div>
+                <div class="card-val val-green">$+500.00</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Overall Win Rate</div>
+                <div class="card-val val-indigo">50.0%</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Closed Positions</div>
+                <div class="card-val">2</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Open Positions</div>
+                <div class="card-val val-green">1</div>
+            </div>
+        </div>
+
+        <div class="grid-layout">
+            <div class="card">
+                <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
+                    <span>July 2026 P&L Calendar</span>
+                    <button onclick="filterDate('')" style="background:rgba(255,255,255,0.05); color:var(--text-primary); border:1px solid var(--border-color); padding:4px 8px; border-radius:4px; cursor:pointer; font-size:12px;">Show All</button>
+                </div>
+                <div class="calendar-container">
+                    <div class="calendar-header">Mon</div>
+                    <div class="calendar-header">Tue</div>
+                    <div class="calendar-header">Wed</div>
+                    <div class="calendar-header">Thu</div>
+                    <div class="calendar-header">Fri</div>
+                    <div class="calendar-header">Sat</div>
+                    <div class="calendar-header">Sun</div>
+                    <div class="calendar-day empty"></div><div class="calendar-day empty"></div><div class="calendar-day empty"></div>
+        <div class="calendar-day" onclick="filterDate('2026-07-01')">
+            <div class="calendar-day-num">1</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-02')">
+            <div class="calendar-day-num">2</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-03')">
+            <div class="calendar-day-num">3</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-04')">
+            <div class="calendar-day-num">4</div>
+            <div class="calendar-day-pnl val-green">$+500.00</div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-05')">
+            <div class="calendar-day-num">5</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-06')">
+            <div class="calendar-day-num">6</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-07')">
+            <div class="calendar-day-num">7</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-08')">
+            <div class="calendar-day-num">8</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-09')">
+            <div class="calendar-day-num">9</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-10')">
+            <div class="calendar-day-num">10</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-11')">
+            <div class="calendar-day-num">11</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-12')">
+            <div class="calendar-day-num">12</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-13')">
+            <div class="calendar-day-num">13</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-14')">
+            <div class="calendar-day-num">14</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-15')">
+            <div class="calendar-day-num">15</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-16')">
+            <div class="calendar-day-num">16</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-17')">
+            <div class="calendar-day-num">17</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-18')">
+            <div class="calendar-day-num">18</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-19')">
+            <div class="calendar-day-num">19</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-20')">
+            <div class="calendar-day-num">20</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-21')">
+            <div class="calendar-day-num">21</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-22')">
+            <div class="calendar-day-num">22</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-23')">
+            <div class="calendar-day-num">23</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-24')">
+            <div class="calendar-day-num">24</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-25')">
+            <div class="calendar-day-num">25</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-26')">
+            <div class="calendar-day-num">26</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-27')">
+            <div class="calendar-day-num">27</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-28')">
+            <div class="calendar-day-num">28</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-29')">
+            <div class="calendar-day-num">29</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-30')">
+            <div class="calendar-day-num">30</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+        <div class="calendar-day" onclick="filterDate('2026-07-31')">
+            <div class="calendar-day-num">31</div>
+            <div class="calendar-day-pnl "></div>
+        </div>
+        
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">Market Context</div>
+                <div class="meta-item" style="margin-bottom:20px;">
+                    <div class="meta-label">VIX Level</div>
+                    <div class="meta-val val-green">18.5 (Elevated: > 30)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">SPY Relative to 50 SMA</div>
+                    <div class="meta-val val-green">+1.2% Above SMA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Position Ledger</div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Direction</th>
+                            <th>Entry Timestamp</th>
+                            <th>Exit Timestamp</th>
+                            <th>Entry Price</th>
+                            <th>Exit Price</th>
+                            <th>Shares</th>
+                            <th>Realized P&L</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trades-table-body">
+                        
+        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a49bdc51f8101c2c475996d", "ticker": "T_DASH_3", "direction": "LONG", "entry_price": 100.0, "share_count": 100, "status": "OPEN", "entry_timestamp": "2026-07-04T02:13:25.026000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}, "realized_pnl": 500.0, "exit_price": 105.0})'>
+            <td><strong>T_DASH_3</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-07-04 02:13</td>
+            <td>OPEN</td>
+            <td>$100.00</td>
+            <td>$105.00 if t.get('exit_price') else '-'</td>
+            <td>100</td>
+            <td class="val-green">$+500.00</td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
+        <tr data-close-date="2026-07-04" onclick='showTradeDetail({"_id": "6a49bdc51f8101c2c475996b", "ticker": "T_DASH_1", "direction": "LONG", "entry_price": 100.0, "exit_price": 110.0, "share_count": 100, "realized_pnl": 1000.0, "status": "CLOSED", "entry_timestamp": "2026-07-03T02:13:25.026000", "exit_timestamp": "2026-07-04T02:13:25.026000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}})'>
+            <td><strong>T_DASH_1</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-07-03 02:13</td>
+            <td>2026-07-04 02:13</td>
+            <td>$100.00</td>
+            <td>$110.00 if t.get('exit_price') else '-'</td>
+            <td>100</td>
+            <td class="val-green">$+1000.00</td>
+            <td><span class="badge badge-closed">Closed</span></td>
+        </tr>
+        
+        <tr data-close-date="2026-07-04" onclick='showTradeDetail({"_id": "6a49bdc51f8101c2c475996c", "ticker": "T_DASH_2", "direction": "SHORT", "entry_price": 100.0, "exit_price": 105.0, "share_count": 100, "realized_pnl": -500.0, "status": "CLOSED", "entry_timestamp": "2026-07-03T02:13:25.026000", "exit_timestamp": "2026-07-04T02:13:25.026000", "reasoning_chain": {"trigger_type": "MATERIAL_FILING"}})'>
+            <td><strong>T_DASH_2</strong></td>
+            <td class="val-rose">SHORT</td>
+            <td>2026-07-03 02:13</td>
+            <td>2026-07-04 02:13</td>
+            <td>$100.00</td>
+            <td>$105.00 if t.get('exit_price') else '-'</td>
+            <td>100</td>
+            <td class="val-rose">$-500.00</td>
+            <td><span class="badge badge-closed">Closed</span></td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trade Detail Modal -->
+    <div id="detail-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="document.getElementById('detail-modal').style.display = 'none'">&times;</span>
+            <h2 id="modal-ticker" style="margin-top:0;">AAPL - LONG</h2>
+            
+            <h3 style="border-bottom:1px solid var(--border-color); padding-bottom:8px; color:var(--text-secondary);">Execution Details</h3>
+            <div class="flex-row">
+                <div class="meta-item">
+                    <div class="meta-label">Shares</div>
+                    <div id="modal-shares" class="meta-val">0</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Entry Price</div>
+                    <div id="modal-entry-price" class="meta-val">$0.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Exit Price</div>
+                    <div id="modal-exit-price" class="meta-val">$0.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Realized PnL</div>
+                    <div id="modal-pnl" class="meta-val">$0.00</div>
+                </div>
+            </div>
+            
+            <div class="flex-row">
+                <div class="meta-item">
+                    <div class="meta-label">Initial Stop</div>
+                    <div id="modal-init-stop" class="meta-val">$0.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Current Stop</div>
+                    <div id="modal-curr-stop" class="meta-val">$0.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Take Profit</div>
+                    <div id="modal-tp" class="meta-val">$0.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Risk Allocated</div>
+                    <div id="modal-risk" class="meta-val">0.00%</div>
+                </div>
+            </div>
+
+            <h3 style="border-bottom:1px solid var(--border-color); padding-bottom:8px; color:var(--text-secondary);">Reasoning Chain</h3>
+            <div class="flex-row">
+                <div class="meta-item">
+                    <div class="meta-label">Trigger Type</div>
+                    <div id="modal-trigger-type" class="meta-val">PEAD</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Decision Score</div>
+                    <div id="modal-score" class="meta-val">2.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Confidence Tier</div>
+                    <div id="modal-tier" class="meta-val">STRONG</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">AI Conviction</div>
+                    <div id="modal-ai-conv" class="meta-val">STRONG_SUPPORT</div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:20px;">
+                <div class="meta-label">AI Rationale</div>
+                <div id="modal-ai-rationale" class="meta-val" style="font-weight:400; font-size:14px; margin-top:8px;"></div>
+            </div>
+            
+            <div>
+                <div class="meta-label">Risk Flags Identified</div>
+                <div id="modal-risk-flags" class="meta-val" style="font-weight:400; font-size:14px; margin-top:8px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterDate(dateStr) {
+            const rows = document.querySelectorAll("#trades-table-body tr");
+            rows.forEach(r => {
+                if (!dateStr || r.getAttribute("data-close-date") === dateStr) {
+                    r.style.display = "";
+                } else {
+                    r.style.display = "none";
+                }
+            });
+        }
+
+        function showTradeDetail(t) {
+            document.getElementById("modal-ticker").innerText = t.ticker + " - " + t.direction;
+            document.getElementById("modal-shares").innerText = t.share_count;
+            document.getElementById("modal-entry-price").innerText = "$" + parseFloat(t.entry_price).toFixed(2);
+            document.getElementById("modal-exit-price").innerText = t.exit_price ? "$" + parseFloat(t.exit_price).toFixed(2) : "-";
+            
+            const pnl = parseFloat(t.realized_pnl || 0.0);
+            const pnlEl = document.getElementById("modal-pnl");
+            pnlEl.innerText = (pnl >= 0 ? "+" : "") + "$" + pnl.toFixed(2);
+            pnlEl.className = "meta-val " + (pnl >= 0 ? "val-green" : "val-rose");
+            
+            document.getElementById("modal-init-stop").innerText = "$" + parseFloat(t.initial_stop).toFixed(2);
+            document.getElementById("modal-curr-stop").innerText = "$" + parseFloat(t.current_stop).toFixed(2);
+            document.getElementById("modal-tp").innerText = "$" + parseFloat(t.take_profit).toFixed(2);
+            document.getElementById("modal-risk").innerText = parseFloat(t.risk_pct_used).toFixed(2) + "%";
+            
+            document.getElementById("modal-trigger-type").innerText = t.reasoning_chain.trigger_type || "EARNINGS_SURPRISE";
+            document.getElementById("modal-score").innerText = parseFloat(t.combined_score).toFixed(2);
+            document.getElementById("modal-tier").innerText = t.confidence_tier || "STRONG";
+            document.getElementById("modal-ai-conv").innerText = t.ai_conviction || "ABSTAIN/UNKNOWN";
+            document.getElementById("modal-ai-rationale").innerText = t.ai_rationale || "No AI rationale details available.";
+            
+            const flags = t.ai_risk_flags || [];
+            document.getElementById("modal-risk-flags").innerText = flags.length > 0 ? flags.join(", ") : "No specific risk flags identified.";
+            
+            document.getElementById("detail-modal").style.display = "flex";
+        }
+
+        function closeModal(e) {
+            if (e.target.id === "detail-modal") {
+                document.getElementById("detail-modal").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
