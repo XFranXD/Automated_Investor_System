@@ -11,9 +11,9 @@ def print_test_result(name, success):
 
 def clean_db_for_verify():
     db = get_db()
-    db.trades.delete_many({"trading_cycle_run_id": "run-monitor-test"})
+    db.trades.delete_many({})
     db.portfolio_state.delete_one({"_id": "current_state"})
-    db.audit_log.delete_many({"trading_cycle_run_id": "run-monitor-test"})
+    db.audit_log.delete_many({})
 
 # --- MOCK ATR RETRIEVER ---
 

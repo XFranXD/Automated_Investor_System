@@ -193,17 +193,19 @@ def execute_trade(candidate_doc, portfolio_state=None, regime_state=None):
     if shares <= 0:
         return block_trade("ABSTAIN_ZERO_SHARES", f"Trade blocked: Calculated share count is 0 (Equity: {portfolio_equity}, Risk%: {risk_pct:.2f}%, Stop: {stop_distance:.2f}).")
         
-    # Liquidity capacity cap: max 10% of 20-day ADV
-    max_shares = int(0.1 * avg_daily_volume)
+    # Liquidity capacity cap: position value must not exceed 10% of 20-day average daily dollar volume (ADV)
+    avg_dollar_volume = pv_data.get("avg_daily_dollar_volume", 0.0)
+    max_position_value = 0.1 * avg_dollar_volume
     is_sized_down = False
     original_shares = shares
     
-    if shares > max_shares:
-        shares = max_shares
+    proposed_value = shares * current_price
+    if proposed_value > max_position_value:
+        shares = math.floor(max_position_value / current_price)
         is_sized_down = True
         
     if shares <= 0:
-        return block_trade("ABSTAIN_ZERO_SHARES", f"Trade blocked: Position sized down to 0 due to 10% ADV liquidity cap (ADV: {avg_daily_volume}).")
+        return block_trade("ABSTAIN_ZERO_SHARES", f"Trade blocked: Position sized down to 0 due to 10% ADV liquidity cap (Dollar ADV: {avg_dollar_volume:,.2f}).")
         
     position_value = shares * current_price
     
@@ -225,7 +227,6 @@ def execute_trade(candidate_doc, portfolio_state=None, regime_state=None):
         initial_stop = current_price + stop_distance
         take_profit = current_price - 2.0 * stop_distance
         
-    # --- EXECUTE TRADE ---
     reasoning_chain = {
         "candidate_id": candidate_doc["_id"],
         "trigger_type": candidate_doc.get("trigger_type"),
@@ -234,7 +235,8 @@ def execute_trade(candidate_doc, portfolio_state=None, regime_state=None):
         "atr_22": atr,
         "risk_pct_allocated": risk_pct,
         "is_sized_down": is_sized_down,
-        "original_shares": original_shares
+        "original_shares": original_shares,
+        "regime_state_at_decision": candidate_doc.get("regime_state_at_decision")
     }
     
     trade_id = open_paper_position(

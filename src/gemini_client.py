@@ -11,6 +11,10 @@ class QuotaExhaustedError(Exception):
     """Raised when all primary keys and fallback models are exhausted."""
     pass
 
+class AIUnavailableError(Exception):
+    """Raised when the Gemini service is completely unavailable due to network/server errors."""
+    pass
+
 def get_gemini_keys():
     """Reads GEMINI_API_KEY_1, _2, _3 from environment variables."""
     keys = [
@@ -99,6 +103,11 @@ def call_gemini_api(prompt, schema=None, use_fallback=False):
         # If all primary keys are exhausted
         if current_idx >= len(keys):
             print("All primary Gemini API keys are exhausted for today.")
+            exhausted = state.get("exhausted_keys", [])
+            # If all primary keys failed on connection/network issues, raise AIUnavailableError directly
+            if len(exhausted) == 0:
+                raise AIUnavailableError("All primary keys failed due to connection/network issues.")
+                
             write_audit_log(
                 subsystem="gemini_client",
                 action="call_api",
@@ -108,9 +117,24 @@ def call_gemini_api(prompt, schema=None, use_fallback=False):
             try:
                 # Call fallback model using first available key
                 return _make_raw_request(keys[0], FALLBACK_MODEL, prompt, schema)
+            except requests.exceptions.RequestException as e:
+                is_quota = False
+                if e.response is not None and e.response.status_code == 429:
+                    is_quota = True
+                else:
+                    try:
+                        err_json = e.response.json()
+                        err_msg = err_json.get("error", {}).get("message", "").lower()
+                        if "quota" in err_msg or "rate limit" in err_msg or "exhausted" in err_msg:
+                            is_quota = True
+                    except Exception:
+                        pass
+                if is_quota:
+                    raise QuotaExhaustedError(f"All primary keys and fallback model are exhausted due to quota limit: {e}")
+                else:
+                    raise AIUnavailableError(f"Gemini API is unavailable due to connection/server issues: {e}")
             except Exception as e:
-                # Fallback failed/exhausted too
-                raise QuotaExhaustedError(f"All primary keys and fallback model are exhausted: {e}")
+                raise AIUnavailableError(f"Gemini API is unavailable: {e}")
                 
         active_key = keys[current_idx]
         

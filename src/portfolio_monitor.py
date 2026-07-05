@@ -17,14 +17,6 @@ def send_kill_switch_notification(drawdown_pct, open_positions):
         
     print(f"NOTIFICATION OUT: {msg}")
     
-    # Save alert log locally
-    log_path = "/home/alejandro/Automated_Investor_Bot/kill_switch_notifications.log"
-    try:
-        with open(log_path, "a") as f:
-            f.write(f"=== {datetime.datetime.utcnow().isoformat()} ===\n{msg}\n\n")
-    except Exception as e:
-        print(f"Failed to write notification file log: {e}")
-        
     # Optional AI enhancement
     email_body = msg
     try:
@@ -104,7 +96,11 @@ def monitor_portfolio(trading_cycle_run_id=None):
             # Fallback to a small percentage of price if ATR cannot be computed
             atr = current_price * 0.02
             
-        current_stop = trade.get("current_stop", trade.get("initial_stop"))
+        current_stop = trade.get("current_stop")
+        if current_stop is None:
+            current_stop = trade.get("initial_stop")
+        if current_stop is None:
+            current_stop = entry_price
         
         # Compute Chandelier stops and ratchet only favorably (never loosen)
         if direction == "LONG":

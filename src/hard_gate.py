@@ -323,8 +323,27 @@ def evaluate_gates(ticker, trading_cycle_run_id=None):
     db = get_db()
     today_str = datetime.date.today().strftime("%Y-%m-%d")
     
+    # Resolve trigger_type by checking if there is a PENDING candidate for this ticker today.
+    # This keeps same-day multiple triggers caching working correctly.
+    pending_cand = db.candidates.find_one({
+        "ticker": ticker,
+        "calendar_day": today_str,
+        "gate_result": "PENDING"
+    })
+    if pending_cand:
+        trigger_type = pending_cand.get("trigger_type")
+    else:
+        # Fallback to any existing candidate today, or default to "EARNINGS_SURPRISE"
+        exist_cand = db.candidates.find_one({"ticker": ticker, "calendar_day": today_str})
+        if exist_cand:
+            trigger_type = exist_cand.get("trigger_type")
+        else:
+            trigger_type = "EARNINGS_SURPRISE"
+            
+    query_filter = {"ticker": ticker, "calendar_day": today_str, "trigger_type": trigger_type}
+    
     # 1. Same-Day Caching check
-    cached = db.candidates.find_one({"ticker": ticker, "calendar_day": today_str})
+    cached = db.candidates.find_one(query_filter)
     if cached and cached.get("gate_result") in ["PASSED", "REJECTED"]:
         write_audit_log(
             subsystem="hardgate",
@@ -342,6 +361,7 @@ def evaluate_gates(ticker, trading_cycle_run_id=None):
     # Initialize candidate payload
     cand_doc = {
         "ticker": ticker,
+        "trigger_type": trigger_type,
         "discovery_timestamp": datetime.datetime.utcnow(),
         "trading_cycle_run_id": trading_cycle_run_id,
         "calendar_day": today_str,
@@ -357,11 +377,11 @@ def evaluate_gates(ticker, trading_cycle_run_id=None):
         
         # Save/update in DB to preserve any trigger fields set by discovery
         db.candidates.update_one(
-            {"ticker": ticker, "calendar_day": today_str},
+            query_filter,
             {"$set": cand_doc},
             upsert=True
         )
-        final_doc = db.candidates.find_one({"ticker": ticker, "calendar_day": today_str})
+        final_doc = db.candidates.find_one(query_filter)
         
         write_audit_log(
             subsystem="hardgate",
@@ -528,11 +548,11 @@ def evaluate_gates(ticker, trading_cycle_run_id=None):
     cand_doc["gate_data_sources_consulted"] = list(set(sources_consulted))
     
     db.candidates.update_one(
-        {"ticker": ticker, "calendar_day": today_str},
+        query_filter,
         {"$set": cand_doc},
         upsert=True
     )
-    final_doc = db.candidates.find_one({"ticker": ticker, "calendar_day": today_str})
+    final_doc = db.candidates.find_one(query_filter)
     
     write_audit_log(
         subsystem="hardgate",

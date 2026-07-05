@@ -35,6 +35,9 @@ jobs:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
         SEC_EDGAR_USER_AGENT: ${{ secrets.SEC_EDGAR_USER_AGENT }}
+        GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+        GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+        GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
         EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
         EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
         EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}

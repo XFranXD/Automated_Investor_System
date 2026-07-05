@@ -9,7 +9,7 @@ from src.data_client import (
     get_company_news,
     clean_html
 )
-from src.gemini_client import call_gemini_api, QuotaExhaustedError
+from src.gemini_client import call_gemini_api, QuotaExhaustedError, AIUnavailableError
 
 # Structured output schema for Google Gemini
 RESPONSE_SCHEMA = {
@@ -219,6 +219,11 @@ Response must be formatted exactly as JSON matching the schema.
             eval_doc["conviction"] = "ABSTAIN"
             eval_doc["abstain_reason"] = "AI_QUOTA_EXHAUSTED"
             return save_and_log_evaluation(eval_doc, "AI Qualitative Assessment Abstained: API quota exhausted.")
+        except AIUnavailableError as ae:
+            print(f"[{ticker}] Gemini service unavailable: {ae}")
+            eval_doc["conviction"] = "ABSTAIN"
+            eval_doc["abstain_reason"] = "AI_UNAVAILABLE"
+            return save_and_log_evaluation(eval_doc, "AI Qualitative Assessment Abstained: AI service unavailable.")
         except Exception as e:
             print(f"[{ticker}] Gemini API error on attempt {attempt+1}: {e}")
             
