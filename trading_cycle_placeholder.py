@@ -56,6 +56,17 @@ def main():
         
         # 5. Step 3: Run AI qualitative reasoning & Scoring on passed candidates
         for cand in passed_candidates:
+            # Re-fetch portfolio_state from DB so that any positions opened earlier in this cycle are seen
+            portfolio_state = db.portfolio_state.find_one({"_id": "current_state"})
+            if not portfolio_state:
+                portfolio_state = {
+                    "equity": 100000.0,
+                    "cash": 100000.0,
+                    "kill_switch_active": False,
+                    "correlation_cap_current": 0.6,
+                    "open_positions": []
+                }
+                
             ticker = cand.get("ticker")
             print(f"Processing candidate: {ticker}")
             
