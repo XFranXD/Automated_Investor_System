@@ -34,7 +34,7 @@ jobs:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
         SEC_EDGAR_USER_AGENT: ${{ secrets.SEC_EDGAR_USER_AGENT }}
-      run: python src/dashboard_builder.py
+      run: python -m src.dashboard_builder
 
     - name: Commit and Push Rendered Dashboard
       run: |
