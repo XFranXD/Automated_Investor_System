@@ -172,15 +172,20 @@ def get_recent_fiscal_years(fundamentals):
     years = []
     
     if source == "SEC_EDGAR":
-        recent = data.get("filings", {}).get("recent", {})
-        forms = recent.get("form", [])
-        fys = recent.get("fy", [])
-        for form, fy in zip(forms, fys):
-            if form == "10-K" and fy:
-                try:
-                    years.append(int(fy))
-                except ValueError:
-                    pass
+        us_gaap = data.get("facts", {}).get("us-gaap", {})
+        dei = data.get("facts", {}).get("dei", {})
+        for tag_dict in [us_gaap, dei]:
+            for tag, tag_data in tag_dict.items():
+                units = tag_data.get("units", {})
+                for unit_key, entries in units.items():
+                    for entry in entries:
+                        if "10-K" in entry.get("form", ""):
+                            fy = entry.get("fy")
+                            if fy:
+                                try:
+                                    years.append(int(fy))
+                                except ValueError:
+                                    pass
     elif source == "Finnhub":
         reports = data.get("data", [])
         for r in reports:
