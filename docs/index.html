@@ -75,12 +75,12 @@
         
         <div class="calendar-day" onclick="filterDate('2026-07-05')">
             <div class="calendar-day-num">5</div>
-            <div class="calendar-day-pnl val-green">$+500.00</div>
+            <div class="calendar-day-pnl "></div>
         </div>
         
         <div class="calendar-day" onclick="filterDate('2026-07-06')">
             <div class="calendar-day-num">6</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-day-pnl val-green">$+500.00</div>
         </div>
         
         <div class="calendar-day" onclick="filterDate('2026-07-07')">
@@ -243,10 +243,10 @@
                     </thead>
                     <tbody id="trades-table-body">
                         
-        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4b0b9ee48e4941a59500d0", "ticker": "T_DASH_3", "direction": "LONG", "entry_price": 100.0, "share_count": 100, "status": "OPEN", "entry_timestamp": "2026-07-05T01:57:50.389000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}, "realized_pnl": 0.0, "exit_price": 100.0})'>
+        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4c5c26b1cc9bf2ca97600b", "ticker": "T_DASH_3", "direction": "LONG", "entry_price": 100.0, "share_count": 100, "status": "OPEN", "entry_timestamp": "2026-07-06T01:53:42.390000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}, "realized_pnl": 0.0, "exit_price": 100.0})'>
             <td><strong>T_DASH_3</strong></td>
             <td class="val-green">LONG</td>
-            <td>2026-07-05 01:57</td>
+            <td>2026-07-06 01:53</td>
             <td>OPEN</td>
             <td>$100.00</td>
             <td>$100.00 if t.get('exit_price') else '-'</td>
@@ -255,11 +255,11 @@
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="2026-07-05" onclick='showTradeDetail({"_id": "6a4b0b9ee48e4941a59500ce", "ticker": "T_DASH_1", "direction": "LONG", "entry_price": 100.0, "exit_price": 110.0, "share_count": 100, "realized_pnl": 1000.0, "status": "CLOSED", "entry_timestamp": "2026-07-04T01:57:50.389000", "exit_timestamp": "2026-07-05T01:57:50.389000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}})'>
+        <tr data-close-date="2026-07-06" onclick='showTradeDetail({"_id": "6a4c5c26b1cc9bf2ca976009", "ticker": "T_DASH_1", "direction": "LONG", "entry_price": 100.0, "exit_price": 110.0, "share_count": 100, "realized_pnl": 1000.0, "status": "CLOSED", "entry_timestamp": "2026-07-05T01:53:42.390000", "exit_timestamp": "2026-07-06T01:53:42.390000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}})'>
             <td><strong>T_DASH_1</strong></td>
             <td class="val-green">LONG</td>
-            <td>2026-07-04 01:57</td>
-            <td>2026-07-05 01:57</td>
+            <td>2026-07-05 01:53</td>
+            <td>2026-07-06 01:53</td>
             <td>$100.00</td>
             <td>$110.00 if t.get('exit_price') else '-'</td>
             <td>100</td>
@@ -267,11 +267,11 @@
             <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="2026-07-05" onclick='showTradeDetail({"_id": "6a4b0b9ee48e4941a59500cf", "ticker": "T_DASH_2", "direction": "SHORT", "entry_price": 100.0, "exit_price": 105.0, "share_count": 100, "realized_pnl": -500.0, "status": "CLOSED", "entry_timestamp": "2026-07-04T01:57:50.389000", "exit_timestamp": "2026-07-05T01:57:50.389000", "reasoning_chain": {"trigger_type": "MATERIAL_FILING"}})'>
+        <tr data-close-date="2026-07-06" onclick='showTradeDetail({"_id": "6a4c5c26b1cc9bf2ca97600a", "ticker": "T_DASH_2", "direction": "SHORT", "entry_price": 100.0, "exit_price": 105.0, "share_count": 100, "realized_pnl": -500.0, "status": "CLOSED", "entry_timestamp": "2026-07-05T01:53:42.390000", "exit_timestamp": "2026-07-06T01:53:42.390000", "reasoning_chain": {"trigger_type": "MATERIAL_FILING"}})'>
             <td><strong>T_DASH_2</strong></td>
             <td class="val-rose">SHORT</td>
-            <td>2026-07-04 01:57</td>
-            <td>2026-07-05 01:57</td>
+            <td>2026-07-05 01:53</td>
+            <td>2026-07-06 01:53</td>
             <td>$100.00</td>
             <td>$105.00 if t.get('exit_price') else '-'</td>
             <td>100</td>
