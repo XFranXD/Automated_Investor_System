@@ -3,6 +3,7 @@ import csv
 import time
 import datetime
 import requests
+import re
 import yfinance
 from src.config import FINNHUB_API_KEY, SEC_EDGAR_USER_AGENT
 from src.logger import write_audit_log
