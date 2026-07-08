@@ -22,19 +22,19 @@
         <div class="summary-grid">
             <div class="card">
                 <div class="card-title">Total Realized P&L</div>
-                <div class="card-val val-green">$+500.00</div>
+                <div class="card-val val-rose">$+0.00</div>
             </div>
             <div class="card">
                 <div class="card-title">Overall Win Rate</div>
-                <div class="card-val val-indigo">50.0%</div>
+                <div class="card-val val-indigo">0.0%</div>
             </div>
             <div class="card">
                 <div class="card-title">Closed Positions</div>
-                <div class="card-val">2</div>
+                <div class="card-val">0</div>
             </div>
             <div class="card">
                 <div class="card-title">Open Positions</div>
-                <div class="card-val val-green">1</div>
+                <div class="card-val val-green">3</div>
             </div>
         </div>
 
@@ -85,7 +85,7 @@
         
         <div class="calendar-day" onclick="filterDate('2026-07-07')">
             <div class="calendar-day-num">7</div>
-            <div class="calendar-day-pnl val-green">$+500.00</div>
+            <div class="calendar-day-pnl "></div>
         </div>
         
         <div class="calendar-day" onclick="filterDate('2026-07-08')">
@@ -243,40 +243,40 @@
                     </thead>
                     <tbody id="trades-table-body">
                         
-        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4de585e4c61466ad9f5b13", "ticker": "T_DASH_3", "direction": "LONG", "entry_price": 100.0, "share_count": 100, "status": "OPEN", "entry_timestamp": "2026-07-07T05:52:05.206000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}, "realized_pnl": 500.0, "exit_price": 105.0})'>
-            <td><strong>T_DASH_3</strong></td>
+        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4e72c3d8c6329d87cb450d", "ticker": "PENG", "direction": "LONG", "entry_price": 73.9468994140625, "share_count": 59, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 48.91353485801003, "current_stop": 48.91353485801003, "take_profit": 124.01362852616744, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:43.203000", "exit_price": 74.70999908447266, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 45.02288055419922, "highest_high_since_entry": 73.9468994140625, "lowest_low_since_entry": 73.9468994140625, "reasoning_chain": {"candidate_id": "6a4e72b40105d061e8bdf250", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 8.34445485201749, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 59, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Penguin Solutions exceeded Q3 2026 earnings expectations with an EPS of $0.84 against a consensus of $0.55, driven by strong demand for AI-integrated memory solutions. Additionally, the company raised its full-year guidance, which has triggered positive market sentiment and significant stock price appreciation.", "ai_risk_flags": ["Market volatility in technology sector", "Dependency on AI-integrated memory market demand"]})'>
+            <td><strong>PENG</strong></td>
             <td class="val-green">LONG</td>
-            <td>2026-07-07 05:52</td>
+            <td>2026-07-08 15:54</td>
             <td>OPEN</td>
-            <td>$100.00</td>
-            <td>$105.00 if t.get('exit_price') else '-'</td>
-            <td>100</td>
-            <td class="val-green">$+500.00</td>
+            <td>$73.95</td>
+            <td>$74.71 if t.get('exit_price') else '-'</td>
+            <td>59</td>
+            <td class="val-green">$+45.02</td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="2026-07-07" onclick='showTradeDetail({"_id": "6a4de585e4c61466ad9f5b11", "ticker": "T_DASH_1", "direction": "LONG", "entry_price": 100.0, "exit_price": 110.0, "share_count": 100, "realized_pnl": 1000.0, "status": "CLOSED", "entry_timestamp": "2026-07-06T05:52:05.206000", "exit_timestamp": "2026-07-07T05:52:05.206000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}})'>
-            <td><strong>T_DASH_1</strong></td>
+        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 21.17236345464533, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 26.540000915527344, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 40.04037094116211, "highest_high_since_entry": 26.399999618530273, "lowest_low_since_entry": 26.399999618530273, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
+            <td><strong>HELE</strong></td>
             <td class="val-green">LONG</td>
-            <td>2026-07-06 05:52</td>
-            <td>2026-07-07 05:52</td>
-            <td>$100.00</td>
-            <td>$110.00 if t.get('exit_price') else '-'</td>
-            <td>100</td>
-            <td class="val-green">$+1000.00</td>
-            <td><span class="badge badge-closed">Closed</span></td>
+            <td>2026-07-08 15:54</td>
+            <td>OPEN</td>
+            <td>$26.40</td>
+            <td>$26.54 if t.get('exit_price') else '-'</td>
+            <td>286</td>
+            <td class="val-green">$+40.04</td>
+            <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="2026-07-07" onclick='showTradeDetail({"_id": "6a4de585e4c61466ad9f5b12", "ticker": "T_DASH_2", "direction": "SHORT", "entry_price": 100.0, "exit_price": 105.0, "share_count": 100, "realized_pnl": -500.0, "status": "CLOSED", "entry_timestamp": "2026-07-06T05:52:05.206000", "exit_timestamp": "2026-07-07T05:52:05.206000", "reasoning_chain": {"trigger_type": "MATERIAL_FILING"}})'>
-            <td><strong>T_DASH_2</strong></td>
-            <td class="val-rose">SHORT</td>
-            <td>2026-07-06 05:52</td>
-            <td>2026-07-07 05:52</td>
-            <td>$100.00</td>
-            <td>$105.00 if t.get('exit_price') else '-'</td>
-            <td>100</td>
-            <td class="val-rose">$-500.00</td>
-            <td><span class="badge badge-closed">Closed</span></td>
+        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 125.35681568492542, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 143.8300018310547, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 0.0, "highest_high_since_entry": 143.8300018310547, "lowest_low_since_entry": 143.8300018310547, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+            <td><strong>AZZ</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-07-08 15:54</td>
+            <td>OPEN</td>
+            <td>$143.83</td>
+            <td>$143.83 if t.get('exit_price') else '-'</td>
+            <td>54</td>
+            <td class="">$+0.00</td>
+            <td><span class="badge badge-open">Open</span></td>
         </tr>
         
                     </tbody>
