@@ -4,7 +4,10 @@ import datetime
 from bson import ObjectId
 from unittest.mock import patch, MagicMock
 import requests
-from src.db import get_db
+from src.db import get_verify_db
+import src.db
+src.db.get_db = get_verify_db
+
 from src.ai_reasoning import evaluate_qualitative_evidence
 from src.gemini_client import call_gemini_api, QuotaExhaustedError
 
@@ -13,7 +16,7 @@ def print_test_result(name, success):
     print(f"TEST [{name}]: {status}")
 
 def clean_db_for_ticker(ticker):
-    db = get_db()
+    db = get_verify_db()
     db.evaluations.delete_many({"ticker": ticker})
     db.audit_log.delete_many({"ticker": ticker})
 
@@ -68,173 +71,184 @@ def test_precondition_enforcement():
     print("\n--- TEST: Precondition Enforcement ---")
     ticker = CAND_FAILED_GATE["ticker"]
     clean_db_for_ticker(ticker)
-    
-    raised_error = False
     try:
-        evaluate_qualitative_evidence(CAND_FAILED_GATE)
-    except ValueError as e:
-        print(f"Precondition check raised expected error: {e}")
-        raised_error = True
+        raised_error = False
+        try:
+            evaluate_qualitative_evidence(CAND_FAILED_GATE)
+        except ValueError as e:
+            print(f"Precondition check raised expected error: {e}")
+            raised_error = True
+            
+        db = get_verify_db()
+        eval_doc = db.evaluations.find_one({"ticker": ticker})
         
-    db = get_db()
-    eval_doc = db.evaluations.find_one({"ticker": ticker})
-    
-    success = raised_error and eval_doc is None
-    print_test_result("Precondition Enforcement", success)
-    return success
+        success = raised_error and eval_doc is None
+        print_test_result("Precondition Enforcement", success)
+        return success
+    finally:
+        clean_db_for_ticker(ticker)
 
 def test_schema_valid_evaluation():
     print("\n--- TEST: Schema-Valid Output Generation ---")
     ticker = CAND_PASSED["ticker"]
     clean_db_for_ticker(ticker)
-    
-    with patch("src.ai_reasoning.get_primary_text_evidence", return_value="Earnings press release: Sales grew 20%"), \
-         patch("src.ai_reasoning.get_company_news", return_value={"source": "Finnhub", "data": []}), \
-         patch("src.ai_reasoning.call_gemini_api", return_value=MOCK_SUCCESS_RESPONSE):
-         
-        res = evaluate_qualitative_evidence(CAND_PASSED)
+    try:
+        with patch("src.ai_reasoning.get_primary_text_evidence", return_value="Earnings press release: Sales grew 20%"), \
+             patch("src.ai_reasoning.get_company_news", return_value={"source": "Finnhub", "data": []}), \
+             patch("src.ai_reasoning.call_gemini_api", return_value=MOCK_SUCCESS_RESPONSE):
+             
+            res = evaluate_qualitative_evidence(CAND_PASSED)
+            
+        db = get_verify_db()
+        eval_doc = db.evaluations.find_one({"ticker": ticker})
+        logs = list(db.audit_log.find({"ticker": ticker}))
         
-    db = get_db()
-    eval_doc = db.evaluations.find_one({"ticker": ticker})
-    logs = list(db.audit_log.find({"ticker": ticker}))
-    
-    success = (
-        res is not None and
-        res["conviction"] == "STRONG_SUPPORT" and
-        res["information_sufficiency"] == "SUFFICIENT" and
-        eval_doc is not None and
-        eval_doc["conviction"] == "STRONG_SUPPORT" and
-        any("STRONG_SUPPORT" in l["decision"] for l in logs)
-    )
-    print_test_result("Schema-Valid Output Generation", success)
-    return success
+        success = (
+            res is not None and
+            res["conviction"] == "STRONG_SUPPORT" and
+            res["information_sufficiency"] == "SUFFICIENT" and
+            eval_doc is not None and
+            eval_doc["conviction"] == "STRONG_SUPPORT" and
+            any("STRONG_SUPPORT" in l["decision"] for l in logs)
+        )
+        print_test_result("Schema-Valid Output Generation", success)
+        return success
+    finally:
+        clean_db_for_ticker(ticker)
 
 def test_no_text_evidence_handling():
     print("\n--- TEST: No Text Evidence Handling ---")
     ticker = "T_AI_NO_TEXT"
     clean_db_for_ticker(ticker)
-    
-    cand = CAND_PASSED.copy()
-    cand["ticker"] = ticker
-    
-    # Mocking filing/news text retrieval to return empty string
-    with patch("src.ai_reasoning.get_primary_text_evidence", return_value=""), \
-         patch("src.ai_reasoning.get_company_news", return_value=None), \
-         patch("src.ai_reasoning.call_gemini_api", return_value=MOCK_LIMITED_RESPONSE) as mock_call:
-         
-        res = evaluate_qualitative_evidence(cand)
+    try:
+        cand = CAND_PASSED.copy()
+        cand["ticker"] = ticker
         
-    success = (
-        mock_call.called and
-        res["conviction"] == "NEUTRAL" and
-        res["information_sufficiency"] == "LIMITED"
-    )
-    print_test_result("No Text Evidence Handling", success)
-    return success
+        # Mocking filing/news text retrieval to return empty string
+        with patch("src.ai_reasoning.get_primary_text_evidence", return_value=""), \
+             patch("src.ai_reasoning.get_company_news", return_value=None), \
+             patch("src.ai_reasoning.call_gemini_api", return_value=MOCK_LIMITED_RESPONSE) as mock_call:
+             
+            res = evaluate_qualitative_evidence(cand)
+            
+        success = (
+            mock_call.called and
+            res["conviction"] == "NEUTRAL" and
+            res["information_sufficiency"] == "LIMITED"
+        )
+        print_test_result("No Text Evidence Handling", success)
+        return success
+    finally:
+        clean_db_for_ticker(ticker)
 
 def test_schema_failure_retry():
     print("\n--- TEST: Schema Failure Retry (Abstain) ---")
     ticker = "T_AI_SCHEMA_FAIL"
     clean_db_for_ticker(ticker)
-    
-    cand = CAND_PASSED.copy()
-    cand["ticker"] = ticker
-    
-    # Call Gemini will return malformed output twice
-    mock_call = MagicMock(return_value=MOCK_MALFORMED_RESPONSE)
-    
-    with patch("src.ai_reasoning.get_primary_text_evidence", return_value="some text"), \
-         patch("src.ai_reasoning.get_company_news", return_value=None), \
-         patch("src.ai_reasoning.call_gemini_api", mock_call):
-         
-        res = evaluate_qualitative_evidence(cand)
+    try:
+        cand = CAND_PASSED.copy()
+        cand["ticker"] = ticker
         
-    db = get_db()
-    eval_doc = db.evaluations.find_one({"ticker": ticker})
-    
-    # Verify:
-    # 1. Exactly 2 attempts (initial + 1 retry) were made
-    # 2. Evaluations document records ABSTAIN / AI_SCHEMA_VALIDATION_FAILED
-    success = (
-        mock_call.call_count == 2 and
-        res["conviction"] == "ABSTAIN" and
-        res["abstain_reason"] == "AI_SCHEMA_VALIDATION_FAILED" and
-        eval_doc is not None and
-        eval_doc["abstain_reason"] == "AI_SCHEMA_VALIDATION_FAILED"
-    )
-    print_test_result("Schema Failure Retry", success)
-    return success
+        # Call Gemini will return malformed output twice
+        mock_call = MagicMock(return_value=MOCK_MALFORMED_RESPONSE)
+        
+        with patch("src.ai_reasoning.get_primary_text_evidence", return_value="some text"), \
+             patch("src.ai_reasoning.get_company_news", return_value=None), \
+             patch("src.ai_reasoning.call_gemini_api", mock_call):
+             
+            res = evaluate_qualitative_evidence(cand)
+            
+        db = get_verify_db()
+        eval_doc = db.evaluations.find_one({"ticker": ticker})
+        
+        # Verify:
+        # 1. Exactly 2 attempts (initial + 1 retry) were made
+        # 2. Evaluations document records ABSTAIN / AI_SCHEMA_VALIDATION_FAILED
+        success = (
+            mock_call.call_count == 2 and
+            res["conviction"] == "ABSTAIN" and
+            res["abstain_reason"] == "AI_SCHEMA_VALIDATION_FAILED" and
+            eval_doc is not None and
+            eval_doc["abstain_reason"] == "AI_SCHEMA_VALIDATION_FAILED"
+        )
+        print_test_result("Schema Failure Retry", success)
+        return success
+    finally:
+        clean_db_for_ticker(ticker)
 
 def test_api_key_rotation():
     print("\n--- TEST: API Key Rotation on Failure ---")
-    
-    # Clean system state first to make sure indices start clean
-    db = get_db()
+    db = get_verify_db()
     db.system_state.delete_one({"_id": "gemini_key_state"})
-    
-    # Mock three API keys
-    with patch("src.gemini_client.get_gemini_keys", return_value=["KEY1", "KEY2", "KEY3"]):
-        # Stub the raw request post
-        # First call on Key 1: raise HTTPError 429 (quota hit)
-        # Second call on Key 2: return success response
-        mock_response_1 = MagicMock()
-        mock_response_1.status_code = 429
-        mock_response_1.json.return_value = {"error": {"message": "Resource has been exhausted (e.g. queries per minute quota)"}}
-        
-        err_429 = requests.exceptions.HTTPError(response=mock_response_1)
-        
-        mock_post = MagicMock(side_effect=[err_429, MagicMock(json=lambda: {"candidates": [{"content": {"parts": [{"text": MOCK_SUCCESS_RESPONSE}]}}]})])
-        
-        with patch("requests.post", mock_post):
-            res_text = call_gemini_api("Test prompt", schema={})
+    try:
+        # Mock three API keys
+        with patch("src.gemini_client.get_gemini_keys", return_value=["KEY1", "KEY2", "KEY3"]):
+            # Stub the raw request post
+            # First call on Key 1: raise HTTPError 429 (quota hit)
+            # Second call on Key 2: return success response
+            mock_response_1 = MagicMock()
+            mock_response_1.status_code = 429
+            mock_response_1.json.return_value = {"error": {"message": "Resource has been exhausted (e.g. queries per minute quota)"}}
             
-        state = db.system_state.find_one({"_id": "gemini_key_state"})
-        
-        # Verify:
-        # 1. Key 1 was rotated (index incremented to 1)
-        # 2. Request was retried on Key 2 and succeeded
-        success = (
-            res_text == MOCK_SUCCESS_RESPONSE and
-            state["current_key_idx"] == 1 and
-            0 in state["exhausted_keys"]
-        )
-        print_test_result("API Key Rotation", success)
-        return success
+            err_429 = requests.exceptions.HTTPError(response=mock_response_1)
+            
+            mock_post = MagicMock(side_effect=[err_429, MagicMock(json=lambda: {"candidates": [{"content": {"parts": [{"text": MOCK_SUCCESS_RESPONSE}]}}]})])
+            
+            with patch("requests.post", mock_post):
+                res_text = call_gemini_api("Test prompt", schema={})
+                
+            state = db.system_state.find_one({"_id": "gemini_key_state"})
+            
+            # Verify:
+            # 1. Key 1 was rotated (index incremented to 1)
+            # 2. Request was retried on Key 2 and succeeded
+            success = (
+                res_text == MOCK_SUCCESS_RESPONSE and
+                state["current_key_idx"] == 1 and
+                0 in state["exhausted_keys"]
+            )
+            print_test_result("API Key Rotation", success)
+            return success
+    finally:
+        db.system_state.delete_one({"_id": "gemini_key_state"})
 
 def test_quota_exhausted_abstain():
     print("\n--- TEST: Quota Exhausted (Abstain) ---")
     ticker = "T_AI_QUOTA"
     clean_db_for_ticker(ticker)
     
-    cand = CAND_PASSED.copy()
-    cand["ticker"] = ticker
-    
-    db = get_db()
+    db = get_verify_db()
     db.system_state.delete_one({"_id": "gemini_key_state"})
-    
-    # Mock three keys and force all to fail with QuotaExhaustedError
-    with patch("src.gemini_client.get_gemini_keys", return_value=["KEY1", "KEY2", "KEY3"]):
-        # Mock requests.post to return 429 for all calls
-        mock_resp = MagicMock()
-        mock_resp.status_code = 429
-        err_429 = requests.exceptions.HTTPError(response=mock_resp)
+    try:
+        cand = CAND_PASSED.copy()
+        cand["ticker"] = ticker
         
-        with patch("requests.post", side_effect=err_429), \
-             patch("src.ai_reasoning.get_primary_text_evidence", return_value="some text"), \
-             patch("src.ai_reasoning.get_company_news", return_value=None):
-             
-            res = evaluate_qualitative_evidence(cand)
+        # Mock three keys and force all to fail with QuotaExhaustedError
+        with patch("src.gemini_client.get_gemini_keys", return_value=["KEY1", "KEY2", "KEY3"]):
+            # Mock requests.post to return 429 for all calls
+            mock_resp = MagicMock()
+            mock_resp.status_code = 429
+            err_429 = requests.exceptions.HTTPError(response=mock_resp)
             
-        eval_doc = db.evaluations.find_one({"ticker": ticker})
-        
-        success = (
-            res["conviction"] == "ABSTAIN" and
-            res["abstain_reason"] == "AI_QUOTA_EXHAUSTED" and
-            eval_doc is not None and
-            eval_doc["abstain_reason"] == "AI_QUOTA_EXHAUSTED"
-        )
-        print_test_result("Quota Exhausted Abstain", success)
-        return success
+            with patch("requests.post", side_effect=err_429), \
+                 patch("src.ai_reasoning.get_primary_text_evidence", return_value="some text"), \
+                 patch("src.ai_reasoning.get_company_news", return_value=None):
+                 
+                res = evaluate_qualitative_evidence(cand)
+                
+            eval_doc = db.evaluations.find_one({"ticker": ticker})
+            
+            success = (
+                res["conviction"] == "ABSTAIN" and
+                res["abstain_reason"] == "AI_QUOTA_EXHAUSTED" and
+                eval_doc is not None and
+                eval_doc["abstain_reason"] == "AI_QUOTA_EXHAUSTED"
+            )
+            print_test_result("Quota Exhausted Abstain", success)
+            return success
+    finally:
+        clean_db_for_ticker(ticker)
+        db.system_state.delete_one({"_id": "gemini_key_state"})
 
 def run_all_tests():
     print("=== STARTING PHASE 3 AI REASONING LAYER VERIFICATION ===")

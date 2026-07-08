@@ -1,7 +1,10 @@
 import sys
 import datetime
 from bson import ObjectId
-from src.db import get_db
+from src.db import get_verify_db
+import src.db
+src.db.get_db = get_verify_db
+
 from src.learning_aggregator import run_weekly_aggregation, get_derived_metrics
 
 def print_test_result(name, success):
@@ -9,7 +12,7 @@ def print_test_result(name, success):
     print(f"TEST [{name}]: {status}")
 
 def clean_db_for_verify():
-    db = get_db()
+    db = get_verify_db()
     db.trades.delete_many({})
     db.stats_aggregates.delete_many({})
     db.system_state.delete_one({"_id": "learning_aggregator_state"})
@@ -22,7 +25,7 @@ def clean_db_for_verify():
 def test_multidimensional_bucketing():
     print("\n--- TEST: Multi-dimensional Bucketing & Consistency ---")
     clean_db_for_verify()
-    db = get_db()
+    db = get_verify_db()
     
     # Insert 2 closed trades with different properties
     # Trade 1: Long, Earnings, Strong, Risk On, profit 1000
@@ -96,7 +99,7 @@ def test_idempotence():
     print("\n--- TEST: Idempotence & Timestamp Tracking ---")
     # Using existing DB from test 1:
     # Running aggregator again when no new trades are closed should make no changes!
-    db = get_db()
+    db = get_verify_db()
     
     overall_before = db.stats_aggregates.find_one({"_id": {"dimension": "overall", "value": "total"}})
     
@@ -115,7 +118,7 @@ def test_idempotence():
 
 def test_additive_contributions():
     print("\n--- TEST: Additive Contributions ---")
-    db = get_db()
+    db = get_verify_db()
     
     overall_before = db.stats_aggregates.find_one({"_id": {"dimension": "overall", "value": "total"}})
     
@@ -156,7 +159,7 @@ def test_additive_contributions():
 
 def test_derived_metrics_derivation():
     print("\n--- TEST: Derived Metrics Formula Calculations ---")
-    db = get_db()
+    db = get_verify_db()
     
     overall = db.stats_aggregates.find_one({"_id": {"dimension": "overall", "value": "total"}})
     
@@ -189,7 +192,7 @@ def test_derived_metrics_derivation():
 
 def test_no_side_effects():
     print("\n--- TEST: No Side Effects to Other Subsystems ---")
-    db = get_db()
+    db = get_verify_db()
     
     # Check if stats aggregates document exists
     count = db.stats_aggregates.count_documents({})
@@ -206,21 +209,25 @@ def test_no_side_effects():
 
 def run_all_tests():
     print("=== STARTING PHASE 7 LEARNING AGGREGATOR VERIFICATION ===")
-    results = [
-        test_multidimensional_bucketing(),
-        test_idempotence(),
-        test_additive_contributions(),
-        test_derived_metrics_derivation(),
-        test_no_side_effects()
-    ]
-    
-    success = all(results)
-    print("\n=== PHASE 7 VERIFICATION COMPLETED ===")
-    if success:
-        print("ALL SCENARIOS COMPLETED SUCCESSFULLY.")
-    else:
-        print("SOME SCENARIOS FAILED. Check stdout for logs.")
-    return success
+    clean_db_for_verify()
+    try:
+        results = [
+            test_multidimensional_bucketing(),
+            test_idempotence(),
+            test_additive_contributions(),
+            test_derived_metrics_derivation(),
+            test_no_side_effects()
+        ]
+        
+        success = all(results)
+        print("\n=== PHASE 7 VERIFICATION COMPLETED ===")
+        if success:
+            print("ALL SCENARIOS COMPLETED SUCCESSFULLY.")
+        else:
+            print("SOME SCENARIOS FAILED. Check stdout for logs.")
+        return success
+    finally:
+        clean_db_for_verify()
 
 if __name__ == "__main__":
     success = run_all_tests()

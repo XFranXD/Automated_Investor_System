@@ -21,6 +21,24 @@ def get_db():
         db = client['tbe']
     return db
 
+def get_verify_db():
+    """Returns the test/verification database instance, isolated by name ('tbe_test')."""
+    client = get_client()
+    try:
+        prod_db = client.get_default_database()
+        if prod_db is None:
+            prod_db = client['tbe']
+    except Exception:
+        prod_db = client['tbe']
+    prod_name = prod_db.name
+    if prod_name == "tbe_test":
+        raise RuntimeError(
+            "MONGODB_URI database name collision: Production database resolves to 'tbe_test'. "
+            "Verification scripts must not run against the production database."
+        )
+    return client["tbe_test"]
+
+
 COLLECTIONS = [
     "candidates",
     "evaluations",
