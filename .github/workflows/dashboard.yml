@@ -33,6 +33,7 @@ jobs:
       env:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
         SEC_EDGAR_USER_AGENT: ${{ secrets.SEC_EDGAR_USER_AGENT }}
       run: python -m src.dashboard_builder
 

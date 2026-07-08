@@ -8,7 +8,8 @@ load_dotenv()
 REQUIRED_VARS = [
     "MONGODB_URI",
     "FINNHUB_API_KEY",
-    "SEC_EDGAR_USER_AGENT"
+    "SEC_EDGAR_USER_AGENT",
+    "TWELVEDATA_API_KEY"
 ]
 
 def validate_config():
@@ -29,3 +30,4 @@ validate_config()
 MONGODB_URI = os.environ["MONGODB_URI"]
 FINNHUB_API_KEY = os.environ["FINNHUB_API_KEY"]
 SEC_EDGAR_USER_AGENT = os.environ["SEC_EDGAR_USER_AGENT"]
+TWELVEDATA_API_KEY = os.environ["TWELVEDATA_API_KEY"]

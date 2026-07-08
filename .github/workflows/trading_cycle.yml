@@ -34,6 +34,7 @@ jobs:
       env:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
         SEC_EDGAR_USER_AGENT: ${{ secrets.SEC_EDGAR_USER_AGENT }}
         GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
         GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}

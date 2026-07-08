@@ -4,7 +4,7 @@ import requests
 import yfinance
 from src.db import get_db
 from src.logger import write_audit_log
-from src.data_client import FINNHUB_API_KEY
+from src.data_client import FINNHUB_API_KEY, get_twelvedata_candles
 
 def get_regime_state():
     """
@@ -44,7 +44,7 @@ def get_regime_state():
     except Exception as e:
         print(f"yfinance regime fetch failed: {e}")
         
-    # 2. Fallback: Finnhub
+    # 2. Fallback: Finnhub + Twelve Data
     try:
         url_vix = f"https://finnhub.io/api/v1/quote?symbol=^VIX&token={FINNHUB_API_KEY}"
         r_vix = requests.get(url_vix, timeout=10)
@@ -53,14 +53,9 @@ def get_regime_state():
         if vix_data and vix_data.get("c") is not None:
             vix = float(vix_data["c"])
             
-        end_time = int(time.time())
-        start_time = end_time - 90 * 24 * 3600
-        url_spy = f"https://finnhub.io/api/v1/stock/candle?symbol=SPY&resolution=D&from={start_time}&to={end_time}&token={FINNHUB_API_KEY}"
-        r_spy = requests.get(url_spy, timeout=10)
-        r_spy.raise_for_status()
-        spy_data = r_spy.json()
-        if spy_data and spy_data.get("s") == "ok":
-            closes = [float(c) for c in spy_data.get("c", [])]
+        candles_data = get_twelvedata_candles("SPY", days=60)
+        if candles_data:
+            closes = [float(day["close"]) for day in candles_data["history"]]
             if len(closes) >= 50:
                 spy_close = closes[-1]
                 spy_sma_50 = sum(closes[-50:]) / 50.0
@@ -70,14 +65,14 @@ def get_regime_state():
             spy_downtrend = spy_close < spy_sma_50
             regime = "RISK_OFF" if (vix_elevated or spy_downtrend) else "RISK_ON"
             return {
-                "source": "Finnhub",
+                "source": "Finnhub+TwelveData",
                 "vix": vix,
                 "spy_close": spy_close,
                 "spy_sma_50": spy_sma_50,
                 "regime": regime
             }
     except Exception as e:
-        print(f"Finnhub regime fetch failed: {e}")
+        print(f"Twelve Data regime fetch failed: {e}")
         
     # Safe default
     print("Regime detection failed completely. Defaulting to RISK_OFF safe mode.")

@@ -5,7 +5,9 @@ import datetime
 import requests
 import re
 import yfinance
-from src.config import FINNHUB_API_KEY, SEC_EDGAR_USER_AGENT
+import collections
+import threading
+from src.config import FINNHUB_API_KEY, SEC_EDGAR_USER_AGENT, TWELVEDATA_API_KEY
 from src.logger import write_audit_log
 
 # Global cache for ticker to CIK mapping
@@ -120,8 +122,97 @@ def get_finnhub_fundamentals(ticker):
         return data
     return None
 
+class TwelveDataRateLimiter:
+    def __init__(self, max_calls=7, period=60.0, max_wait=65.0):
+        self.max_calls = max_calls
+        self.period = period
+        self.max_wait = max_wait
+        self.calls = collections.deque(maxlen=max_calls)
+        self.lock = threading.Lock()
+
+    def wait_for_slot(self):
+        start_time = time.time()
+        while True:
+            with self.lock:
+                now = time.time()
+                elapsed = now - start_time
+                if elapsed > self.max_wait:
+                    return False
+                
+                while self.calls and now - self.calls[0] >= self.period:
+                    self.calls.popleft()
+                
+                if len(self.calls) < self.max_calls:
+                    self.calls.append(now)
+                    return True
+                
+                oldest = self.calls[0]
+                wait_time = self.period - (now - oldest)
+                
+                if elapsed + wait_time > self.max_wait:
+                    return False
+            
+            time.sleep(wait_time)
+
+_twelvedata_limiter = TwelveDataRateLimiter()
+
+def get_twelvedata_candles(ticker, days=45):
+    """Fetches daily candles from Twelve Data, with sliding-window rate limiting."""
+    if not _twelvedata_limiter.wait_for_slot():
+        log_attempt(ticker, "TwelveData", False, "Rate limit wait time exceeded (65s cap)")
+        return None
+        
+    try:
+        url = f"https://api.twelvedata.com/time_series?symbol={ticker.upper()}&interval=1day&outputsize={days}&order=asc&apikey={TWELVEDATA_API_KEY}"
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        res_data = response.json()
+        
+        if res_data.get("status") == "error":
+            message = res_data.get("message", "Unknown Twelve Data error")
+            log_attempt(ticker, "TwelveData", False, f"Twelve Data API returned error: {message}")
+            return None
+            
+        values = res_data.get("values", [])
+        if not values:
+            log_attempt(ticker, "TwelveData", False, "Twelve Data returned empty values array")
+            return None
+            
+        history_list = []
+        for item in values:
+            dt_str = item["datetime"][:10]
+            history_list.append({
+                "date": dt_str,
+                "open": float(item["open"]),
+                "high": float(item["high"]),
+                "low": float(item["low"]),
+                "close": float(item["close"]),
+                "volume": float(item["volume"])
+            })
+            
+        closes = [float(x["close"]) for x in history_list]
+        volumes = [float(x["volume"]) for x in history_list]
+        
+        avg_volume = 0.0
+        avg_dollar_volume = 0.0
+        last_20_closes = closes[-20:]
+        last_20_volumes = volumes[-20:]
+        if last_20_volumes:
+            avg_volume = sum(last_20_volumes) / len(last_20_volumes)
+            avg_dollar_volume = sum(c * v for c, v in zip(last_20_closes, last_20_volumes)) / len(last_20_volumes)
+            
+        log_attempt(ticker, "TwelveData", True)
+        return {
+            "history": history_list,
+            "avg_volume": avg_volume,
+            "avg_dollar_volume": avg_dollar_volume
+        }
+    except Exception as e:
+        log_attempt(ticker, "TwelveData", False, str(e))
+        return None
+
 def get_finnhub_price_volume(ticker):
-    """Fetches price, 20-day ADV and history from Finnhub quote, metric & candle endpoints."""
+    """Fetches price, 20-day ADV and history from Finnhub quote & metric, and Twelve Data candles."""
     # 1. Current Price
     url_quote = f"https://finnhub.io/api/v1/quote?symbol={ticker.upper()}&token={FINNHUB_API_KEY}"
     r_q = requests.get(url_quote, timeout=10)
@@ -140,47 +231,17 @@ def get_finnhub_price_volume(ticker):
     if market_cap:
         market_cap = market_cap * 1000000 # convert from millions
         
-    # 3. Candles (for 20-day ADV and history)
-    end_time = int(time.time())
-    start_time = end_time - 45 * 24 * 3600 # 45 days
-    url_candle = f"https://finnhub.io/api/v1/stock/candle?symbol={ticker.upper()}&resolution=D&from={start_time}&to={end_time}&token={FINNHUB_API_KEY}"
-    r_c = requests.get(url_candle, timeout=10)
-    r_c.raise_for_status()
-    candles = r_c.json()
-    
-    history_list = []
-    avg_volume = 0.0
-    avg_dollar_volume = 0.0
-    if candles and candles.get("s") == "ok":
-        closes = candles.get("c", [])
-        opens = candles.get("o", [])
-        highs = candles.get("h", [])
-        lows = candles.get("l", [])
-        volumes = candles.get("v", [])
-        times = candles.get("t", [])
-        for i in range(len(closes)):
-            dt_str = datetime.datetime.utcfromtimestamp(times[i]).strftime("%Y-%m-%d")
-            history_list.append({
-                "date": dt_str,
-                "open": float(opens[i]),
-                "high": float(highs[i]),
-                "low": float(lows[i]),
-                "close": float(closes[i]),
-                "volume": float(volumes[i])
-            })
+    # 3. Candles (from Twelve Data fallback instead of Finnhub candle endpoint)
+    candles_data = get_twelvedata_candles(ticker, days=45)
+    if not candles_data:
+        return None
         
-        last_20_closes = closes[-20:]
-        last_20_volumes = volumes[-20:]
-        if last_20_volumes:
-            avg_volume = sum(last_20_volumes) / len(last_20_volumes)
-            avg_dollar_volume = sum(c * v for c, v in zip(last_20_closes, last_20_volumes)) / len(last_20_volumes)
-            
     return {
         "current_price": current_price,
-        "avg_daily_volume": avg_volume,
-        "avg_daily_dollar_volume": avg_dollar_volume,
+        "avg_daily_volume": candles_data["avg_volume"],
+        "avg_daily_dollar_volume": candles_data["avg_dollar_volume"],
         "market_cap": market_cap,
-        "history": history_list
+        "history": candles_data["history"]
     }
 
 def get_finnhub_earnings(ticker):
@@ -641,8 +702,8 @@ def get_fundamentals(ticker):
     return None
 
 def get_price_volume(ticker):
-    """Waterfall: yfinance -> Finnhub"""
-    sources = ["yfinance", "Finnhub"]
+    """Waterfall: yfinance -> Finnhub+TwelveData"""
+    sources = ["yfinance", "Finnhub+TwelveData"]
     
     # 1. yfinance
     try:
@@ -654,15 +715,15 @@ def get_price_volume(ticker):
     except Exception as e:
         log_attempt(ticker, "yfinance", False, str(e))
         
-    # 2. Finnhub
+    # 2. Finnhub + TwelveData
     try:
         data = get_finnhub_price_volume(ticker)
         if data:
-            log_attempt(ticker, "Finnhub", True)
-            return {"source": "Finnhub", "data": data}
-        log_attempt(ticker, "Finnhub", False, "Returned empty data structure")
+            log_attempt(ticker, "Finnhub+TwelveData", True)
+            return {"source": "Finnhub+TwelveData", "data": data}
+        log_attempt(ticker, "Finnhub+TwelveData", False, "Returned empty data structure")
     except Exception as e:
-        log_attempt(ticker, "Finnhub", False, str(e))
+        log_attempt(ticker, "Finnhub+TwelveData", False, str(e))
         
     write_audit_log(
         subsystem="data_client",
