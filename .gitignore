@@ -39,3 +39,6 @@ venv.bak/
 
 # TBE Local Data (if any)
 *.log
+
+# Backups
+backups/
