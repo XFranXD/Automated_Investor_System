@@ -239,7 +239,14 @@ def monitor_portfolio(trading_cycle_run_id=None):
         "correlation_cap_current": correlation_cap,
         "sector_exposure": sector_exposure_pct,
         "correlation_snapshot": correlation_snapshot,
-        "open_positions": updated_positions
+        "open_positions": updated_positions,
+        "regime_snapshot": {
+            "vix": regime_state.get("vix"),
+            "spy_close": regime_state.get("spy_close"),
+            "spy_sma_50": regime_state.get("spy_sma_50"),
+            "source": regime_state.get("source"),
+            "regime": regime
+        }
     }
     
     db.portfolio_state.update_one(

@@ -1,5 +1,6 @@
 import os
 import json
+import calendar
 import datetime
 from bson import ObjectId
 from src.db import get_db
@@ -114,13 +115,20 @@ def generate_dashboard():
             if reason:
                 rejections[reason] = rejections.get(reason, 0) + 1
                 
-    # 5. Load current market indices from candidates/history
-    # Let's inspect latest candidate details or default context
-    latest_vix = 18.5
-    latest_spy_rel = "+1.2%"
-    if candidates:
-        # Check if we can find VIX / SPY relative from audit log or regime state
-        pass
+    # 5. Load current market indices from the regime snapshot persisted by Portfolio Monitor
+    # (portfolio_monitor.py writes this every trading cycle; absent only before the first cycle ever runs)
+    regime_snapshot = portfolio_state.get("regime_snapshot", {})
+    latest_vix = regime_snapshot.get("vix")
+    spy_close = regime_snapshot.get("spy_close")
+    spy_sma_50 = regime_snapshot.get("spy_sma_50")
+    has_regime_data = latest_vix is not None and spy_close is not None and spy_sma_50 is not None
+    if has_regime_data:
+        spy_rel_pct = ((spy_close - spy_sma_50) / spy_sma_50) * 100.0 if spy_sma_50 else 0.0
+        latest_spy_rel = f"{spy_rel_pct:+.1f}%"
+        spy_above_sma = spy_close >= spy_sma_50
+    else:
+        latest_spy_rel = "N/A"
+        spy_above_sma = True
     correlation_cap = portfolio_state.get("correlation_cap_current", 0.6)
     regime = "RISK_OFF" if correlation_cap == 0.4 else "RISK_ON"
     
@@ -243,27 +251,40 @@ nav a:hover, nav a.active {
     }
 }
 
-/* Calendar styling */
-.calendar-container {
+/* Calendar styling — desktop grid (5 weekdays + 1 week-total column) */
+.calendar-desktop {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr) 1.1fr;
     gap: 8px;
+    margin-top: 15px;
+}
+
+.calendar-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
     margin-top: 15px;
 }
 
 .calendar-header {
     text-align: center;
     color: var(--text-secondary);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     padding: 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.calendar-header.week-total-header {
+    color: var(--accent-indigo);
 }
 
 .calendar-day {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    aspect-ratio: 1.2;
+    aspect-ratio: 1.1;
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -277,7 +298,7 @@ nav a:hover, nav a.active {
 }
 
 .calendar-day.empty {
-    opacity: 0.2;
+    opacity: 0.15;
     cursor: default;
 }
 
@@ -290,6 +311,114 @@ nav a:hover, nav a.active {
     font-size: 12px;
     font-weight: 600;
     text-align: right;
+}
+
+.calendar-week-total {
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-week-total:hover {
+    background: rgba(99, 102, 241, 0.15);
+}
+
+.calendar-week-total-label {
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.calendar-week-total-val {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+/* Calendar — mobile list rows */
+.calendar-mobile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.calendar-mobile-row-date {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.calendar-mobile-row-pnl {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.calendar-mobile-week-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-indigo);
+}
+
+@media(max-width: 640px) {
+    .calendar-desktop { display: none; }
+    .calendar-mobile { display: flex; }
+}
+
+/* Market Context — compact chip row */
+.market-context-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.market-chip {
+    flex: 1;
+    min-width: 130px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.market-chip-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.market-chip-val {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.market-chip-sub {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 2px;
 }
 
 /* Table styling */
@@ -343,6 +472,93 @@ tr:hover {
 .badge-closed {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-secondary);
+}
+
+/* Position Ledger toggle + summary */
+.ledger-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.ledger-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.ledger-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-family);
+}
+
+.ledger-toggle-btn.active {
+    background: var(--accent-indigo);
+    color: var(--text-primary);
+}
+
+.ledger-sum {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.ledger-sum-val {
+    font-weight: 700;
+}
+
+/* Position Ledger — mobile cards */
+.ledger-cards {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ledger-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+}
+
+.ledger-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ledger-card-ticker {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.ledger-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.ledger-card-grid-label {
+    color: var(--text-secondary);
+}
+
+@media(max-width: 768px) {
+    .table-container.ledger-table { display: none; }
+    .ledger-cards { display: flex; }
 }
 
 /* Modal styling */
@@ -445,51 +661,118 @@ tr:hover {
             
         trades_data.append(t_copy)
 
-    # Compile calendar days
-    calendar_days_html = ""
-    # Render calendar for current month (e.g. July 2026)
-    # July 2026 starts on a Wednesday (index 3 if Monday=0 or index 2)
-    # We will generate 31 days
-    for blank in range(3): # Wednesday start
-        calendar_days_html += '<div class="calendar-day empty"></div>'
-    for day in range(1, 32):
-        date_str = f"2026-07-{day:02d}"
-        pnl = calendar_pnl.get(date_str, 0.0)
-        pnl_class = "val-green" if pnl > 0 else ("val-rose" if pnl < 0 else "")
-        pnl_text = f"${pnl:+.2f}" if pnl != 0 else ""
-        
-        calendar_days_html += f"""
-        <div class="calendar-day" onclick="filterDate('{date_str}')">
-            <div class="calendar-day-num">{day}</div>
-            <div class="calendar-day-pnl {pnl_class}">{pnl_text}</div>
+    # Compile calendar — current month, weekdays only (Mon-Fri; the market is closed
+    # Sat/Sun so those columns are never populated), plus a week-total column/row.
+    today = datetime.date.today()
+    cal_year, cal_month = today.year, today.month
+    month_label = today.strftime("%B %Y")
+    cal_calendar = calendar.Calendar(firstweekday=0)  # Monday=0
+    month_weeks_raw = cal_calendar.monthdayscalendar(cal_year, cal_month)  # weeks of 7 (Mon..Sun), 0 = outside month
+
+    calendar_desktop_html = ""
+    calendar_mobile_html = ""
+    for week in month_weeks_raw:
+        weekdays = week[0:5]  # drop Sat/Sun
+        if not any(weekdays):
+            continue  # week entirely outside this month once weekend-only days are dropped
+
+        day_cells = []
+        week_dates = []
+        week_total = 0.0
+        for day_num in weekdays:
+            if day_num == 0:
+                day_cells.append(None)
+                continue
+            date_str = f"{cal_year}-{cal_month:02d}-{day_num:02d}"
+            pnl = calendar_pnl.get(date_str, 0.0)
+            week_total += pnl
+            week_dates.append(date_str)
+            day_cells.append({"day": day_num, "date_str": date_str, "pnl": pnl})
+
+        week_dates_json = json.dumps(week_dates)
+
+        for cell in day_cells:
+            if cell is None:
+                calendar_desktop_html += '<div class="calendar-day empty"></div>'
+                continue
+            pnl_class = "val-green" if cell["pnl"] > 0 else ("val-rose" if cell["pnl"] < 0 else "")
+            pnl_text = f"${cell['pnl']:+.2f}" if cell["pnl"] != 0 else ""
+            calendar_desktop_html += f"""
+            <div class="calendar-day" onclick="filterDate('{cell['date_str']}')">
+                <div class="calendar-day-num">{cell['day']}</div>
+                <div class="calendar-day-pnl {pnl_class}">{pnl_text}</div>
+            </div>
+            """
+            weekday_label = datetime.date(cal_year, cal_month, cell["day"]).strftime("%a")
+            calendar_mobile_html += f"""
+            <div class="calendar-mobile-row" onclick="filterDate('{cell['date_str']}')">
+                <div class="calendar-mobile-row-date">{weekday_label} {cell['day']}</div>
+                <div class="calendar-mobile-row-pnl {pnl_class}">{pnl_text if pnl_text else '—'}</div>
+            </div>
+            """
+
+        week_total_class = "val-green" if week_total > 0 else ("val-rose" if week_total < 0 else "")
+        week_total_text = f"${week_total:+.2f}" if week_total != 0 else "—"
+        calendar_desktop_html += f"""
+        <div class="calendar-week-total" onclick='filterWeek({week_dates_json})'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val {week_total_class}">{week_total_text}</div>
+        </div>
+        """
+        calendar_mobile_html += f"""
+        <div class="calendar-mobile-week-total" onclick='filterWeek({week_dates_json})'>
+            <span>Week Total</span>
+            <span class="{week_total_class}">{week_total_text}</span>
         </div>
         """
 
-    # Compile trades list HTML rows
+    # Compile trades list — desktop table rows + mobile cards, tagged by status for the ledger toggle
+    open_pnl_sum = sum(float(t.get("realized_pnl", 0.0)) for t in trades_data if t["status"] == "OPEN")
+    closed_pnl_sum = total_pnl  # already computed above from CLOSED trades only
+
     table_rows_html = ""
+    ledger_cards_html = ""
     for t in trades_data:
         pnl = float(t.get("realized_pnl", 0.0))
         pnl_class = "val-green" if pnl > 0 else ("val-rose" if pnl < 0 else "")
         status_badge = f'<span class="badge badge-open">Open</span>' if t["status"] == "OPEN" else f'<span class="badge badge-closed">Closed</span>'
-        
+
         exit_date_str = "OPEN"
         if t["status"] == "CLOSED" and t.get("exit_timestamp"):
             exit_date_str = t["exit_timestamp"].strftime("%Y-%m-%d %H:%M")
-            
+
         close_date_iso = t["exit_timestamp"].date().isoformat() if (t["status"] == "CLOSED" and t.get("exit_timestamp")) else ""
-            
+        exit_price_text = f"${t['exit_price']:.2f}" if t.get("exit_price") else "-"
+        direction_class = "val-green" if t["direction"] == "LONG" else "val-rose"
+        trade_json = json.dumps(t, cls=DashboardJSONEncoder)
+
         table_rows_html += f"""
-        <tr data-close-date="{close_date_iso}" onclick='showTradeDetail({json.dumps(t, cls=DashboardJSONEncoder)})'>
+        <tr data-close-date="{close_date_iso}" data-status="{t['status']}" onclick='showTradeDetail({trade_json})'>
             <td><strong>{t['ticker']}</strong></td>
-            <td class="{ "val-green" if t['direction'] == "LONG" else "val-rose" }">{t['direction']}</td>
+            <td class="{direction_class}">{t['direction']}</td>
             <td>{t['entry_timestamp'].strftime("%Y-%m-%d %H:%M")}</td>
             <td>{exit_date_str}</td>
             <td>${t['entry_price']:.2f}</td>
-            <td>${t.get('exit_price', 0.0):.2f} if t.get('exit_price') else '-'</td>
+            <td>{exit_price_text}</td>
             <td>{t['share_count']}</td>
             <td class="{pnl_class}">${pnl:+.2f}</td>
             <td>{status_badge}</td>
         </tr>
+        """
+
+        ledger_cards_html += f"""
+        <div class="ledger-card" data-close-date="{close_date_iso}" data-status="{t['status']}" onclick='showTradeDetail({trade_json})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">{t['ticker']} <span class="{direction_class}">{t['direction']}</span></span>
+                {status_badge}
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> ${t['entry_price']:.2f}</div>
+                <div><span class="ledger-card-grid-label">Exit</span> {exit_price_text}</div>
+                <div><span class="ledger-card-grid-label">Shares</span> {t['share_count']}</div>
+                <div class="{pnl_class}"><span class="ledger-card-grid-label">P&amp;L</span> ${pnl:+.2f}</div>
+            </div>
+        </div>
         """
 
     index_html = f"""
@@ -535,37 +818,55 @@ tr:hover {
         <div class="grid-layout">
             <div class="card">
                 <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
-                    <span>July 2026 P&L Calendar</span>
+                    <span>{month_label} P&amp;L Calendar</span>
                     <button onclick="filterDate('')" style="background:rgba(255,255,255,0.05); color:var(--text-primary); border:1px solid var(--border-color); padding:4px 8px; border-radius:4px; cursor:pointer; font-size:12px;">Show All</button>
                 </div>
-                <div class="calendar-container">
+                <div class="calendar-desktop">
                     <div class="calendar-header">Mon</div>
                     <div class="calendar-header">Tue</div>
                     <div class="calendar-header">Wed</div>
                     <div class="calendar-header">Thu</div>
                     <div class="calendar-header">Fri</div>
-                    <div class="calendar-header">Sat</div>
-                    <div class="calendar-header">Sun</div>
-                    {calendar_days_html}
+                    <div class="calendar-header week-total-header">Week Total</div>
+                    {calendar_desktop_html}
+                </div>
+                <div class="calendar-mobile">
+                    {calendar_mobile_html}
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-title">Market Context</div>
-                <div class="meta-item" style="margin-bottom:20px;">
-                    <div class="meta-label">VIX Level</div>
-                    <div class="meta-val { "val-rose" if latest_vix > 30 else "val-green" }">{latest_vix} (Elevated: > 30)</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">SPY Relative to 50 SMA</div>
-                    <div class="meta-val val-green">{latest_spy_rel} Above SMA</div>
+                <div class="market-context-row">
+                    <div class="market-chip">
+                        <div class="market-chip-label">VIX</div>
+                        <div class="market-chip-val { ('val-rose' if (has_regime_data and latest_vix > 30) else 'val-green') if has_regime_data else '' }">{f"{latest_vix:.1f}" if has_regime_data else "N/A"}</div>
+                        <div class="market-chip-sub">{"Elevated (>30)" if (has_regime_data and latest_vix > 30) else "Normal range"}</div>
+                    </div>
+                    <div class="market-chip">
+                        <div class="market-chip-label">SPY vs 50-SMA</div>
+                        <div class="market-chip-val { ('val-green' if spy_above_sma else 'val-rose') if has_regime_data else '' }">{latest_spy_rel}</div>
+                        <div class="market-chip-sub">{"Above SMA" if (has_regime_data and spy_above_sma) else ("Below SMA" if has_regime_data else "Awaiting first cycle")}</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-title">Position Ledger</div>
-            <div class="table-container">
+            <div class="ledger-header-row">
+                <div class="card-title" style="margin-bottom:0;">Position Ledger</div>
+                <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                    <div class="ledger-sum">
+                        <span id="ledger-sum-label">Open Unrealized P&amp;L:</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val { 'val-green' if open_pnl_sum >= 0 else 'val-rose' }">${open_pnl_sum:+.2f}</span>
+                    </div>
+                    <div class="ledger-toggle">
+                        <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
+                        <button id="toggle-closed-btn" class="ledger-toggle-btn" onclick="toggleLedgerView('CLOSED')">Closed</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-container ledger-table">
                 <table>
                     <thead>
                         <tr>
@@ -576,7 +877,7 @@ tr:hover {
                             <th>Entry Price</th>
                             <th>Exit Price</th>
                             <th>Shares</th>
-                            <th>Realized P&L</th>
+                            <th>P&amp;L</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -584,6 +885,9 @@ tr:hover {
                         {table_rows_html}
                     </tbody>
                 </table>
+            </div>
+            <div class="ledger-cards" id="ledger-cards-container">
+                {ledger_cards_html}
             </div>
         </div>
     </div>
@@ -666,15 +970,60 @@ tr:hover {
     </div>
 
     <script>
-        function filterDate(dateStr) {{
-            const rows = document.querySelectorAll("#trades-table-body tr");
-            rows.forEach(r => {{
-                if (!dateStr || r.getAttribute("data-close-date") === dateStr) {{
-                    r.style.display = "";
-                }} else {{
-                    r.style.display = "none";
-                }}
+        const openPnlSum = {open_pnl_sum};
+        const closedPnlSum = {closed_pnl_sum};
+        let ledgerStatusFilter = 'OPEN';
+        let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
+
+        function updateLedgerSumDisplay() {{
+            const label = document.getElementById("ledger-sum-label");
+            const val = document.getElementById("ledger-sum-val");
+            const sum = ledgerStatusFilter === 'OPEN' ? openPnlSum : closedPnlSum;
+            label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L:" : "Closed Realized P&L:";
+            val.innerText = (sum >= 0 ? "+$" : "-$") + Math.abs(sum).toFixed(2);
+            val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
+        }}
+
+        function setLedgerStatus(status) {{
+            ledgerStatusFilter = status;
+            document.getElementById("toggle-open-btn").classList.toggle("active", status === "OPEN");
+            document.getElementById("toggle-closed-btn").classList.toggle("active", status === "CLOSED");
+            updateLedgerSumDisplay();
+        }}
+
+        function toggleLedgerView(status) {{
+            setLedgerStatus(status);
+            applyLedgerFilters();
+        }}
+
+        function applyLedgerFilters() {{
+            const items = document.querySelectorAll("#trades-table-body tr, #ledger-cards-container .ledger-card");
+            items.forEach(el => {{
+                const status = el.getAttribute("data-status");
+                const closeDate = el.getAttribute("data-close-date");
+                const statusMatch = (status === ledgerStatusFilter);
+                const dateMatch = (!ledgerDateFilter) || ledgerDateFilter.has(closeDate);
+                el.style.display = (statusMatch && dateMatch) ? "" : "none";
             }});
+        }}
+
+        // Clicking a single calendar day: closed trades only make sense here (open positions have no close date),
+        // so switch the ledger to the Closed view automatically. Passing '' clears the date filter (Show All).
+        function filterDate(dateStr) {{
+            if (dateStr) {{
+                ledgerDateFilter = new Set([dateStr]);
+                setLedgerStatus('CLOSED');
+            }} else {{
+                ledgerDateFilter = null;
+            }}
+            applyLedgerFilters();
+        }}
+
+        // Clicking a week-total cell: show every closed trade within that week's weekday dates.
+        function filterWeek(dateArr) {{
+            ledgerDateFilter = new Set(dateArr);
+            setLedgerStatus('CLOSED');
+            applyLedgerFilters();
         }}
 
         function showTradeDetail(t) {{
@@ -710,6 +1059,10 @@ tr:hover {
                 document.getElementById("detail-modal").style.display = "none";
             }}
         }}
+
+        // Initialize default ledger view (Open positions, no date filter) on page load.
+        updateLedgerSumDisplay();
+        applyLedgerFilters();
     </script>
 </body>
 </html>
