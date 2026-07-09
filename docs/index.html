@@ -34,7 +34,7 @@
             </div>
             <div class="card">
                 <div class="card-title">Open Positions</div>
-                <div class="card-val val-green">4</div>
+                <div class="card-val val-green">5</div>
             </div>
         </div>
 
@@ -361,7 +361,7 @@
                 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
                     <div class="ledger-sum">
                         <span id="ledger-sum-label">Open Unrealized P&amp;L:</span>
-                        <span id="ledger-sum-val" class="ledger-sum-val val-green">$+569.48</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val val-green">$+572.18</span>
                     </div>
                     <div class="ledger-toggle">
                         <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
@@ -386,6 +386,18 @@
                     </thead>
                     <tbody id="trades-table-body">
                         
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a500d964102e397f4b7244c", "ticker": "WDFC", "direction": "LONG", "entry_price": 239.4199981689453, "share_count": 73, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 218.99971632523972, "current_stop": 218.99971632523972, "take_profit": 280.2605618563565, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T21:07:34.501000", "exit_price": 239.4199981689453, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 0.0, "highest_high_since_entry": 239.4199981689453, "lowest_low_since_entry": 239.4199981689453, "reasoning_chain": {"candidate_id": "6a500d84a69540e11ea2e02d", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.806760614568537, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 73, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "WD-40 Company reported a significant earnings beat and provided an upgraded outlook, supported by strong sales growth and a new $100M share buyback program. The qualitative news evidence aligns with the quantitative earnings surprise, suggesting a bullish outlook for the stock despite broader market volatility concerns.", "ai_risk_flags": ["Market sentiment uncertainty", "Geopolitical tension"]})'>
+            <td><strong>WDFC</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-07-09 21:07</td>
+            <td>OPEN</td>
+            <td>$239.42</td>
+            <td>$239.42</td>
+            <td>73</td>
+            <td class="">$+0.00</td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
         <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4fc95936b2248600263145", "ticker": "FEIM", "direction": "SHORT", "entry_price": 61.029998779296875, "share_count": 83, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 79.18545324152166, "current_stop": 79.18545324152166, "take_profit": 24.719089854847304, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T16:16:25.418000", "exit_price": 61.06999969482422, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -3.3200759887695312, "highest_high_since_entry": 62.41999816894531, "lowest_low_since_entry": 61.029998779296875, "reasoning_chain": {"candidate_id": "6a4fc934a69540e11ea2b211", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.051818154074929, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 83, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company filed an 8-K confirming the release of financial results for the quarter ended January 31, 2026. This corroborates the earnings surprise data indicating a significant shortfall against consensus expectations, supporting the short thesis.", "ai_risk_flags": ["EARNINGS_MISS", "OPERATIONAL_UNDERPERFORMANCE"]})'>
             <td><strong>FEIM</strong></td>
             <td class="val-rose">SHORT</td>
@@ -422,15 +434,15 @@
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 140.85000610351562, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -160.91976928710938, "highest_high_since_entry": 144.98500061035156, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 140.89999389648438, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -158.22042846679688, "highest_high_since_entry": 144.98500061035156, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
             <td><strong>AZZ</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-08 15:54</td>
             <td>OPEN</td>
             <td>$143.83</td>
-            <td>$140.85</td>
+            <td>$140.90</td>
             <td>54</td>
-            <td class="val-rose">$-160.92</td>
+            <td class="val-rose">$-158.22</td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -439,6 +451,19 @@
             </div>
             <div class="ledger-cards" id="ledger-cards-container">
                 
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a500d964102e397f4b7244c", "ticker": "WDFC", "direction": "LONG", "entry_price": 239.4199981689453, "share_count": 73, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 218.99971632523972, "current_stop": 218.99971632523972, "take_profit": 280.2605618563565, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T21:07:34.501000", "exit_price": 239.4199981689453, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 0.0, "highest_high_since_entry": 239.4199981689453, "lowest_low_since_entry": 239.4199981689453, "reasoning_chain": {"candidate_id": "6a500d84a69540e11ea2e02d", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.806760614568537, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 73, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "WD-40 Company reported a significant earnings beat and provided an upgraded outlook, supported by strong sales growth and a new $100M share buyback program. The qualitative news evidence aligns with the quantitative earnings surprise, suggesting a bullish outlook for the stock despite broader market volatility concerns.", "ai_risk_flags": ["Market sentiment uncertainty", "Geopolitical tension"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">WDFC <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $239.42</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $239.42</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 73</div>
+                <div class=""><span class="ledger-card-grid-label">P&amp;L</span> $+0.00</div>
+            </div>
+        </div>
+        
         <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4fc95936b2248600263145", "ticker": "FEIM", "direction": "SHORT", "entry_price": 61.029998779296875, "share_count": 83, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 79.18545324152166, "current_stop": 79.18545324152166, "take_profit": 24.719089854847304, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T16:16:25.418000", "exit_price": 61.06999969482422, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -3.3200759887695312, "highest_high_since_entry": 62.41999816894531, "lowest_low_since_entry": 61.029998779296875, "reasoning_chain": {"candidate_id": "6a4fc934a69540e11ea2b211", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.051818154074929, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 83, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company filed an 8-K confirming the release of financial results for the quarter ended January 31, 2026. This corroborates the earnings surprise data indicating a significant shortfall against consensus expectations, supporting the short thesis.", "ai_risk_flags": ["EARNINGS_MISS", "OPERATIONAL_UNDERPERFORMANCE"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">FEIM <span class="val-rose">SHORT</span></span>
@@ -478,16 +503,16 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 140.85000610351562, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -160.91976928710938, "highest_high_since_entry": 144.98500061035156, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 140.89999389648438, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -158.22042846679688, "highest_high_since_entry": 144.98500061035156, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">AZZ <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $143.83</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $140.85</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $140.90</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 54</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">P&amp;L</span> $-160.92</div>
+                <div class="val-rose"><span class="ledger-card-grid-label">P&amp;L</span> $-158.22</div>
             </div>
         </div>
         
@@ -573,7 +598,7 @@
     </div>
 
     <script>
-        const openPnlSum = 569.4832496643066;
+        const openPnlSum = 572.1825904846191;
         const closedPnlSum = 0.0;
         let ledgerStatusFilter = 'OPEN';
         let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
