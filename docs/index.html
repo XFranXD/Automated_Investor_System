@@ -41,171 +41,298 @@
         <div class="grid-layout">
             <div class="card">
                 <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
-                    <span>July 2026 P&L Calendar</span>
+                    <span>July 2026 P&amp;L Calendar</span>
                     <button onclick="filterDate('')" style="background:rgba(255,255,255,0.05); color:var(--text-primary); border:1px solid var(--border-color); padding:4px 8px; border-radius:4px; cursor:pointer; font-size:12px;">Show All</button>
                 </div>
-                <div class="calendar-container">
+                <div class="calendar-desktop">
                     <div class="calendar-header">Mon</div>
                     <div class="calendar-header">Tue</div>
                     <div class="calendar-header">Wed</div>
                     <div class="calendar-header">Thu</div>
                     <div class="calendar-header">Fri</div>
-                    <div class="calendar-header">Sat</div>
-                    <div class="calendar-header">Sun</div>
-                    <div class="calendar-day empty"></div><div class="calendar-day empty"></div><div class="calendar-day empty"></div>
-        <div class="calendar-day" onclick="filterDate('2026-07-01')">
-            <div class="calendar-day-num">1</div>
-            <div class="calendar-day-pnl "></div>
+                    <div class="calendar-header week-total-header">Week Total</div>
+                    <div class="calendar-day empty"></div><div class="calendar-day empty"></div>
+            <div class="calendar-day" onclick="filterDate('2026-07-01')">
+                <div class="calendar-day-num">1</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-02')">
+                <div class="calendar-day-num">2</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-03')">
+                <div class="calendar-day-num">3</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-01", "2026-07-02", "2026-07-03"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-02')">
-            <div class="calendar-day-num">2</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-day" onclick="filterDate('2026-07-06')">
+                <div class="calendar-day-num">6</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-07')">
+                <div class="calendar-day-num">7</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-08')">
+                <div class="calendar-day-num">8</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-09')">
+                <div class="calendar-day-num">9</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-10')">
+                <div class="calendar-day-num">10</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-03')">
-            <div class="calendar-day-num">3</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-day" onclick="filterDate('2026-07-13')">
+                <div class="calendar-day-num">13</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-14')">
+                <div class="calendar-day-num">14</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-15')">
+                <div class="calendar-day-num">15</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-16')">
+                <div class="calendar-day-num">16</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-17')">
+                <div class="calendar-day-num">17</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-04')">
-            <div class="calendar-day-num">4</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-day" onclick="filterDate('2026-07-20')">
+                <div class="calendar-day-num">20</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-21')">
+                <div class="calendar-day-num">21</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-22')">
+                <div class="calendar-day-num">22</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-23')">
+                <div class="calendar-day-num">23</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-24')">
+                <div class="calendar-day-num">24</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-05')">
-            <div class="calendar-day-num">5</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-day" onclick="filterDate('2026-07-27')">
+                <div class="calendar-day-num">27</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-28')">
+                <div class="calendar-day-num">28</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-29')">
+                <div class="calendar-day-num">29</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-30')">
+                <div class="calendar-day-num">30</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-31')">
+                <div class="calendar-day-num">31</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-06')">
-            <div class="calendar-day-num">6</div>
-            <div class="calendar-day-pnl "></div>
+                </div>
+                <div class="calendar-mobile">
+                    
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-01')">
+                <div class="calendar-mobile-row-date">Wed 1</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-02')">
+                <div class="calendar-mobile-row-date">Thu 2</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-03')">
+                <div class="calendar-mobile-row-date">Fri 3</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-01", "2026-07-02", "2026-07-03"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-07')">
-            <div class="calendar-day-num">7</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-06')">
+                <div class="calendar-mobile-row-date">Mon 6</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-07')">
+                <div class="calendar-mobile-row-date">Tue 7</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-08')">
+                <div class="calendar-mobile-row-date">Wed 8</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-09')">
+                <div class="calendar-mobile-row-date">Thu 9</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-10')">
+                <div class="calendar-mobile-row-date">Fri 10</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-08')">
-            <div class="calendar-day-num">8</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-13')">
+                <div class="calendar-mobile-row-date">Mon 13</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-14')">
+                <div class="calendar-mobile-row-date">Tue 14</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-15')">
+                <div class="calendar-mobile-row-date">Wed 15</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-16')">
+                <div class="calendar-mobile-row-date">Thu 16</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-17')">
+                <div class="calendar-mobile-row-date">Fri 17</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-09')">
-            <div class="calendar-day-num">9</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-20')">
+                <div class="calendar-mobile-row-date">Mon 20</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-21')">
+                <div class="calendar-mobile-row-date">Tue 21</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-22')">
+                <div class="calendar-mobile-row-date">Wed 22</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-23')">
+                <div class="calendar-mobile-row-date">Thu 23</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-24')">
+                <div class="calendar-mobile-row-date">Fri 24</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
         </div>
         
-        <div class="calendar-day" onclick="filterDate('2026-07-10')">
-            <div class="calendar-day-num">10</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-11')">
-            <div class="calendar-day-num">11</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-12')">
-            <div class="calendar-day-num">12</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-13')">
-            <div class="calendar-day-num">13</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-14')">
-            <div class="calendar-day-num">14</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-15')">
-            <div class="calendar-day-num">15</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-16')">
-            <div class="calendar-day-num">16</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-17')">
-            <div class="calendar-day-num">17</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-18')">
-            <div class="calendar-day-num">18</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-19')">
-            <div class="calendar-day-num">19</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-20')">
-            <div class="calendar-day-num">20</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-21')">
-            <div class="calendar-day-num">21</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-22')">
-            <div class="calendar-day-num">22</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-23')">
-            <div class="calendar-day-num">23</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-24')">
-            <div class="calendar-day-num">24</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-25')">
-            <div class="calendar-day-num">25</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-26')">
-            <div class="calendar-day-num">26</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-27')">
-            <div class="calendar-day-num">27</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-28')">
-            <div class="calendar-day-num">28</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-29')">
-            <div class="calendar-day-num">29</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-30')">
-            <div class="calendar-day-num">30</div>
-            <div class="calendar-day-pnl "></div>
-        </div>
-        
-        <div class="calendar-day" onclick="filterDate('2026-07-31')">
-            <div class="calendar-day-num">31</div>
-            <div class="calendar-day-pnl "></div>
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-27')">
+                <div class="calendar-mobile-row-date">Mon 27</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-28')">
+                <div class="calendar-mobile-row-date">Tue 28</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-29')">
+                <div class="calendar-mobile-row-date">Wed 29</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-30')">
+                <div class="calendar-mobile-row-date">Thu 30</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-31')">
+                <div class="calendar-mobile-row-date">Fri 31</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
         </div>
         
                 </div>
@@ -213,20 +340,36 @@
             
             <div class="card">
                 <div class="card-title">Market Context</div>
-                <div class="meta-item" style="margin-bottom:20px;">
-                    <div class="meta-label">VIX Level</div>
-                    <div class="meta-val val-green">18.5 (Elevated: > 30)</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">SPY Relative to 50 SMA</div>
-                    <div class="meta-val val-green">+1.2% Above SMA</div>
+                <div class="market-context-row">
+                    <div class="market-chip">
+                        <div class="market-chip-label">VIX</div>
+                        <div class="market-chip-val val-green">15.9</div>
+                        <div class="market-chip-sub">Normal range</div>
+                    </div>
+                    <div class="market-chip">
+                        <div class="market-chip-label">SPY vs 50-SMA</div>
+                        <div class="market-chip-val val-green">+1.7%</div>
+                        <div class="market-chip-sub">Above SMA</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-title">Position Ledger</div>
-            <div class="table-container">
+            <div class="ledger-header-row">
+                <div class="card-title" style="margin-bottom:0;">Position Ledger</div>
+                <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                    <div class="ledger-sum">
+                        <span id="ledger-sum-label">Open Unrealized P&amp;L:</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val val-green">$+971.86</span>
+                    </div>
+                    <div class="ledger-toggle">
+                        <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
+                        <button id="toggle-closed-btn" class="ledger-toggle-btn" onclick="toggleLedgerView('CLOSED')">Closed</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-container ledger-table">
                 <table>
                     <thead>
                         <tr>
@@ -237,62 +380,117 @@
                             <th>Entry Price</th>
                             <th>Exit Price</th>
                             <th>Shares</th>
-                            <th>Realized P&L</th>
+                            <th>P&amp;L</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id="trades-table-body">
                         
-        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4fc95936b2248600263145", "ticker": "FEIM", "direction": "SHORT", "entry_price": 61.029998779296875, "share_count": 83, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 79.18545324152166, "current_stop": 79.18545324152166, "take_profit": 24.719089854847304, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T16:16:25.418000", "exit_price": 61.029998779296875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 0.0, "highest_high_since_entry": 61.029998779296875, "lowest_low_since_entry": 61.029998779296875, "reasoning_chain": {"candidate_id": "6a4fc934a69540e11ea2b211", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.051818154074929, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 83, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company filed an 8-K confirming the release of financial results for the quarter ended January 31, 2026. This corroborates the earnings surprise data indicating a significant shortfall against consensus expectations, supporting the short thesis.", "ai_risk_flags": ["EARNINGS_MISS", "OPERATIONAL_UNDERPERFORMANCE"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4fc95936b2248600263145", "ticker": "FEIM", "direction": "SHORT", "entry_price": 61.029998779296875, "share_count": 83, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 79.18545324152166, "current_stop": 79.18545324152166, "take_profit": 24.719089854847304, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T16:16:25.418000", "exit_price": 61.7400016784668, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -58.930240631103516, "highest_high_since_entry": 61.790000915527344, "lowest_low_since_entry": 61.029998779296875, "reasoning_chain": {"candidate_id": "6a4fc934a69540e11ea2b211", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.051818154074929, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 83, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company filed an 8-K confirming the release of financial results for the quarter ended January 31, 2026. This corroborates the earnings surprise data indicating a significant shortfall against consensus expectations, supporting the short thesis.", "ai_risk_flags": ["EARNINGS_MISS", "OPERATIONAL_UNDERPERFORMANCE"]})'>
             <td><strong>FEIM</strong></td>
             <td class="val-rose">SHORT</td>
             <td>2026-07-09 16:16</td>
             <td>OPEN</td>
             <td>$61.03</td>
-            <td>$61.03 if t.get('exit_price') else '-'</td>
+            <td>$61.74</td>
             <td>83</td>
-            <td class="">$+0.00</td>
+            <td class="val-rose">$-58.93</td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4e72c3d8c6329d87cb450d", "ticker": "PENG", "direction": "LONG", "entry_price": 73.9468994140625, "share_count": 59, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 48.91353485801003, "current_stop": 63.260454871437766, "take_profit": 124.01362852616744, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:43.203000", "exit_price": 89.18000030517578, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 898.7529525756836, "highest_high_since_entry": 88.68000030517578, "lowest_low_since_entry": 73.9468994140625, "reasoning_chain": {"candidate_id": "6a4e72b40105d061e8bdf250", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 8.34445485201749, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 59, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Penguin Solutions exceeded Q3 2026 earnings expectations with an EPS of $0.84 against a consensus of $0.55, driven by strong demand for AI-integrated memory solutions. Additionally, the company raised its full-year guidance, which has triggered positive market sentiment and significant stock price appreciation.", "ai_risk_flags": ["Market volatility in technology sector", "Dependency on AI-integrated memory market demand"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72c3d8c6329d87cb450d", "ticker": "PENG", "direction": "LONG", "entry_price": 73.9468994140625, "share_count": 59, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 48.91353485801003, "current_stop": 63.260454871437766, "take_profit": 124.01362852616744, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:43.203000", "exit_price": 87.08000183105469, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 774.8530426025391, "highest_high_since_entry": 88.68000030517578, "lowest_low_since_entry": 73.9468994140625, "reasoning_chain": {"candidate_id": "6a4e72b40105d061e8bdf250", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 8.34445485201749, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 59, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Penguin Solutions exceeded Q3 2026 earnings expectations with an EPS of $0.84 against a consensus of $0.55, driven by strong demand for AI-integrated memory solutions. Additionally, the company raised its full-year guidance, which has triggered positive market sentiment and significant stock price appreciation.", "ai_risk_flags": ["Market volatility in technology sector", "Dependency on AI-integrated memory market demand"]})'>
             <td><strong>PENG</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-08 15:54</td>
             <td>OPEN</td>
             <td>$73.95</td>
-            <td>$89.18 if t.get('exit_price') else '-'</td>
+            <td>$87.08</td>
             <td>59</td>
-            <td class="val-green">$+898.75</td>
+            <td class="val-green">$+774.85</td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 22.107500943270598, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 27.709999084472656, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 374.6598472595215, "highest_high_since_entry": 27.6200008392334, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 23.063636346296832, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 28.65999984741211, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 646.3600654602051, "highest_high_since_entry": 28.65999984741211, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
             <td><strong>HELE</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-08 15:54</td>
             <td>OPEN</td>
             <td>$26.40</td>
-            <td>$27.71 if t.get('exit_price') else '-'</td>
+            <td>$28.66</td>
             <td>286</td>
-            <td class="val-green">$+374.66</td>
+            <td class="val-green">$+646.36</td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 138.2050018310547, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -303.75, "highest_high_since_entry": 144.98500061035156, "lowest_low_since_entry": 138.25999450683594, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 136.60000610351562, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -390.4197692871094, "highest_high_since_entry": 144.98500061035156, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
             <td><strong>AZZ</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-08 15:54</td>
             <td>OPEN</td>
             <td>$143.83</td>
-            <td>$138.21 if t.get('exit_price') else '-'</td>
+            <td>$136.60</td>
             <td>54</td>
-            <td class="val-rose">$-303.75</td>
+            <td class="val-rose">$-390.42</td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
                     </tbody>
                 </table>
+            </div>
+            <div class="ledger-cards" id="ledger-cards-container">
+                
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4fc95936b2248600263145", "ticker": "FEIM", "direction": "SHORT", "entry_price": 61.029998779296875, "share_count": 83, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 79.18545324152166, "current_stop": 79.18545324152166, "take_profit": 24.719089854847304, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T16:16:25.418000", "exit_price": 61.7400016784668, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -58.930240631103516, "highest_high_since_entry": 61.790000915527344, "lowest_low_since_entry": 61.029998779296875, "reasoning_chain": {"candidate_id": "6a4fc934a69540e11ea2b211", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.051818154074929, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 83, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company filed an 8-K confirming the release of financial results for the quarter ended January 31, 2026. This corroborates the earnings surprise data indicating a significant shortfall against consensus expectations, supporting the short thesis.", "ai_risk_flags": ["EARNINGS_MISS", "OPERATIONAL_UNDERPERFORMANCE"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">FEIM <span class="val-rose">SHORT</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $61.03</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $61.74</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 83</div>
+                <div class="val-rose"><span class="ledger-card-grid-label">P&amp;L</span> $-58.93</div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72c3d8c6329d87cb450d", "ticker": "PENG", "direction": "LONG", "entry_price": 73.9468994140625, "share_count": 59, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 48.91353485801003, "current_stop": 63.260454871437766, "take_profit": 124.01362852616744, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:43.203000", "exit_price": 87.08000183105469, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 774.8530426025391, "highest_high_since_entry": 88.68000030517578, "lowest_low_since_entry": 73.9468994140625, "reasoning_chain": {"candidate_id": "6a4e72b40105d061e8bdf250", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 8.34445485201749, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 59, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Penguin Solutions exceeded Q3 2026 earnings expectations with an EPS of $0.84 against a consensus of $0.55, driven by strong demand for AI-integrated memory solutions. Additionally, the company raised its full-year guidance, which has triggered positive market sentiment and significant stock price appreciation.", "ai_risk_flags": ["Market volatility in technology sector", "Dependency on AI-integrated memory market demand"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">PENG <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $73.95</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $87.08</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 59</div>
+                <div class="val-green"><span class="ledger-card-grid-label">P&amp;L</span> $+774.85</div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 23.063636346296832, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 28.65999984741211, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 646.3600654602051, "highest_high_since_entry": 28.65999984741211, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">HELE <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $26.40</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $28.66</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 286</div>
+                <div class="val-green"><span class="ledger-card-grid-label">P&amp;L</span> $+646.36</div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 136.60000610351562, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -390.4197692871094, "highest_high_since_entry": 144.98500061035156, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">AZZ <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $143.83</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $136.60</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 54</div>
+                <div class="val-rose"><span class="ledger-card-grid-label">P&amp;L</span> $-390.42</div>
+            </div>
+        </div>
+        
             </div>
         </div>
     </div>
@@ -375,15 +573,60 @@
     </div>
 
     <script>
-        function filterDate(dateStr) {
-            const rows = document.querySelectorAll("#trades-table-body tr");
-            rows.forEach(r => {
-                if (!dateStr || r.getAttribute("data-close-date") === dateStr) {
-                    r.style.display = "";
-                } else {
-                    r.style.display = "none";
-                }
+        const openPnlSum = 971.8630981445312;
+        const closedPnlSum = 0.0;
+        let ledgerStatusFilter = 'OPEN';
+        let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
+
+        function updateLedgerSumDisplay() {
+            const label = document.getElementById("ledger-sum-label");
+            const val = document.getElementById("ledger-sum-val");
+            const sum = ledgerStatusFilter === 'OPEN' ? openPnlSum : closedPnlSum;
+            label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L:" : "Closed Realized P&L:";
+            val.innerText = (sum >= 0 ? "+$" : "-$") + Math.abs(sum).toFixed(2);
+            val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
+        }
+
+        function setLedgerStatus(status) {
+            ledgerStatusFilter = status;
+            document.getElementById("toggle-open-btn").classList.toggle("active", status === "OPEN");
+            document.getElementById("toggle-closed-btn").classList.toggle("active", status === "CLOSED");
+            updateLedgerSumDisplay();
+        }
+
+        function toggleLedgerView(status) {
+            setLedgerStatus(status);
+            applyLedgerFilters();
+        }
+
+        function applyLedgerFilters() {
+            const items = document.querySelectorAll("#trades-table-body tr, #ledger-cards-container .ledger-card");
+            items.forEach(el => {
+                const status = el.getAttribute("data-status");
+                const closeDate = el.getAttribute("data-close-date");
+                const statusMatch = (status === ledgerStatusFilter);
+                const dateMatch = (!ledgerDateFilter) || ledgerDateFilter.has(closeDate);
+                el.style.display = (statusMatch && dateMatch) ? "" : "none";
             });
+        }
+
+        // Clicking a single calendar day: closed trades only make sense here (open positions have no close date),
+        // so switch the ledger to the Closed view automatically. Passing '' clears the date filter (Show All).
+        function filterDate(dateStr) {
+            if (dateStr) {
+                ledgerDateFilter = new Set([dateStr]);
+                setLedgerStatus('CLOSED');
+            } else {
+                ledgerDateFilter = null;
+            }
+            applyLedgerFilters();
+        }
+
+        // Clicking a week-total cell: show every closed trade within that week's weekday dates.
+        function filterWeek(dateArr) {
+            ledgerDateFilter = new Set(dateArr);
+            setLedgerStatus('CLOSED');
+            applyLedgerFilters();
         }
 
         function showTradeDetail(t) {
@@ -419,6 +662,10 @@
                 document.getElementById("detail-modal").style.display = "none";
             }
         }
+
+        // Initialize default ledger view (Open positions, no date filter) on page load.
+        updateLedgerSumDisplay();
+        applyLedgerFilters();
     </script>
 </body>
 </html>

@@ -113,27 +113,40 @@ nav a:hover, nav a.active {
     }
 }
 
-/* Calendar styling */
-.calendar-container {
+/* Calendar styling — desktop grid (5 weekdays + 1 week-total column) */
+.calendar-desktop {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr) 1.1fr;
     gap: 8px;
+    margin-top: 15px;
+}
+
+.calendar-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
     margin-top: 15px;
 }
 
 .calendar-header {
     text-align: center;
     color: var(--text-secondary);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     padding: 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.calendar-header.week-total-header {
+    color: var(--accent-indigo);
 }
 
 .calendar-day {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    aspect-ratio: 1.2;
+    aspect-ratio: 1.1;
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -147,7 +160,7 @@ nav a:hover, nav a.active {
 }
 
 .calendar-day.empty {
-    opacity: 0.2;
+    opacity: 0.15;
     cursor: default;
 }
 
@@ -160,6 +173,114 @@ nav a:hover, nav a.active {
     font-size: 12px;
     font-weight: 600;
     text-align: right;
+}
+
+.calendar-week-total {
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-week-total:hover {
+    background: rgba(99, 102, 241, 0.15);
+}
+
+.calendar-week-total-label {
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.calendar-week-total-val {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+/* Calendar — mobile list rows */
+.calendar-mobile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.calendar-mobile-row-date {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.calendar-mobile-row-pnl {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.calendar-mobile-week-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-indigo);
+}
+
+@media(max-width: 640px) {
+    .calendar-desktop { display: none; }
+    .calendar-mobile { display: flex; }
+}
+
+/* Market Context — compact chip row */
+.market-context-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.market-chip {
+    flex: 1;
+    min-width: 130px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.market-chip-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.market-chip-val {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.market-chip-sub {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 2px;
 }
 
 /* Table styling */
@@ -213,6 +334,93 @@ tr:hover {
 .badge-closed {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-secondary);
+}
+
+/* Position Ledger toggle + summary */
+.ledger-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.ledger-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.ledger-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-family);
+}
+
+.ledger-toggle-btn.active {
+    background: var(--accent-indigo);
+    color: var(--text-primary);
+}
+
+.ledger-sum {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.ledger-sum-val {
+    font-weight: 700;
+}
+
+/* Position Ledger — mobile cards */
+.ledger-cards {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ledger-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+}
+
+.ledger-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ledger-card-ticker {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.ledger-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.ledger-card-grid-label {
+    color: var(--text-secondary);
+}
+
+@media(max-width: 768px) {
+    .table-container.ledger-table { display: none; }
+    .ledger-cards { display: flex; }
 }
 
 /* Modal styling */
