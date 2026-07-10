@@ -1,17 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>TBE — Trades Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <h1>TBE — Autonomous Investment Dashboard</h1>
@@ -20,24 +17,24 @@
             <a href="system.html">System State</a>
         </nav>
     </header>
-
+    
     <div class="container">
         <div class="summary-grid">
             <div class="card">
-                <div class="card-title">Total Realized P&L</div>
-                <div class="card-val val-green">$+500.00</div>
+                <div class="card-title">Total Realized P&amp;L <span style="font-size:11px; color:var(--text-secondary); font-weight:400;">(Equity Impact)</span></div>
+                <div class="card-val val-rose">+0.00%</div>
             </div>
             <div class="card">
                 <div class="card-title">Overall Win Rate</div>
-                <div class="card-val val-indigo">50.0%</div>
+                <div class="card-val val-indigo">0.0%</div>
             </div>
             <div class="card">
                 <div class="card-title">Closed Positions</div>
-                <div class="card-val">2</div>
+                <div class="card-val">0</div>
             </div>
             <div class="card">
                 <div class="card-title">Open Positions</div>
-                <div class="card-val val-green">1</div>
+                <div class="card-val val-green">5</div>
             </div>
         </div>
 
@@ -45,948 +42,668 @@
             <div class="card">
                 <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
                     <span>July 2026 P&amp;L Calendar</span>
-                    <span>July 2026 P&amp;L Calendar</span>
-                    <button onclick="filterDate('')"
-                        style="background:rgba(255,255,255,0.05); color:var(--text-primary); border:1px solid var(--border-color); padding:4px 8px; border-radius:4px; cursor:pointer; font-size:12px;">Show
-                        All</button>
+                    <button onclick="filterDate('')" style="background:rgba(255,255,255,0.05); color:var(--text-primary); border:1px solid var(--border-color); padding:4px 8px; border-radius:4px; cursor:pointer; font-size:12px;">Show All</button>
                 </div>
                 <div class="calendar-desktop">
-                    <div class="calendar-desktop">
-                        <div class="calendar-header">Mon</div>
-                        <div class="calendar-header">Tue</div>
-                        <div class="calendar-header">Wed</div>
-                        <div class="calendar-header">Thu</div>
-                        <div class="calendar-header">Fri</div>
-                        <div class="calendar-header week-total-header">Week Total</div>
-                        <div class="calendar-day empty"></div>
-                        <div class="calendar-day empty"></div>
-                        <div class="calendar-day" onclick="filterDate('2026-07-01')">
-                            <div class="calendar-day-num">1</div>
-                            <div class="calendar-day-pnl "></div>
-                        </div>
-
-                        <div class="calendar-day" onclick="filterDate('2026-07-02')">
-                            <div class="calendar-day-num">2</div>
-                            <div class="calendar-day-pnl "></div>
-                        </div>
-
-                        <div class="calendar-day" onclick="filterDate('2026-07-03')">
-                            <div class="calendar-day-num">3</div>
-                            <div class="calendar-day-pnl "></div>
-                        </div>
-
-                        <div class="calendar-week-total"
-                            onclick='filterWeek(["2026-07-01", "2026-07-02", "2026-07-03"])'>
-                            <div class="calendar-week-total-label">Week</div>
-                            <div class="calendar-week-total-val ">—</div>
-                            <div class="calendar-header week-total-header">Week Total</div>
-                            <div class="calendar-day empty"></div>
-                            <div class="calendar-day empty"></div>
-                            <div class="calendar-day" onclick="filterDate('2026-07-01')">
-                                <div class="calendar-day-num">1</div>
-                                <div class="calendar-day-pnl "></div>
-                            </div>
-
-                            <div class="calendar-day" onclick="filterDate('2026-07-02')">
-                                <div class="calendar-day-num">2</div>
-                                <div class="calendar-day-pnl "></div>
-                            </div>
-
-                            <div class="calendar-day" onclick="filterDate('2026-07-03')">
-                                <div class="calendar-day-num">3</div>
-                                <div class="calendar-day-pnl "></div>
-                            </div>
-
-                            <div class="calendar-week-total"
-                                onclick='filterWeek(["2026-07-01", "2026-07-02", "2026-07-03"])'>
-                                <div class="calendar-week-total-label">Week</div>
-                                <div class="calendar-week-total-val ">—</div>
-                            </div>
-
-                            <div class="calendar-day" onclick="filterDate('2026-07-06')">
-                                <div class="calendar-day-num">6</div>
-                                <div class="calendar-day-pnl "></div>
-                            </div>
-
-                            <div class="calendar-day" onclick="filterDate('2026-07-07')">
-                                <div class="calendar-day-num">7</div>
-                                <div class="calendar-day-pnl "></div>
-                            </div>
-
-                            <div class="calendar-day" onclick="filterDate('2026-07-08')">
-                                <div class="calendar-day-num">8</div>
-                                <div class="calendar-day-pnl "></div>
-                            </div>
-
-                            <div class="calendar-day" onclick="filterDate('2026-07-09')">
-                                <div class="calendar-day-num">9</div>
-                                <div class="calendar-day-pnl "></div>
-                            </div>
-
-                            <div class="calendar-day" onclick="filterDate('2026-07-10')">
-                                <div class="calendar-day-num">10</div>
-                                <div class="calendar-day-pnl "></div>
-                            </div>
-
-                            <div class="calendar-week-total"
-                                onclick='filterWeek(["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])'>
-                                <div class="calendar-week-total-label">Week</div>
-                                <div class="calendar-week-total-val ">—</div>
-                                <div class="calendar-day" onclick="filterDate('2026-07-06')">
-                                    <div class="calendar-day-num">6</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-07')">
-                                    <div class="calendar-day-num">7</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-08')">
-                                    <div class="calendar-day-num">8</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-09')">
-                                    <div class="calendar-day-num">9</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-10')">
-                                    <div class="calendar-day-num">10</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-week-total"
-                                    onclick='filterWeek(["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])'>
-                                    <div class="calendar-week-total-label">Week</div>
-                                    <div class="calendar-week-total-val ">—</div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-13')">
-                                    <div class="calendar-day-num">13</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-14')">
-                                    <div class="calendar-day-num">14</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-15')">
-                                    <div class="calendar-day-num">15</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-16')">
-                                    <div class="calendar-day-num">16</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-day" onclick="filterDate('2026-07-17')">
-                                    <div class="calendar-day-num">17</div>
-                                    <div class="calendar-day-pnl "></div>
-                                </div>
-
-                                <div class="calendar-week-total"
-                                    onclick='filterWeek(["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"])'>
-                                    <div class="calendar-week-total-label">Week</div>
-                                    <div class="calendar-week-total-val ">—</div>
-                                    <div class="calendar-day" onclick="filterDate('2026-07-13')">
-                                        <div class="calendar-day-num">13</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-14')">
-                                        <div class="calendar-day-num">14</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-15')">
-                                        <div class="calendar-day-num">15</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-16')">
-                                        <div class="calendar-day-num">16</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-17')">
-                                        <div class="calendar-day-num">17</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-week-total"
-                                        onclick='filterWeek(["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"])'>
-                                        <div class="calendar-week-total-label">Week</div>
-                                        <div class="calendar-week-total-val ">—</div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-20')">
-                                        <div class="calendar-day-num">20</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-21')">
-                                        <div class="calendar-day-num">21</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-22')">
-                                        <div class="calendar-day-num">22</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-23')">
-                                        <div class="calendar-day-num">23</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-day" onclick="filterDate('2026-07-24')">
-                                        <div class="calendar-day-num">24</div>
-                                        <div class="calendar-day-pnl "></div>
-                                    </div>
-
-                                    <div class="calendar-week-total"
-                                        onclick='filterWeek(["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"])'>
-                                        <div class="calendar-week-total-label">Week</div>
-                                        <div class="calendar-week-total-val ">—</div>
-                                        <div class="calendar-day" onclick="filterDate('2026-07-20')">
-                                            <div class="calendar-day-num">20</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-21')">
-                                            <div class="calendar-day-num">21</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-22')">
-                                            <div class="calendar-day-num">22</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-23')">
-                                            <div class="calendar-day-num">23</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-24')">
-                                            <div class="calendar-day-num">24</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-week-total"
-                                            onclick='filterWeek(["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"])'>
-                                            <div class="calendar-week-total-label">Week</div>
-                                            <div class="calendar-week-total-val ">—</div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-27')">
-                                            <div class="calendar-day-num">27</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-28')">
-                                            <div class="calendar-day-num">28</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-29')">
-                                            <div class="calendar-day-num">29</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-30')">
-                                            <div class="calendar-day-num">30</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-day" onclick="filterDate('2026-07-31')">
-                                            <div class="calendar-day-num">31</div>
-                                            <div class="calendar-day-pnl "></div>
-                                        </div>
-
-                                        <div class="calendar-week-total"
-                                            onclick='filterWeek(["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"])'>
-                                            <div class="calendar-week-total-label">Week</div>
-                                            <div class="calendar-week-total-val ">—</div>
-                                        </div>
-
-                                    </div>
-                                    <div class="calendar-mobile">
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-01')">
-                                            <div class="calendar-mobile-row-date">Wed 1</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-02')">
-                                            <div class="calendar-mobile-row-date">Thu 2</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-03')">
-                                            <div class="calendar-mobile-row-date">Fri 3</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-week-total"
-                                            onclick='filterWeek(["2026-07-01", "2026-07-02", "2026-07-03"])'>
-                                            <span>Week Total</span>
-                                            <span class="">—</span>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-06')">
-                                            <div class="calendar-mobile-row-date">Mon 6</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-07')">
-                                            <div class="calendar-mobile-row-date">Tue 7</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-08')">
-                                            <div class="calendar-mobile-row-date">Wed 8</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-09')">
-                                            <div class="calendar-mobile-row-date">Thu 9</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-10')">
-                                            <div class="calendar-mobile-row-date">Fri 10</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-week-total"
-                                            onclick='filterWeek(["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])'>
-                                            <span>Week Total</span>
-                                            <span class="">—</span>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-13')">
-                                            <div class="calendar-mobile-row-date">Mon 13</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-14')">
-                                            <div class="calendar-mobile-row-date">Tue 14</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-15')">
-                                            <div class="calendar-mobile-row-date">Wed 15</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-16')">
-                                            <div class="calendar-mobile-row-date">Thu 16</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-17')">
-                                            <div class="calendar-mobile-row-date">Fri 17</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-week-total"
-                                            onclick='filterWeek(["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"])'>
-                                            <span>Week Total</span>
-                                            <span class="">—</span>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-20')">
-                                            <div class="calendar-mobile-row-date">Mon 20</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-21')">
-                                            <div class="calendar-mobile-row-date">Tue 21</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-22')">
-                                            <div class="calendar-mobile-row-date">Wed 22</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-23')">
-                                            <div class="calendar-mobile-row-date">Thu 23</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-24')">
-                                            <div class="calendar-mobile-row-date">Fri 24</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-week-total"
-                                            onclick='filterWeek(["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"])'>
-                                            <span>Week Total</span>
-                                            <span class="">—</span>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-27')">
-                                            <div class="calendar-mobile-row-date">Mon 27</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-28')">
-                                            <div class="calendar-mobile-row-date">Tue 28</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-29')">
-                                            <div class="calendar-mobile-row-date">Wed 29</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-30')">
-                                            <div class="calendar-mobile-row-date">Thu 30</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-row" onclick="filterDate('2026-07-31')">
-                                            <div class="calendar-mobile-row-date">Fri 31</div>
-                                            <div class="calendar-mobile-row-pnl ">—</div>
-                                        </div>
-
-                                        <div class="calendar-mobile-week-total"
-                                            onclick='filterWeek(["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"])'>
-                                            <span>Week Total</span>
-                                            <span class="">—</span>
-                                            <div class="calendar-day" onclick="filterDate('2026-07-27')">
-                                                <div class="calendar-day-num">27</div>
-                                                <div class="calendar-day-pnl "></div>
-                                            </div>
-
-                                            <div class="calendar-day" onclick="filterDate('2026-07-28')">
-                                                <div class="calendar-day-num">28</div>
-                                                <div class="calendar-day-pnl "></div>
-                                            </div>
-
-                                            <div class="calendar-day" onclick="filterDate('2026-07-29')">
-                                                <div class="calendar-day-num">29</div>
-                                                <div class="calendar-day-pnl "></div>
-                                            </div>
-
-                                            <div class="calendar-day" onclick="filterDate('2026-07-30')">
-                                                <div class="calendar-day-num">30</div>
-                                                <div class="calendar-day-pnl "></div>
-                                            </div>
-
-                                            <div class="calendar-day" onclick="filterDate('2026-07-31')">
-                                                <div class="calendar-day-num">31</div>
-                                                <div class="calendar-day-pnl "></div>
-                                            </div>
-
-                                            <div class="calendar-week-total"
-                                                onclick='filterWeek(["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"])'>
-                                                <div class="calendar-week-total-label">Week</div>
-                                                <div class="calendar-week-total-val ">—</div>
-                                            </div>
-
-                                        </div>
-                                        <div class="calendar-mobile">
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-01')">
-                                                <div class="calendar-mobile-row-date">Wed 1</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-02')">
-                                                <div class="calendar-mobile-row-date">Thu 2</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-03')">
-                                                <div class="calendar-mobile-row-date">Fri 3</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-week-total"
-                                                onclick='filterWeek(["2026-07-01", "2026-07-02", "2026-07-03"])'>
-                                                <span>Week Total</span>
-                                                <span class="">—</span>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-06')">
-                                                <div class="calendar-mobile-row-date">Mon 6</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-07')">
-                                                <div class="calendar-mobile-row-date">Tue 7</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-08')">
-                                                <div class="calendar-mobile-row-date">Wed 8</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-09')">
-                                                <div class="calendar-mobile-row-date">Thu 9</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-10')">
-                                                <div class="calendar-mobile-row-date">Fri 10</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-week-total"
-                                                onclick='filterWeek(["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])'>
-                                                <span>Week Total</span>
-                                                <span class="">—</span>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-13')">
-                                                <div class="calendar-mobile-row-date">Mon 13</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-14')">
-                                                <div class="calendar-mobile-row-date">Tue 14</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-15')">
-                                                <div class="calendar-mobile-row-date">Wed 15</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-16')">
-                                                <div class="calendar-mobile-row-date">Thu 16</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-17')">
-                                                <div class="calendar-mobile-row-date">Fri 17</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-week-total"
-                                                onclick='filterWeek(["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"])'>
-                                                <span>Week Total</span>
-                                                <span class="">—</span>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-20')">
-                                                <div class="calendar-mobile-row-date">Mon 20</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-21')">
-                                                <div class="calendar-mobile-row-date">Tue 21</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-22')">
-                                                <div class="calendar-mobile-row-date">Wed 22</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-23')">
-                                                <div class="calendar-mobile-row-date">Thu 23</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-24')">
-                                                <div class="calendar-mobile-row-date">Fri 24</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-week-total"
-                                                onclick='filterWeek(["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"])'>
-                                                <span>Week Total</span>
-                                                <span class="">—</span>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-27')">
-                                                <div class="calendar-mobile-row-date">Mon 27</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-28')">
-                                                <div class="calendar-mobile-row-date">Tue 28</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-29')">
-                                                <div class="calendar-mobile-row-date">Wed 29</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-30')">
-                                                <div class="calendar-mobile-row-date">Thu 30</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-row" onclick="filterDate('2026-07-31')">
-                                                <div class="calendar-mobile-row-date">Fri 31</div>
-                                                <div class="calendar-mobile-row-pnl ">—</div>
-                                            </div>
-
-                                            <div class="calendar-mobile-week-total"
-                                                onclick='filterWeek(["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"])'>
-                                                <span>Week Total</span>
-                                                <span class="">—</span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="card-title">Market Context</div>
-                                        <div class="market-context-row">
-                                            <div class="market-chip">
-                                                <div class="market-chip-label">VIX</div>
-                                                <div class="market-chip-val ">N/A</div>
-                                                <div class="market-chip-sub">Normal range</div>
-                                            </div>
-                                            <div class="market-chip">
-                                                <div class="market-chip-label">SPY vs 50-SMA</div>
-                                                <div class="market-chip-val ">N/A</div>
-                                                <div class="market-chip-sub">Awaiting first cycle</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="ledger-header-row">
-                                        <div class="card-title" style="margin-bottom:0;">Position Ledger</div>
-                                        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-                                            <div class="ledger-sum">
-                                                <span id="ledger-sum-label">Open Unrealized P&amp;L:</span>
-                                                <span id="ledger-sum-val" class="ledger-sum-val val-green">+0.00%</span>
-                                            </div>
-                                            <div class="ledger-toggle">
-                                                <button id="toggle-open-btn" class="ledger-toggle-btn active"
-                                                    onclick="toggleLedgerView('OPEN')">Open</button>
-                                                <button id="toggle-closed-btn" class="ledger-toggle-btn"
-                                                    onclick="toggleLedgerView('CLOSED')">Closed</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table-container ledger-table">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Ticker</th>
-                                                    <th>Direction</th>
-                                                    <th>Entry Timestamp</th>
-                                                    <th>Exit Timestamp</th>
-                                                    <th>Entry Price</th>
-                                                    <th>Exit Price</th>
-                                                    <th>Shares</th>
-                                                    <th>P&amp;L</th>
-                                                    <th>P&amp;L</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="trades-table-body">
-
-                                                <tr data-close-date="" data-status="OPEN"
-                                                    onclick='showTradeDetail({"_id": "6a5087010802921d06a0a8a1", "ticker": "T_DASH_3", "direction": "LONG", "entry_price": 100.0, "share_count": 100, "status": "OPEN", "entry_timestamp": "2026-07-09T05:45:37.625000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}, "realized_pnl": 500.0, "trade_return_pct": 0.05, "exit_price": 105.0, "equity_pct": null})'>
-                                                    <td><strong>T_DASH_3</strong></td>
-                                                    <td class="val-green">LONG</td>
-                                                    <td>2026-07-09 05:45</td>
-                                                    <td>OPEN</td>
-                                                    <td>$100.00</td>
-                                                    <td>$105.00</td>
-                                                    <td>100</td>
-                                                    <td class="val-green"><strong>+5.00%</strong> <span
-                                                            style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">(+$500.00)</span>
-                                                    </td>
-                                                    <td><span class="badge badge-open">Open</span></td>
-                                                </tr>
-
-                                                <tr data-close-date="2026-07-09" data-status="CLOSED"
-                                                    onclick='showTradeDetail({"_id": "6a5087010802921d06a0a89f", "ticker": "T_DASH_1", "direction": "LONG", "entry_price": 100.0, "exit_price": 110.0, "share_count": 100, "realized_pnl": 1000.0, "status": "CLOSED", "entry_timestamp": "2026-07-08T05:45:37.625000", "exit_timestamp": "2026-07-09T05:45:37.625000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}, "trade_return_pct": 0.1})'>
-                                                    <td><strong>T_DASH_1</strong></td>
-                                                    <td class="val-green">LONG</td>
-                                                    <td>2026-07-08 05:45</td>
-                                                    <td>2026-07-09 05:45</td>
-                                                    <td>$100.00</td>
-                                                    <td>$110.00</td>
-                                                    <td>100</td>
-                                                    <td class="val-green"><strong>+10.00%</strong> <span
-                                                            style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">(+$1000.00)</span>
-                                                    </td>
-                                                    <td><span class="badge badge-closed">Closed</span></td>
-                                                </tr>
-
-                                                <tr data-close-date="2026-07-09" data-status="CLOSED"
-                                                    onclick='showTradeDetail({"_id": "6a5087010802921d06a0a8a0", "ticker": "T_DASH_2", "direction": "SHORT", "entry_price": 100.0, "exit_price": 105.0, "share_count": 100, "realized_pnl": -500.0, "status": "CLOSED", "entry_timestamp": "2026-07-08T05:45:37.625000", "exit_timestamp": "2026-07-09T05:45:37.625000", "reasoning_chain": {"trigger_type": "MATERIAL_FILING"}, "trade_return_pct": -0.05})'>
-                                                    <td><strong>T_DASH_2</strong></td>
-                                                    <td class="val-rose">SHORT</td>
-                                                    <td>2026-07-08 05:45</td>
-                                                    <td>2026-07-09 05:45</td>
-                                                    <td>$100.00</td>
-                                                    <td>$105.00</td>
-                                                    <td>100</td>
-                                                    <td class="val-rose"><strong>-5.00%</strong> <span
-                                                            style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">(-$500.00)</span>
-                                                    </td>
-                                                    <td><span class="badge badge-closed">Closed</span></td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="ledger-cards" id="ledger-cards-container">
-
-                                        <div class="ledger-card" data-close-date="" data-status="OPEN"
-                                            onclick='showTradeDetail({"_id": "6a5087010802921d06a0a8a1", "ticker": "T_DASH_3", "direction": "LONG", "entry_price": 100.0, "share_count": 100, "status": "OPEN", "entry_timestamp": "2026-07-09T05:45:37.625000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}, "realized_pnl": 500.0, "trade_return_pct": 0.05, "exit_price": 105.0, "equity_pct": null})'>
-                                            <div class="ledger-card-top">
-                                                <span class="ledger-card-ticker">T_DASH_3 <span
-                                                        class="val-green">LONG</span></span>
-                                                <span class="badge badge-open">Open</span>
-                                            </div>
-                                            <div class="ledger-card-grid">
-                                                <div><span class="ledger-card-grid-label">Entry</span> $100.00</div>
-                                                <div><span class="ledger-card-grid-label">Exit</span> $105.00</div>
-                                                <div><span class="ledger-card-grid-label">Shares</span> 100</div>
-                                                <div class="val-green"><span
-                                                        class="ledger-card-grid-label">P&amp;L</span>
-                                                    <strong>+5.00%</strong> <span
-                                                        style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">(+$500.00)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="ledger-card" data-close-date="2026-07-09" data-status="CLOSED"
-                                            onclick='showTradeDetail({"_id": "6a5087010802921d06a0a89f", "ticker": "T_DASH_1", "direction": "LONG", "entry_price": 100.0, "exit_price": 110.0, "share_count": 100, "realized_pnl": 1000.0, "status": "CLOSED", "entry_timestamp": "2026-07-08T05:45:37.625000", "exit_timestamp": "2026-07-09T05:45:37.625000", "reasoning_chain": {"trigger_type": "EARNINGS_SURPRISE"}, "trade_return_pct": 0.1})'>
-                                            <div class="ledger-card-top">
-                                                <span class="ledger-card-ticker">T_DASH_1 <span
-                                                        class="val-green">LONG</span></span>
-                                                <span class="badge badge-closed">Closed</span>
-                                            </div>
-                                            <div class="ledger-card-grid">
-                                                <div><span class="ledger-card-grid-label">Entry</span> $100.00</div>
-                                                <div><span class="ledger-card-grid-label">Exit</span> $110.00</div>
-                                                <div><span class="ledger-card-grid-label">Shares</span> 100</div>
-                                                <div class="val-green"><span
-                                                        class="ledger-card-grid-label">P&amp;L</span>
-                                                    <strong>+10.00%</strong> <span
-                                                        style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">(+$1000.00)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="ledger-card" data-close-date="2026-07-09" data-status="CLOSED"
-                                            onclick='showTradeDetail({"_id": "6a5087010802921d06a0a8a0", "ticker": "T_DASH_2", "direction": "SHORT", "entry_price": 100.0, "exit_price": 105.0, "share_count": 100, "realized_pnl": -500.0, "status": "CLOSED", "entry_timestamp": "2026-07-08T05:45:37.625000", "exit_timestamp": "2026-07-09T05:45:37.625000", "reasoning_chain": {"trigger_type": "MATERIAL_FILING"}, "trade_return_pct": -0.05})'>
-                                            <div class="ledger-card-top">
-                                                <span class="ledger-card-ticker">T_DASH_2 <span
-                                                        class="val-rose">SHORT</span></span>
-                                                <span class="badge badge-closed">Closed</span>
-                                            </div>
-                                            <div class="ledger-card-grid">
-                                                <div><span class="ledger-card-grid-label">Entry</span> $100.00</div>
-                                                <div><span class="ledger-card-grid-label">Exit</span> $105.00</div>
-                                                <div><span class="ledger-card-grid-label">Shares</span> 100</div>
-                                                <div class="val-rose"><span
-                                                        class="ledger-card-grid-label">P&amp;L</span>
-                                                    <strong>-5.00%</strong> <span
-                                                        style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">(-$500.00)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Trade Detail Modal -->
-                            <div id="detail-modal" class="modal" onclick="closeModal(event)">
-                                <div class="modal-content" onclick="event.stopPropagation()">
-                                    <span class="close-btn"
-                                        onclick="document.getElementById('detail-modal').style.display = 'none'">&times;</span>
-                                    <h2 id="modal-ticker" style="margin-top:0;">AAPL - LONG</h2>
-
-                                    <h3
-                                        style="border-bottom:1px solid var(--border-color); padding-bottom:8px; color:var(--text-secondary);">
-                                        Execution Details</h3>
-                                    <div class="flex-row">
-                                        <div class="meta-item">
-                                            <div class="meta-label">Shares</div>
-                                            <div id="modal-shares" class="meta-val">0</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">Entry Price</div>
-                                            <div id="modal-entry-price" class="meta-val">$0.00</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">Exit Price</div>
-                                            <div id="modal-exit-price" class="meta-val">$0.00</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">Realized PnL</div>
-                                            <div id="modal-pnl" class="meta-val">$0.00</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex-row">
-                                        <div class="meta-item">
-                                            <div class="meta-label">Initial Stop</div>
-                                            <div id="modal-init-stop" class="meta-val">$0.00</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">Current Stop</div>
-                                            <div id="modal-curr-stop" class="meta-val">$0.00</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">Take Profit</div>
-                                            <div id="modal-tp" class="meta-val">$0.00</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">Risk Allocated</div>
-                                            <div id="modal-risk" class="meta-val">0.00%</div>
-                                        </div>
-                                    </div>
-
-                                    <h3
-                                        style="border-bottom:1px solid var(--border-color); padding-bottom:8px; color:var(--text-secondary);">
-                                        Reasoning Chain</h3>
-                                    <div class="flex-row">
-                                        <div class="meta-item">
-                                            <div class="meta-label">Trigger Type</div>
-                                            <div id="modal-trigger-type" class="meta-val">PEAD</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">Decision Score</div>
-                                            <div id="modal-score" class="meta-val">2.00</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">Confidence Tier</div>
-                                            <div id="modal-tier" class="meta-val">STRONG</div>
-                                        </div>
-                                        <div class="meta-item">
-                                            <div class="meta-label">AI Conviction</div>
-                                            <div id="modal-ai-conv" class="meta-val">STRONG_SUPPORT</div>
-                                        </div>
-                                    </div>
-
-                                    <div style="margin-bottom:20px;">
-                                        <div class="meta-label">AI Rationale</div>
-                                        <div id="modal-ai-rationale" class="meta-val"
-                                            style="font-weight:400; font-size:14px; margin-top:8px;"></div>
-                                    </div>
-
-                                    <div>
-                                        <div class="meta-label">Risk Flags Identified</div>
-                                        <div id="modal-risk-flags" class="meta-val"
-                                            style="font-weight:400; font-size:14px; margin-top:8px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <script>
-                                const openPnlSum = 0;
-                                const closedPnlSum = 0;
-                                let ledgerStatusFilter = 'OPEN';
-                                let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
-
-                                function updateLedgerSumDisplay() {
-                                    const label = document.getElementById("ledger-sum-label");
-                                    const val = document.getElementById("ledger-sum-val");
-                                    const sum = ledgerStatusFilter === 'OPEN' ? openPnlSum : closedPnlSum;
-                                    label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L:" : "Closed Realized P&L:";
-                                    val.innerText = (sum >= 0 ? "+" : "") + (sum * 100).toFixed(2) + "%";
-                                    val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
-                                }
-
-                                function setLedgerStatus(status) {
-                                    ledgerStatusFilter = status;
-                                    document.getElementById("toggle-open-btn").classList.toggle("active", status === "OPEN");
-                                    document.getElementById("toggle-closed-btn").classList.toggle("active", status === "CLOSED");
-                                    updateLedgerSumDisplay();
-                                }
-
-                                function toggleLedgerView(status) {
-                                    setLedgerStatus(status);
-                                    applyLedgerFilters();
-                                }
-
-                                function applyLedgerFilters() {
-                                    const items = document.querySelectorAll("#trades-table-body tr, #ledger-cards-container .ledger-card");
-                                    items.forEach(el => {
-                                        const status = el.getAttribute("data-status");
-                                        const closeDate = el.getAttribute("data-close-date");
-                                        const statusMatch = (status === ledgerStatusFilter);
-                                        const dateMatch = (!ledgerDateFilter) || ledgerDateFilter.has(closeDate);
-                                        el.style.display = (statusMatch && dateMatch) ? "" : "none";
-                                    });
-                                }
-
-                                // Clicking a single calendar day: closed trades only make sense here (open positions have no close date),
-                                // so switch the ledger to the Closed view automatically. Passing '' clears the date filter (Show All).
-                                function filterDate(dateStr) {
-                                    if (dateStr) {
-                                        ledgerDateFilter = new Set([dateStr]);
-                                        setLedgerStatus('CLOSED');
-                                    } else {
-                                        ledgerDateFilter = null;
-                                    }
-                                    applyLedgerFilters();
-                                }
-
-                                // Clicking a week-total cell: show every closed trade within that week's weekday dates.
-                                function filterWeek(dateArr) {
-                                    ledgerDateFilter = new Set(dateArr);
-                                    setLedgerStatus('CLOSED');
-                                    applyLedgerFilters();
-                                }
-
-                                function showTradeDetail(t) {
-                                    document.getElementById("modal-ticker").innerText = t.ticker + " - " + t.direction;
-                                    document.getElementById("modal-shares").innerText = t.share_count;
-                                    document.getElementById("modal-entry-price").innerText = "$" + parseFloat(t.entry_price).toFixed(2);
-                                    document.getElementById("modal-exit-price").innerText = t.exit_price ? "$" + parseFloat(t.exit_price).toFixed(2) : "-";
-
-                                    const pnl = parseFloat(t.realized_pnl || 0.0);
-                                    const pnlEl = document.getElementById("modal-pnl");
-                                    pnlEl.innerText = (pnl >= 0 ? "+" : "") + "$" + pnl.toFixed(2);
-                                    pnlEl.className = "meta-val " + (pnl >= 0 ? "val-green" : "val-rose");
-
-                                    document.getElementById("modal-init-stop").innerText = "$" + parseFloat(t.initial_stop).toFixed(2);
-                                    document.getElementById("modal-curr-stop").innerText = "$" + parseFloat(t.current_stop).toFixed(2);
-                                    document.getElementById("modal-tp").innerText = "$" + parseFloat(t.take_profit).toFixed(2);
-                                    document.getElementById("modal-risk").innerText = parseFloat(t.risk_pct_used).toFixed(2) + "%";
-
-                                    document.getElementById("modal-trigger-type").innerText = t.reasoning_chain.trigger_type || "EARNINGS_SURPRISE";
-                                    document.getElementById("modal-score").innerText = parseFloat(t.combined_score).toFixed(2);
-                                    document.getElementById("modal-tier").innerText = t.confidence_tier || "STRONG";
-                                    document.getElementById("modal-ai-conv").innerText = t.ai_conviction || "ABSTAIN/UNKNOWN";
-                                    document.getElementById("modal-ai-rationale").innerText = t.ai_rationale || "No AI rationale details available.";
-
-                                    const flags = t.ai_risk_flags || [];
-                                    document.getElementById("modal-risk-flags").innerText = flags.length > 0 ? flags.join(", ") : "No specific risk flags identified.";
-
-                                    document.getElementById("detail-modal").style.display = "flex";
-                                }
-
-                                function closeModal(e) {
-                                    if (e.target.id === "detail-modal") {
-                                        document.getElementById("detail-modal").style.display = "none";
-                                    }
-                                }
-
-                                // Initialize default ledger view (Open positions, no date filter) on page load.
-                                updateLedgerSumDisplay();
-                                applyLedgerFilters();
-
-                                // Initialize default ledger view (Open positions, no date filter) on page load.
-                                updateLedgerSumDisplay();
-                                applyLedgerFilters();
-                            </script>
+                    <div class="calendar-header">Mon</div>
+                    <div class="calendar-header">Tue</div>
+                    <div class="calendar-header">Wed</div>
+                    <div class="calendar-header">Thu</div>
+                    <div class="calendar-header">Fri</div>
+                    <div class="calendar-header week-total-header">Week Total</div>
+                    <div class="calendar-day empty"></div><div class="calendar-day empty"></div>
+            <div class="calendar-day" onclick="filterDate('2026-07-01')">
+                <div class="calendar-day-num">1</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-02')">
+                <div class="calendar-day-num">2</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-03')">
+                <div class="calendar-day-num">3</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-01", "2026-07-02", "2026-07-03"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
+        </div>
+        
+            <div class="calendar-day" onclick="filterDate('2026-07-06')">
+                <div class="calendar-day-num">6</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-07')">
+                <div class="calendar-day-num">7</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-08')">
+                <div class="calendar-day-num">8</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-09')">
+                <div class="calendar-day-num">9</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-10')">
+                <div class="calendar-day-num">10</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
+        </div>
+        
+            <div class="calendar-day" onclick="filterDate('2026-07-13')">
+                <div class="calendar-day-num">13</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-14')">
+                <div class="calendar-day-num">14</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-15')">
+                <div class="calendar-day-num">15</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-16')">
+                <div class="calendar-day-num">16</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-17')">
+                <div class="calendar-day-num">17</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
+        </div>
+        
+            <div class="calendar-day" onclick="filterDate('2026-07-20')">
+                <div class="calendar-day-num">20</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-21')">
+                <div class="calendar-day-num">21</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-22')">
+                <div class="calendar-day-num">22</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-23')">
+                <div class="calendar-day-num">23</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-24')">
+                <div class="calendar-day-num">24</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
+        </div>
+        
+            <div class="calendar-day" onclick="filterDate('2026-07-27')">
+                <div class="calendar-day-num">27</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-28')">
+                <div class="calendar-day-num">28</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-29')">
+                <div class="calendar-day-num">29</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-30')">
+                <div class="calendar-day-num">30</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+            <div class="calendar-day" onclick="filterDate('2026-07-31')">
+                <div class="calendar-day-num">31</div>
+                <div class="calendar-day-pnl "></div>
+            </div>
+            
+        <div class="calendar-week-total" onclick='filterWeek(["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"])'>
+            <div class="calendar-week-total-label">Week</div>
+            <div class="calendar-week-total-val ">—</div>
+        </div>
+        
+                </div>
+                <div class="calendar-mobile">
+                    
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-01')">
+                <div class="calendar-mobile-row-date">Wed 1</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-02')">
+                <div class="calendar-mobile-row-date">Thu 2</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-03')">
+                <div class="calendar-mobile-row-date">Fri 3</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-01", "2026-07-02", "2026-07-03"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
+        </div>
+        
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-06')">
+                <div class="calendar-mobile-row-date">Mon 6</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-07')">
+                <div class="calendar-mobile-row-date">Tue 7</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-08')">
+                <div class="calendar-mobile-row-date">Wed 8</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-09')">
+                <div class="calendar-mobile-row-date">Thu 9</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-10')">
+                <div class="calendar-mobile-row-date">Fri 10</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
+        </div>
+        
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-13')">
+                <div class="calendar-mobile-row-date">Mon 13</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-14')">
+                <div class="calendar-mobile-row-date">Tue 14</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-15')">
+                <div class="calendar-mobile-row-date">Wed 15</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-16')">
+                <div class="calendar-mobile-row-date">Thu 16</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-17')">
+                <div class="calendar-mobile-row-date">Fri 17</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
+        </div>
+        
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-20')">
+                <div class="calendar-mobile-row-date">Mon 20</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-21')">
+                <div class="calendar-mobile-row-date">Tue 21</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-22')">
+                <div class="calendar-mobile-row-date">Wed 22</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-23')">
+                <div class="calendar-mobile-row-date">Thu 23</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-24')">
+                <div class="calendar-mobile-row-date">Fri 24</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
+        </div>
+        
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-27')">
+                <div class="calendar-mobile-row-date">Mon 27</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-28')">
+                <div class="calendar-mobile-row-date">Tue 28</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-29')">
+                <div class="calendar-mobile-row-date">Wed 29</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-30')">
+                <div class="calendar-mobile-row-date">Thu 30</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+            <div class="calendar-mobile-row" onclick="filterDate('2026-07-31')">
+                <div class="calendar-mobile-row-date">Fri 31</div>
+                <div class="calendar-mobile-row-pnl ">—</div>
+            </div>
+            
+        <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"])'>
+            <span>Week Total</span>
+            <span class="">—</span>
+        </div>
+        
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">Market Context</div>
+                <div class="market-context-row">
+                    <div class="market-chip">
+                        <div class="market-chip-label">VIX</div>
+                        <div class="market-chip-val val-green">15.2</div>
+                        <div class="market-chip-sub">Normal range</div>
+                    </div>
+                    <div class="market-chip">
+                        <div class="market-chip-label">SPY vs 50-SMA</div>
+                        <div class="market-chip-val val-green">+2.1%</div>
+                        <div class="market-chip-sub">Above SMA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="ledger-header-row">
+                <div class="card-title" style="margin-bottom:0;">Position Ledger</div>
+                <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                    <div class="ledger-sum">
+                        <span id="ledger-sum-label">Open Unrealized P&amp;L (Equity Impact):</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val val-green">+0.00%</span>
+                    </div>
+                    <div class="ledger-toggle">
+                        <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
+                        <button id="toggle-closed-btn" class="ledger-toggle-btn" onclick="toggleLedgerView('CLOSED')">Closed</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-container ledger-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Direction</th>
+                            <th>Entry Timestamp</th>
+                            <th>Exit Timestamp</th>
+                            <th>Entry Price</th>
+                            <th>Exit Price</th>
+                            <th>Shares</th>
+                            <th>P&amp;L <span style="font-size:10px; color:var(--text-secondary); font-weight:400;">(Trade Return)</span></th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trades-table-body">
+                        
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a500d964102e397f4b7244c", "ticker": "WDFC", "direction": "LONG", "entry_price": 239.4199981689453, "share_count": 73, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 218.99971632523972, "current_stop": 240.19694380326706, "take_profit": 280.2605618563565, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T21:07:34.501000", "exit_price": 263.2650146484375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1740.6862030029297, "highest_high_since_entry": 268.2099914550781, "lowest_low_since_entry": 239.4199981689453, "reasoning_chain": {"candidate_id": "6a500d84a69540e11ea2e02d", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.806760614568537, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 73, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.09959492382364021, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "WD-40 Company reported a significant earnings beat and provided an upgraded outlook, supported by strong sales growth and a new $100M share buyback program. The qualitative news evidence aligns with the quantitative earnings surprise, suggesting a bullish outlook for the stock despite broader market volatility concerns.", "ai_risk_flags": ["Market sentiment uncertainty", "Geopolitical tension"]})'>
+            <td><strong>WDFC</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-07-09 21:07</td>
+            <td>OPEN</td>
+            <td>$239.42</td>
+            <td>$263.27 (live)</td>
+            <td>73</td>
+            <td class="val-green"><strong>+9.96%</strong></td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4fc95936b2248600263145", "ticker": "FEIM", "direction": "SHORT", "entry_price": 61.029998779296875, "share_count": 83, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 79.18545324152166, "current_stop": 75.32727293534712, "take_profit": 24.719089854847304, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T16:16:25.418000", "exit_price": 57.0099983215332, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 333.66003799438477, "highest_high_since_entry": 62.41999816894531, "lowest_low_since_entry": 57.27000045776367, "reasoning_chain": {"candidate_id": "6a4fc934a69540e11ea2b211", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.051818154074929, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 83, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06586925345191669, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company filed an 8-K confirming the release of financial results for the quarter ended January 31, 2026. This corroborates the earnings surprise data indicating a significant shortfall against consensus expectations, supporting the short thesis.", "ai_risk_flags": ["EARNINGS_MISS", "OPERATIONAL_UNDERPERFORMANCE"]})'>
+            <td><strong>FEIM</strong></td>
+            <td class="val-rose">SHORT</td>
+            <td>2026-07-09 16:16</td>
+            <td>OPEN</td>
+            <td>$61.03</td>
+            <td>$57.01 (live)</td>
+            <td>83</td>
+            <td class="val-green"><strong>+6.59%</strong></td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72c3d8c6329d87cb450d", "ticker": "PENG", "direction": "LONG", "entry_price": 73.9468994140625, "share_count": 59, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 48.91353485801003, "current_stop": 63.260454871437766, "take_profit": 124.01362852616744, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:43.203000", "exit_price": 78.70999908447266, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 281.0228805541992, "highest_high_since_entry": 88.68000030517578, "lowest_low_since_entry": 73.9468994140625, "reasoning_chain": {"candidate_id": "6a4e72b40105d061e8bdf250", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 8.34445485201749, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 59, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06441243254486416, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Penguin Solutions exceeded Q3 2026 earnings expectations with an EPS of $0.84 against a consensus of $0.55, driven by strong demand for AI-integrated memory solutions. Additionally, the company raised its full-year guidance, which has triggered positive market sentiment and significant stock price appreciation.", "ai_risk_flags": ["Market volatility in technology sector", "Dependency on AI-integrated memory market demand"]})'>
+            <td><strong>PENG</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-07-08 15:54</td>
+            <td>OPEN</td>
+            <td>$73.95</td>
+            <td>$78.71 (live)</td>
+            <td>59</td>
+            <td class="val-green"><strong>+6.44%</strong></td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 23.12772768194025, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 26.645000457763672, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 70.07024002075195, "highest_high_since_entry": 28.65999984741211, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.009280334953544139, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
+            <td><strong>HELE</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-07-08 15:54</td>
+            <td>OPEN</td>
+            <td>$26.40</td>
+            <td>$26.65 (live)</td>
+            <td>286</td>
+            <td class="val-green"><strong>+0.93%</strong></td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 146.11990356445312, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 123.65469360351562, "highest_high_since_entry": 145.88999938964844, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.01592089066430102, "equity_pct": null, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+            <td><strong>AZZ</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-07-08 15:54</td>
+            <td>OPEN</td>
+            <td>$143.83</td>
+            <td>$146.12 (live)</td>
+            <td>54</td>
+            <td class="val-green"><strong>+1.59%</strong></td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+            <div class="ledger-cards" id="ledger-cards-container">
+                
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a500d964102e397f4b7244c", "ticker": "WDFC", "direction": "LONG", "entry_price": 239.4199981689453, "share_count": 73, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 218.99971632523972, "current_stop": 240.19694380326706, "take_profit": 280.2605618563565, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T21:07:34.501000", "exit_price": 263.2650146484375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1740.6862030029297, "highest_high_since_entry": 268.2099914550781, "lowest_low_since_entry": 239.4199981689453, "reasoning_chain": {"candidate_id": "6a500d84a69540e11ea2e02d", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.806760614568537, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 73, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.09959492382364021, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "WD-40 Company reported a significant earnings beat and provided an upgraded outlook, supported by strong sales growth and a new $100M share buyback program. The qualitative news evidence aligns with the quantitative earnings surprise, suggesting a bullish outlook for the stock despite broader market volatility concerns.", "ai_risk_flags": ["Market sentiment uncertainty", "Geopolitical tension"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">WDFC <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $239.42</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $263.27 (live)</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 73</div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+9.96%</strong></div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4fc95936b2248600263145", "ticker": "FEIM", "direction": "SHORT", "entry_price": 61.029998779296875, "share_count": 83, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 79.18545324152166, "current_stop": 75.32727293534712, "take_profit": 24.719089854847304, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-09T16:16:25.418000", "exit_price": 57.0099983215332, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 333.66003799438477, "highest_high_since_entry": 62.41999816894531, "lowest_low_since_entry": 57.27000045776367, "reasoning_chain": {"candidate_id": "6a4fc934a69540e11ea2b211", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 6.051818154074929, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 83, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06586925345191669, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company filed an 8-K confirming the release of financial results for the quarter ended January 31, 2026. This corroborates the earnings surprise data indicating a significant shortfall against consensus expectations, supporting the short thesis.", "ai_risk_flags": ["EARNINGS_MISS", "OPERATIONAL_UNDERPERFORMANCE"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">FEIM <span class="val-rose">SHORT</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $61.03</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $57.01 (live)</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 83</div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+6.59%</strong></div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72c3d8c6329d87cb450d", "ticker": "PENG", "direction": "LONG", "entry_price": 73.9468994140625, "share_count": 59, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 48.91353485801003, "current_stop": 63.260454871437766, "take_profit": 124.01362852616744, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:43.203000", "exit_price": 78.70999908447266, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 281.0228805541992, "highest_high_since_entry": 88.68000030517578, "lowest_low_since_entry": 73.9468994140625, "reasoning_chain": {"candidate_id": "6a4e72b40105d061e8bdf250", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 8.34445485201749, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 59, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06441243254486416, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Penguin Solutions exceeded Q3 2026 earnings expectations with an EPS of $0.84 against a consensus of $0.55, driven by strong demand for AI-integrated memory solutions. Additionally, the company raised its full-year guidance, which has triggered positive market sentiment and significant stock price appreciation.", "ai_risk_flags": ["Market volatility in technology sector", "Dependency on AI-integrated memory market demand"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">PENG <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $73.95</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $78.71 (live)</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 59</div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+6.44%</strong></div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 23.12772768194025, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 26.645000457763672, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 70.07024002075195, "highest_high_since_entry": 28.65999984741211, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.009280334953544139, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">HELE <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $26.40</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $26.65 (live)</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 286</div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+0.93%</strong></div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 126.5118144642223, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 146.11990356445312, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 123.65469360351562, "highest_high_since_entry": 145.88999938964844, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.01592089066430102, "equity_pct": null, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">AZZ <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $143.83</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $146.12 (live)</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 54</div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+1.59%</strong></div>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+    </div>
+
+    <!-- Trade Detail Modal -->
+    <div id="detail-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="document.getElementById('detail-modal').style.display = 'none'">&times;</span>
+            <h2 id="modal-ticker" style="margin-top:0;">AAPL - LONG</h2>
+            
+            <h3 style="border-bottom:1px solid var(--border-color); padding-bottom:8px; color:var(--text-secondary);">Execution Details</h3>
+            <div class="flex-row">
+                <div class="meta-item">
+                    <div class="meta-label">Shares</div>
+                    <div id="modal-shares" class="meta-val">0</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Entry Price</div>
+                    <div id="modal-entry-price" class="meta-val">$0.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label" id="modal-exit-price-label">Exit Price</div>
+                    <div id="modal-exit-price" class="meta-val">$0.00</div>
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <div class="meta-item">
+                    <div class="meta-label">Trade Return <span style="font-size:10px; opacity:0.7;">(signal quality)</span></div>
+                    <div id="modal-trade-return" class="meta-val">0.00%</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Equity Impact <span style="font-size:10px; opacity:0.7;">(account effect)</span></div>
+                    <div id="modal-equity-impact" class="meta-val">0.00%</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Initial Stop</div>
+                    <div id="modal-init-stop" class="meta-val">$0.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Current Stop</div>
+                    <div id="modal-curr-stop" class="meta-val">$0.00</div>
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <div class="meta-item">
+                    <div class="meta-label">Take Profit</div>
+                    <div id="modal-tp" class="meta-val">$0.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Risk Allocated</div>
+                    <div id="modal-risk" class="meta-val">0.00%</div>
+                </div>
+            </div>
+
+            <h3 style="border-bottom:1px solid var(--border-color); padding-bottom:8px; color:var(--text-secondary);">Reasoning Chain</h3>
+            <div class="flex-row">
+                <div class="meta-item">
+                    <div class="meta-label">Trigger Type</div>
+                    <div id="modal-trigger-type" class="meta-val">PEAD</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Decision Score</div>
+                    <div id="modal-score" class="meta-val">2.00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Confidence Tier</div>
+                    <div id="modal-tier" class="meta-val">STRONG</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">AI Conviction</div>
+                    <div id="modal-ai-conv" class="meta-val">STRONG_SUPPORT</div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:20px;">
+                <div class="meta-label">AI Rationale</div>
+                <div id="modal-ai-rationale" class="meta-val" style="font-weight:400; font-size:14px; margin-top:8px;"></div>
+            </div>
+            
+            <div>
+                <div class="meta-label">Risk Flags Identified</div>
+                <div id="modal-risk-flags" class="meta-val" style="font-weight:400; font-size:14px; margin-top:8px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openPnlSum = 0;
+        const closedPnlSum = 0;
+        let ledgerStatusFilter = 'OPEN';
+        let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
+
+        function updateLedgerSumDisplay() {
+            const label = document.getElementById("ledger-sum-label");
+            const val = document.getElementById("ledger-sum-val");
+            const sum = ledgerStatusFilter === 'OPEN' ? openPnlSum : closedPnlSum;
+            label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L (Equity Impact):" : "Closed Realized P&L (Equity Impact):";
+            val.innerText = (sum >= 0 ? "+" : "") + (sum * 100).toFixed(2) + "%";
+            val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
+        }
+
+        function setLedgerStatus(status) {
+            ledgerStatusFilter = status;
+            document.getElementById("toggle-open-btn").classList.toggle("active", status === "OPEN");
+            document.getElementById("toggle-closed-btn").classList.toggle("active", status === "CLOSED");
+            updateLedgerSumDisplay();
+        }
+
+        function toggleLedgerView(status) {
+            setLedgerStatus(status);
+            applyLedgerFilters();
+        }
+
+        function applyLedgerFilters() {
+            const items = document.querySelectorAll("#trades-table-body tr, #ledger-cards-container .ledger-card");
+            items.forEach(el => {
+                const status = el.getAttribute("data-status");
+                const closeDate = el.getAttribute("data-close-date");
+                const statusMatch = (status === ledgerStatusFilter);
+                const dateMatch = (!ledgerDateFilter) || ledgerDateFilter.has(closeDate);
+                el.style.display = (statusMatch && dateMatch) ? "" : "none";
+            });
+        }
+
+        // Clicking a single calendar day: closed trades only make sense here (open positions have no close date),
+        // so switch the ledger to the Closed view automatically. Passing '' clears the date filter (Show All).
+        function filterDate(dateStr) {
+            if (dateStr) {
+                ledgerDateFilter = new Set([dateStr]);
+                setLedgerStatus('CLOSED');
+            } else {
+                ledgerDateFilter = null;
+            }
+            applyLedgerFilters();
+        }
+
+        // Clicking a week-total cell: show every closed trade within that week's weekday dates.
+        function filterWeek(dateArr) {
+            ledgerDateFilter = new Set(dateArr);
+            setLedgerStatus('CLOSED');
+            applyLedgerFilters();
+        }
+
+        function showTradeDetail(t) {
+            document.getElementById("modal-ticker").innerText = t.ticker + " - " + t.direction;
+            document.getElementById("modal-shares").innerText = t.share_count;
+            document.getElementById("modal-entry-price").innerText = "$" + parseFloat(t.entry_price).toFixed(2);
+            document.getElementById("modal-exit-price-label").innerText = t.status === "OPEN" ? "Current Price (live)" : "Exit Price";
+            document.getElementById("modal-exit-price").innerText = t.exit_price ? "$" + parseFloat(t.exit_price).toFixed(2) : "-";
+            
+            const tradeReturn = parseFloat(t.trade_return_pct || 0.0) * 100;
+            const tradeReturnEl = document.getElementById("modal-trade-return");
+            tradeReturnEl.innerText = (tradeReturn >= 0 ? "+" : "") + tradeReturn.toFixed(2) + "%";
+            tradeReturnEl.className = "meta-val " + (tradeReturn >= 0 ? "val-green" : "val-rose");
+            
+            const equityImpact = t.equity_pct !== null && t.equity_pct !== undefined ? parseFloat(t.equity_pct) * 100 : null;
+            const equityImpactEl = document.getElementById("modal-equity-impact");
+            equityImpactEl.innerText = equityImpact !== null ? (equityImpact >= 0 ? "+" : "") + equityImpact.toFixed(2) + "%" : "N/A";
+            equityImpactEl.className = "meta-val " + (equityImpact !== null ? (equityImpact >= 0 ? "val-green" : "val-rose") : "");
+            
+            document.getElementById("modal-init-stop").innerText = "$" + parseFloat(t.initial_stop).toFixed(2);
+            document.getElementById("modal-curr-stop").innerText = "$" + parseFloat(t.current_stop).toFixed(2);
+            document.getElementById("modal-tp").innerText = "$" + parseFloat(t.take_profit).toFixed(2);
+            document.getElementById("modal-risk").innerText = parseFloat(t.risk_pct_used).toFixed(2) + "%";
+            
+            document.getElementById("modal-trigger-type").innerText = t.reasoning_chain.trigger_type || "EARNINGS_SURPRISE";
+            document.getElementById("modal-score").innerText = parseFloat(t.combined_score).toFixed(2);
+            document.getElementById("modal-tier").innerText = t.confidence_tier || "STRONG";
+            document.getElementById("modal-ai-conv").innerText = t.ai_conviction || "ABSTAIN/UNKNOWN";
+            document.getElementById("modal-ai-rationale").innerText = t.ai_rationale || "No AI rationale details available.";
+            
+            const flags = t.ai_risk_flags || [];
+            document.getElementById("modal-risk-flags").innerText = flags.length > 0 ? flags.join(", ") : "No specific risk flags identified.";
+            
+            document.getElementById("detail-modal").style.display = "flex";
+        }
+
+        function closeModal(e) {
+            if (e.target.id === "detail-modal") {
+                document.getElementById("detail-modal").style.display = "none";
+            }
+        }
+
+        // Initialize default ledger view (Open positions, no date filter) on page load.
+        updateLedgerSumDisplay();
+        applyLedgerFilters();
+    </script>
 </body>
-
 </html>
