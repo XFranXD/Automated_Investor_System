@@ -40,7 +40,10 @@ def generate_dashboard():
     stats_aggregates = list(db.stats_aggregates.find())
     
     # 2. Summary stats calculations
-    total_pnl = 0.0
+    # total_equity_pct = cumulative EQUITY IMPACT (%) across all closed trades — this is
+    # what "Total Realized P&L" now reports. Win/loss classification still comes from
+    # realized_pnl's sign, since it always matches trade_return_pct's sign.
+    total_equity_pct = 0.0
     wins = 0
     losses = 0
     closed_count = 0
@@ -49,7 +52,9 @@ def generate_dashboard():
     for t in trades:
         if t.get("status") == "CLOSED":
             pnl = float(t.get("realized_pnl", 0.0))
-            total_pnl += pnl
+            eq_pct = t.get("equity_pct")
+            if eq_pct is not None:
+                total_equity_pct += float(eq_pct)
             closed_count += 1
             if pnl > 0:
                 wins += 1
@@ -60,36 +65,52 @@ def generate_dashboard():
             
     win_rate = (wins / closed_count * 100.0) if closed_count > 0 else 0.0
     
-    # Reconstruct Equity Curve Points from closed trades
+    # Reconstruct Equity Curve Points from closed trades, in CUMULATIVE EQUITY IMPACT (%) terms
+    # rather than dollars. Values are stored as percentage points (e.g. 5.23, not 0.0523) for
+    # direct use in the chart and formatting.
     closed_trades_chronological = sorted(
         [t for t in trades if t.get("status") == "CLOSED"], 
         key=lambda x: x.get("exit_timestamp") or datetime.datetime.min
     )
     
     equity_curve = []
-    current_equity = 100000.0
-    current_hwm = 100000.0
+    current_cum_pct = 0.0
+    current_hwm_pct = 0.0
     
     # Starting point
     equity_curve.append({
         "date": "Initial",
-        "equity": current_equity,
-        "hwm": current_hwm,
+        "equity": current_cum_pct,
+        "hwm": current_hwm_pct,
         "drawdown": 0.0
     })
     
     for t in closed_trades_chronological:
-        pnl = float(t.get("realized_pnl", 0.0))
-        current_equity += pnl
-        current_hwm = max(current_hwm, current_equity)
-        dd = ((current_hwm - current_equity) / current_hwm * 100.0) if current_hwm > 0 else 0.0
+        eq_pct = t.get("equity_pct")
+        if eq_pct is None:
+            # Fallback for legacy closed trades that predate the equity_pct field
+            entry = float(t.get("entry_price", 0.0))
+            exit_val = float(t.get("exit_price") or entry)
+            direction = t.get("direction", "LONG").upper()
+            shares = int(t.get("share_count", 0))
+            equity_at_entry = t.get("equity_at_entry")
+            if equity_at_entry:
+                realized = shares * (exit_val - entry) if direction == "LONG" else shares * (entry - exit_val)
+                eq_pct = realized / float(equity_at_entry)
+            else:
+                eq_pct = 0.0
+        eq_pct = float(eq_pct) * 100.0
+        
+        current_cum_pct += eq_pct
+        current_hwm_pct = max(current_hwm_pct, current_cum_pct)
+        dd = current_hwm_pct - current_cum_pct  # underwater depth, in percentage points
         
         exit_ts = t.get("exit_timestamp")
         date_str = exit_ts.strftime("%Y-%m-%d %H:%M") if exit_ts else "Unknown"
         equity_curve.append({
             "date": date_str,
-            "equity": current_equity,
-            "hwm": current_hwm,
+            "equity": current_cum_pct,
+            "hwm": current_hwm_pct,
             "drawdown": dd
         })
         
@@ -785,11 +806,12 @@ tr:hover {
             exit_date_str = t["exit_timestamp"].strftime("%Y-%m-%d %H:%M")
 
         close_date_iso = t["exit_timestamp"].date().isoformat() if (t["status"] == "CLOSED" and t.get("exit_timestamp")) else ""
-        exit_price_text = f"${t['exit_price']:.2f}" if t.get("exit_price") else "-"
+        is_open = t["status"] == "OPEN"
+        # For OPEN trades, "exit_price" is actually the live current mark price (see re-evaluation
+        # block above) — label it "(live)" so it's never mistaken for an actual exit.
+        exit_price_text = (f"${t['exit_price']:.2f} (live)" if is_open else f"${t['exit_price']:.2f}") if t.get("exit_price") else "-"
         direction_class = "val-green" if t["direction"] == "LONG" else "val-rose"
         trade_json = json.dumps(t, cls=DashboardJSONEncoder)
-
-        pnl_dollar_formatted = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
 
         table_rows_html += f"""
         <tr data-close-date="{close_date_iso}" data-status="{t['status']}" onclick='showTradeDetail({trade_json})'>
@@ -800,7 +822,7 @@ tr:hover {
             <td>${t['entry_price']:.2f}</td>
             <td>{exit_price_text}</td>
             <td>{t['share_count']}</td>
-            <td class="{pnl_class}"><strong>{pnl_pct * 100:+.2f}%</strong> <span style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">({pnl_dollar_formatted})</span></td>
+            <td class="{pnl_class}"><strong>{pnl_pct * 100:+.2f}%</strong></td>
             <td>{status_badge}</td>
         </tr>
         """
@@ -815,7 +837,7 @@ tr:hover {
                 <div><span class="ledger-card-grid-label">Entry</span> ${t['entry_price']:.2f}</div>
                 <div><span class="ledger-card-grid-label">Exit</span> {exit_price_text}</div>
                 <div><span class="ledger-card-grid-label">Shares</span> {t['share_count']}</div>
-                <div class="{pnl_class}"><span class="ledger-card-grid-label">P&amp;L</span> <strong>{pnl_pct * 100:+.2f}%</strong> <span style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">({pnl_dollar_formatted})</span></div>
+                <div class="{pnl_class}"><span class="ledger-card-grid-label">Trade Return</span> <strong>{pnl_pct * 100:+.2f}%</strong></div>
             </div>
         </div>
         """
@@ -843,8 +865,8 @@ tr:hover {
     <div class="container">
         <div class="summary-grid">
             <div class="card">
-                <div class="card-title">Total Realized P&L</div>
-                <div class="card-val { "val-green" if total_pnl > 0 else "val-rose" }">${total_pnl:+.2f}</div>
+                <div class="card-title">Total Realized P&amp;L <span style="font-size:11px; color:var(--text-secondary); font-weight:400;">(Equity Impact)</span></div>
+                <div class="card-val { "val-green" if total_equity_pct > 0 else "val-rose" }">{total_equity_pct * 100:+.2f}%</div>
             </div>
             <div class="card">
                 <div class="card-title">Overall Win Rate</div>
@@ -902,7 +924,7 @@ tr:hover {
                 <div class="card-title" style="margin-bottom:0;">Position Ledger</div>
                 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
                     <div class="ledger-sum">
-                        <span id="ledger-sum-label">Open Unrealized P&amp;L:</span>
+                        <span id="ledger-sum-label">Open Unrealized P&amp;L (Equity Impact):</span>
                         <span id="ledger-sum-val" class="ledger-sum-val { 'val-green' if open_pnl_sum >= 0 else 'val-rose' }">{open_pnl_sum*100:+.2f}%</span>
                     </div>
                     <div class="ledger-toggle">
@@ -922,7 +944,7 @@ tr:hover {
                             <th>Entry Price</th>
                             <th>Exit Price</th>
                             <th>Shares</th>
-                            <th>P&amp;L</th>
+                            <th>P&amp;L <span style="font-size:10px; color:var(--text-secondary); font-weight:400;">(Trade Return)</span></th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -954,16 +976,20 @@ tr:hover {
                     <div id="modal-entry-price" class="meta-val">$0.00</div>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-label">Exit Price</div>
+                    <div class="meta-label" id="modal-exit-price-label">Exit Price</div>
                     <div id="modal-exit-price" class="meta-val">$0.00</div>
                 </div>
-                <div class="meta-item">
-                    <div class="meta-label">Realized PnL</div>
-                    <div id="modal-pnl" class="meta-val">$0.00</div>
-                </div>
             </div>
-            
+
             <div class="flex-row">
+                <div class="meta-item">
+                    <div class="meta-label">Trade Return <span style="font-size:10px; opacity:0.7;">(signal quality)</span></div>
+                    <div id="modal-trade-return" class="meta-val">0.00%</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Equity Impact <span style="font-size:10px; opacity:0.7;">(account effect)</span></div>
+                    <div id="modal-equity-impact" class="meta-val">0.00%</div>
+                </div>
                 <div class="meta-item">
                     <div class="meta-label">Initial Stop</div>
                     <div id="modal-init-stop" class="meta-val">$0.00</div>
@@ -972,6 +998,9 @@ tr:hover {
                     <div class="meta-label">Current Stop</div>
                     <div id="modal-curr-stop" class="meta-val">$0.00</div>
                 </div>
+            </div>
+
+            <div class="flex-row">
                 <div class="meta-item">
                     <div class="meta-label">Take Profit</div>
                     <div id="modal-tp" class="meta-val">$0.00</div>
@@ -1024,7 +1053,7 @@ tr:hover {
             const label = document.getElementById("ledger-sum-label");
             const val = document.getElementById("ledger-sum-val");
             const sum = ledgerStatusFilter === 'OPEN' ? openPnlSum : closedPnlSum;
-            label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L:" : "Closed Realized P&L:";
+            label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L (Equity Impact):" : "Closed Realized P&L (Equity Impact):";
             val.innerText = (sum >= 0 ? "+" : "") + (sum * 100).toFixed(2) + "%";
             val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
         }}
@@ -1075,12 +1104,18 @@ tr:hover {
             document.getElementById("modal-ticker").innerText = t.ticker + " - " + t.direction;
             document.getElementById("modal-shares").innerText = t.share_count;
             document.getElementById("modal-entry-price").innerText = "$" + parseFloat(t.entry_price).toFixed(2);
+            document.getElementById("modal-exit-price-label").innerText = t.status === "OPEN" ? "Current Price (live)" : "Exit Price";
             document.getElementById("modal-exit-price").innerText = t.exit_price ? "$" + parseFloat(t.exit_price).toFixed(2) : "-";
             
-            const pnl = parseFloat(t.realized_pnl || 0.0);
-            const pnlEl = document.getElementById("modal-pnl");
-            pnlEl.innerText = (pnl >= 0 ? "+" : "") + "$" + pnl.toFixed(2);
-            pnlEl.className = "meta-val " + (pnl >= 0 ? "val-green" : "val-rose");
+            const tradeReturn = parseFloat(t.trade_return_pct || 0.0) * 100;
+            const tradeReturnEl = document.getElementById("modal-trade-return");
+            tradeReturnEl.innerText = (tradeReturn >= 0 ? "+" : "") + tradeReturn.toFixed(2) + "%";
+            tradeReturnEl.className = "meta-val " + (tradeReturn >= 0 ? "val-green" : "val-rose");
+            
+            const equityImpact = t.equity_pct !== null && t.equity_pct !== undefined ? parseFloat(t.equity_pct) * 100 : null;
+            const equityImpactEl = document.getElementById("modal-equity-impact");
+            equityImpactEl.innerText = equityImpact !== null ? (equityImpact >= 0 ? "+" : "") + equityImpact.toFixed(2) + "%" : "N/A";
+            equityImpactEl.className = "meta-val " + (equityImpact !== null ? (equityImpact >= 0 ? "val-green" : "val-rose") : "");
             
             document.getElementById("modal-init-stop").innerText = "$" + parseFloat(t.initial_stop).toFixed(2);
             document.getElementById("modal-curr-stop").innerText = "$" + parseFloat(t.current_stop).toFixed(2);
@@ -1215,7 +1250,7 @@ tr:hover {
         <div class="grid-layout">
             <div>
                 <div class="card" style="margin-bottom:30px;">
-                    <div class="card-title">Equity Curve & High-Water Mark</div>
+                    <div class="card-title">Cumulative Return &amp; High-Water Mark <span style="font-size:11px; color:var(--text-secondary); font-weight:400;">(Equity Impact, %)</span></div>
                     <div style="height: 350px; position: relative;">
                         <canvas id="equityChart"></canvas>
                     </div>
@@ -1262,8 +1297,8 @@ tr:hover {
                         <div class="meta-val">{portfolio_state.get('correlation_cap_current', 0.6)}</div>
                     </div>
                     <div class="meta-item">
-                        <div class="meta-label">High Water Mark</div>
-                        <div class="meta-val">${hwm_vals[-1] if hwm_vals else 100000.0:,.2f}</div>
+                        <div class="meta-label">High-Water Mark <span style="font-size:10px; opacity:0.7;">(cumulative equity impact)</span></div>
+                        <div class="meta-val">{(hwm_vals[-1] if hwm_vals else 0.0):+.2f}%</div>
                     </div>
                 </div>
 
@@ -1287,7 +1322,7 @@ tr:hover {
             labels: {json.dumps(equity_labels)},
             datasets: [
                 {{
-                    label: 'Portfolio Equity',
+                    label: 'Cumulative Return (%)',
                     data: {json.dumps(equity_vals)},
                     borderColor: '#10b981',
                     backgroundColor: 'rgba(16, 185, 129, 0.05)',
@@ -1295,7 +1330,7 @@ tr:hover {
                     tension: 0.1
                 }},
                 {{
-                    label: 'High Water Mark',
+                    label: 'High-Water Mark (%)',
                     data: {json.dumps(hwm_vals)},
                     borderColor: '#6366f1',
                     borderDash: [5, 5],
@@ -1318,12 +1353,20 @@ tr:hover {
                     }},
                     y: {{
                         grid: {{ color: 'rgba(255,255,255,0.02)' }},
-                        ticks: {{ color: '#94a3b8' }}
+                        ticks: {{
+                            color: '#94a3b8',
+                            callback: function(value) {{ return value.toFixed(1) + '%'; }}
+                        }}
                     }}
                 }},
                 plugins: {{
                     legend: {{
                         labels: {{ color: '#f8fafc' }}
+                    }},
+                    tooltip: {{
+                        callbacks: {{
+                            label: function(ctx) {{ return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%'; }}
+                        }}
                     }}
                 }}
             }}
