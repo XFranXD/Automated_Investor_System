@@ -148,11 +148,11 @@ def test_additive_contributions():
     
     overall_after = db.stats_aggregates.find_one({"_id": {"dimension": "overall", "value": "total"}})
     
-    # Verify values were incremented (2 + 1 = 3), PnL added (1000 - 500 + 200 = 700)
+    # Verify values were incremented (2 + 1 = 3), PnL added (0.10 - 0.05 + 0.02 = 0.07)
     success = (
         processed == 1 and
         overall_after["tradeCount"] == overall_before["tradeCount"] + 1 and
-        overall_after["sumPnL"] == overall_before["sumPnL"] + 200.0
+        abs(overall_after["sumPnL"] - (overall_before["sumPnL"] + 0.02)) < 1e-6
     )
     print_test_result("Additive Contributions", success)
     return success
@@ -181,10 +181,10 @@ def test_derived_metrics_derivation():
     # Std dev = sqrt(375555.55) = 612.825...
     
     win_rate_ok = abs(metrics["win_rate"] - (2/3)) < 1e-6
-    avg_return_ok = abs(metrics["avg_return"] - (700/3)) < 1e-6
-    expectancy_ok = abs(metrics["expectancy"] - (700/3)) < 1e-6
+    avg_return_ok = abs(metrics["avg_return"] - (0.07/3)) < 1e-6
+    expectancy_ok = abs(metrics["expectancy"] - (0.07/3)) < 1e-6
     profit_factor_ok = abs(metrics["profit_factor"] - 2.4) < 1e-6
-    std_dev_ok = abs(metrics["std_dev"] - 612.825877) < 1e-3
+    std_dev_ok = abs(metrics["std_dev"] - 0.0612825877) < 1e-3
     
     success = win_rate_ok and avg_return_ok and expectancy_ok and profit_factor_ok and std_dev_ok
     print_test_result("Derived Metrics Formula Calculations", success)

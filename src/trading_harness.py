@@ -3,7 +3,7 @@ from bson import ObjectId
 from src.db import get_db
 from src.logger import write_audit_log
 
-def open_paper_position(ticker, direction, share_count, entry_price, initial_stop, take_profit, combined_score, risk_pct_used, confidence_tier, reasoning_chain=None):
+def open_paper_position(ticker, direction, share_count, entry_price, initial_stop, take_profit, combined_score, risk_pct_used, confidence_tier, reasoning_chain=None, equity_at_entry=None):
     """
     Creates a new paper position in the trades collection.
     
@@ -18,6 +18,7 @@ def open_paper_position(ticker, direction, share_count, entry_price, initial_sto
     - risk_pct_used (float): Risk percentage of portfolio equity allocated.
     - confidence_tier (str): 'STRONG' or 'MODERATE'.
     - reasoning_chain (dict, optional): Context containing candidate/evaluation IDs and scoring snapshot.
+    - equity_at_entry (float, optional): Portfolio equity at entry time.
     
     Returns:
     - ObjectId: The unique DB ID of the newly opened trade.
@@ -37,6 +38,7 @@ def open_paper_position(ticker, direction, share_count, entry_price, initial_sto
         "share_count": int(share_count),
         "combined_score": float(combined_score),
         "risk_pct_used": float(risk_pct_used),
+        "equity_at_entry": float(equity_at_entry) if equity_at_entry is not None else None,
         "initial_stop": float(initial_stop),
         "current_stop": float(initial_stop), # Starts equal to initial stop
         "take_profit": float(take_profit),
@@ -103,10 +105,18 @@ def close_paper_position(trade_id, exit_price, exit_reason):
     # Short: PnL = (entry_price - exit_price) * shares
     if direction == "LONG":
         realized_pnl = (float(exit_price) - entry_price) * share_count
+        trade_return_pct = (float(exit_price) - entry_price) / entry_price
     elif direction == "SHORT":
         realized_pnl = (entry_price - float(exit_price)) * share_count
+        trade_return_pct = (entry_price - float(exit_price)) / entry_price
     else:
         raise ValueError(f"Invalid direction in DB trade record: {direction}")
+        
+    equity_at_entry = trade.get("equity_at_entry")
+    if equity_at_entry is not None and equity_at_entry != 0:
+        equity_pct = realized_pnl / float(equity_at_entry)
+    else:
+        equity_pct = None
         
     db.trades.update_one(
         {"_id": trade_id},
@@ -116,7 +126,9 @@ def close_paper_position(trade_id, exit_price, exit_reason):
                 "exit_price": float(exit_price),
                 "exit_timestamp": datetime.datetime.utcnow(),
                 "exit_reason": exit_reason.upper().strip(),
-                "realized_pnl": realized_pnl
+                "realized_pnl": realized_pnl,
+                "trade_return_pct": trade_return_pct,
+                "equity_pct": equity_pct
             }
         }
     )

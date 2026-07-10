@@ -146,16 +146,18 @@ def run_weekly_aggregation():
         # Regime state at entry (default RISK_ON)
         regime_state = r_chain.get("regime_state_at_decision") or "RISK_ON"
         
-        # Calculate realized P&L if not explicitly saved
-        pnl = trade.get("realized_pnl")
+        # Calculate trade return percentage if not explicitly saved
+        pnl = trade.get("trade_return_pct")
         if pnl is None:
             entry = float(trade.get("entry_price", 0.0))
             exit = float(trade.get("exit_price", 0.0))
-            shares = int(trade.get("share_count", 0))
-            if direction == "LONG":
-                pnl = shares * (exit - entry)
+            if entry > 0.0:
+                if direction == "LONG":
+                    pnl = (exit - entry) / entry
+                else:
+                    pnl = (entry - exit) / entry
             else:
-                pnl = shares * (entry - exit)
+                pnl = 0.0
         else:
             pnl = float(pnl)
             

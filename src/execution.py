@@ -249,7 +249,8 @@ def execute_trade(candidate_doc, portfolio_state=None, regime_state=None):
         combined_score=combined_score,
         risk_pct_used=risk_pct,
         confidence_tier=confidence_tier,
-        reasoning_chain=reasoning_chain
+        reasoning_chain=reasoning_chain,
+        equity_at_entry=portfolio_equity
     )
     
     # Update portfolio state document in MongoDB

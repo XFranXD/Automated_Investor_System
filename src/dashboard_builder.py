@@ -93,13 +93,16 @@ def generate_dashboard():
             "drawdown": dd
         })
         
-    # 3. Calendar Data Mapping (group daily closed realized PnL)
+    # 3. Calendar Data Mapping (group daily closed equity_pct)
     calendar_pnl = {}
+    calendar_has_data = set()
     for t in trades:
         if t.get("status") == "CLOSED" and t.get("exit_timestamp"):
             exit_date = t["exit_timestamp"].date().isoformat()
-            pnl = float(t.get("realized_pnl", 0.0))
-            calendar_pnl[exit_date] = calendar_pnl.get(exit_date, 0.0) + pnl
+            eq_pct = t.get("equity_pct")
+            if eq_pct is not None:
+                calendar_pnl[exit_date] = calendar_pnl.get(exit_date, 0.0) + float(eq_pct)
+                calendar_has_data.add(exit_date)
             
     # 4. Rejection breakdown grouping
     rejections = {}
@@ -634,23 +637,44 @@ tr:hover {
     trades_data = []
     for t in trades:
         t_copy = t.copy()
+        direction = t_copy.get("direction", "LONG").upper()
+        entry = float(t_copy.get("entry_price", 0.0))
+        shares = int(t_copy.get("share_count", 0))
+        
         if t_copy.get("status") == "OPEN":
             # For open positions, get current price and calculate unrealized P&L
             # For simplicity in static compilation, we use current_price
             ticker = t_copy["ticker"]
-            direction = t_copy["direction"]
-            entry = float(t_copy["entry_price"])
-            shares = int(t_copy["share_count"])
-            
             pv = get_price_volume(ticker)
             curr = pv["data"]["current_price"] if (pv and pv.get("data")) else entry
             
             if direction == "LONG":
                 unrealized = shares * (curr - entry)
+                unrealized_return_pct = (curr - entry) / entry if entry > 0.0 else 0.0
             else:
                 unrealized = shares * (entry - curr)
+                unrealized_return_pct = (entry - curr) / entry if entry > 0.0 else 0.0
             t_copy["realized_pnl"] = unrealized
+            t_copy["trade_return_pct"] = unrealized_return_pct
             t_copy["exit_price"] = curr
+            
+            # Compute unrealized equity_pct if equity_at_entry is available
+            equity_at_entry = t_copy.get("equity_at_entry")
+            if equity_at_entry is not None and equity_at_entry != 0:
+                t_copy["equity_pct"] = unrealized / float(equity_at_entry)
+            else:
+                t_copy["equity_pct"] = None
+        else:
+            # Fallback for closed trades that predate the change
+            if t_copy.get("trade_return_pct") is None:
+                exit_val = float(t_copy.get("exit_price") or entry)
+                if entry > 0.0:
+                    if direction == "LONG":
+                        t_copy["trade_return_pct"] = (exit_val - entry) / entry
+                    else:
+                        t_copy["trade_return_pct"] = (entry - exit_val) / entry
+                else:
+                    t_copy["trade_return_pct"] = 0.0
         
         # Resolve associated evaluation details
         eval_doc = next((ev for ev in evaluations if str(ev.get("candidate_id")) == str(t_copy.get("reasoning_chain", {}).get("candidate_id"))), None)
@@ -679,15 +703,20 @@ tr:hover {
         day_cells = []
         week_dates = []
         week_total = 0.0
+        week_has_data = False
         for day_num in weekdays:
             if day_num == 0:
                 day_cells.append(None)
                 continue
             date_str = f"{cal_year}-{cal_month:02d}-{day_num:02d}"
-            pnl = calendar_pnl.get(date_str, 0.0)
-            week_total += pnl
             week_dates.append(date_str)
-            day_cells.append({"day": day_num, "date_str": date_str, "pnl": pnl})
+            if date_str in calendar_has_data:
+                pnl = calendar_pnl[date_str]
+                week_total += pnl
+                week_has_data = True
+                day_cells.append({"day": day_num, "date_str": date_str, "pnl": pnl, "has_data": True})
+            else:
+                day_cells.append({"day": day_num, "date_str": date_str, "pnl": 0.0, "has_data": False})
 
         week_dates_json = json.dumps(week_dates)
 
@@ -695,8 +724,15 @@ tr:hover {
             if cell is None:
                 calendar_desktop_html += '<div class="calendar-day empty"></div>'
                 continue
-            pnl_class = "val-green" if cell["pnl"] > 0 else ("val-rose" if cell["pnl"] < 0 else "")
-            pnl_text = f"${cell['pnl']:+.2f}" if cell["pnl"] != 0 else ""
+            
+            if cell["has_data"]:
+                pnl_val = cell["pnl"] * 100.0
+                pnl_class = "val-green" if pnl_val > 0.0 else ("val-rose" if pnl_val < 0.0 else "")
+                pnl_text = f"{pnl_val:+.2f}%" if pnl_val != 0.0 else "0.00%"
+            else:
+                pnl_class = ""
+                pnl_text = ""
+                
             calendar_desktop_html += f"""
             <div class="calendar-day" onclick="filterDate('{cell['date_str']}')">
                 <div class="calendar-day-num">{cell['day']}</div>
@@ -711,8 +747,14 @@ tr:hover {
             </div>
             """
 
-        week_total_class = "val-green" if week_total > 0 else ("val-rose" if week_total < 0 else "")
-        week_total_text = f"${week_total:+.2f}" if week_total != 0 else "—"
+        if week_has_data:
+            week_total_val = week_total * 100.0
+            week_total_class = "val-green" if week_total_val > 0.0 else ("val-rose" if week_total_val < 0.0 else "")
+            week_total_text = f"{week_total_val:+.2f}%" if week_total_val != 0.0 else "0.00%"
+        else:
+            week_total_class = ""
+            week_total_text = "—"
+            
         calendar_desktop_html += f"""
         <div class="calendar-week-total" onclick='filterWeek({week_dates_json})'>
             <div class="calendar-week-total-label">Week</div>
@@ -727,14 +769,15 @@ tr:hover {
         """
 
     # Compile trades list — desktop table rows + mobile cards, tagged by status for the ledger toggle
-    open_pnl_sum = sum(float(t.get("realized_pnl", 0.0)) for t in trades_data if t["status"] == "OPEN")
-    closed_pnl_sum = total_pnl  # already computed above from CLOSED trades only
+    open_pnl_sum = sum(float(t.get("equity_pct", 0.0)) for t in trades_data if t["status"] == "OPEN" and t.get("equity_pct") is not None)
+    closed_pnl_sum = sum(float(t.get("equity_pct", 0.0)) for t in trades_data if t["status"] == "CLOSED" and t.get("equity_pct") is not None)
 
     table_rows_html = ""
     ledger_cards_html = ""
     for t in trades_data:
         pnl = float(t.get("realized_pnl", 0.0))
-        pnl_class = "val-green" if pnl > 0 else ("val-rose" if pnl < 0 else "")
+        pnl_pct = float(t.get("trade_return_pct", 0.0))
+        pnl_class = "val-green" if pnl_pct > 0 else ("val-rose" if pnl_pct < 0 else "")
         status_badge = f'<span class="badge badge-open">Open</span>' if t["status"] == "OPEN" else f'<span class="badge badge-closed">Closed</span>'
 
         exit_date_str = "OPEN"
@@ -746,6 +789,8 @@ tr:hover {
         direction_class = "val-green" if t["direction"] == "LONG" else "val-rose"
         trade_json = json.dumps(t, cls=DashboardJSONEncoder)
 
+        pnl_dollar_formatted = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+
         table_rows_html += f"""
         <tr data-close-date="{close_date_iso}" data-status="{t['status']}" onclick='showTradeDetail({trade_json})'>
             <td><strong>{t['ticker']}</strong></td>
@@ -755,7 +800,7 @@ tr:hover {
             <td>${t['entry_price']:.2f}</td>
             <td>{exit_price_text}</td>
             <td>{t['share_count']}</td>
-            <td class="{pnl_class}">${pnl:+.2f}</td>
+            <td class="{pnl_class}"><strong>{pnl_pct * 100:+.2f}%</strong> <span style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">({pnl_dollar_formatted})</span></td>
             <td>{status_badge}</td>
         </tr>
         """
@@ -770,7 +815,7 @@ tr:hover {
                 <div><span class="ledger-card-grid-label">Entry</span> ${t['entry_price']:.2f}</div>
                 <div><span class="ledger-card-grid-label">Exit</span> {exit_price_text}</div>
                 <div><span class="ledger-card-grid-label">Shares</span> {t['share_count']}</div>
-                <div class="{pnl_class}"><span class="ledger-card-grid-label">P&amp;L</span> ${pnl:+.2f}</div>
+                <div class="{pnl_class}"><span class="ledger-card-grid-label">P&amp;L</span> <strong>{pnl_pct * 100:+.2f}%</strong> <span style="font-size: 0.85em; opacity: 0.7; margin-left: 4px;">({pnl_dollar_formatted})</span></div>
             </div>
         </div>
         """
@@ -858,7 +903,7 @@ tr:hover {
                 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
                     <div class="ledger-sum">
                         <span id="ledger-sum-label">Open Unrealized P&amp;L:</span>
-                        <span id="ledger-sum-val" class="ledger-sum-val { 'val-green' if open_pnl_sum >= 0 else 'val-rose' }">${open_pnl_sum:+.2f}</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val { 'val-green' if open_pnl_sum >= 0 else 'val-rose' }">{open_pnl_sum*100:+.2f}%</span>
                     </div>
                     <div class="ledger-toggle">
                         <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
@@ -980,7 +1025,7 @@ tr:hover {
             const val = document.getElementById("ledger-sum-val");
             const sum = ledgerStatusFilter === 'OPEN' ? openPnlSum : closedPnlSum;
             label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L:" : "Closed Realized P&L:";
-            val.innerText = (sum >= 0 ? "+$" : "-$") + Math.abs(sum).toFixed(2);
+            val.innerText = (sum >= 0 ? "+" : "") + (sum * 100).toFixed(2) + "%";
             val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
         }}
 
@@ -1110,10 +1155,10 @@ tr:hover {
             <td>{val}</td>
             <td>{agg['tradeCount']}</td>
             <td>{metrics['win_rate']*100:.1f}%</td>
-            <td>${metrics['avg_return']:+.2f}</td>
+            <td>{metrics['avg_return']*100:+.1f}%</td>
             <td>{metrics['profit_factor']:.2f}</td>
-            <td class="val-green">${agg.get('maxWin', 0.0):.2f}</td>
-            <td class="val-rose">${agg.get('maxLoss', 0.0):.2f}</td>
+            <td class="val-green">{agg.get('maxWin', 0.0)*100:.1f}%</td>
+            <td class="val-rose">{agg.get('maxLoss', 0.0)*100:.1f}%</td>
         </tr>
         """
 
