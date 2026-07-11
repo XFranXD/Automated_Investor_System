@@ -44,6 +44,7 @@ def generate_dashboard():
     # what "Total Realized P&L" now reports. Win/loss classification still comes from
     # realized_pnl's sign, since it always matches trade_return_pct's sign.
     total_equity_pct = 0.0
+    total_equity_pct_count = 0
     wins = 0
     losses = 0
     closed_count = 0
@@ -55,6 +56,7 @@ def generate_dashboard():
             eq_pct = t.get("equity_pct")
             if eq_pct is not None:
                 total_equity_pct += float(eq_pct)
+                total_equity_pct_count += 1
             closed_count += 1
             if pnl > 0:
                 wins += 1
@@ -790,8 +792,12 @@ tr:hover {
         """
 
     # Compile trades list — desktop table rows + mobile cards, tagged by status for the ledger toggle
-    open_pnl_sum = sum(float(t.get("equity_pct", 0.0)) for t in trades_data if t["status"] == "OPEN" and t.get("equity_pct") is not None)
-    closed_pnl_sum = sum(float(t.get("equity_pct", 0.0)) for t in trades_data if t["status"] == "CLOSED" and t.get("equity_pct") is not None)
+    open_pnl_trades = [t for t in trades_data if t["status"] == "OPEN" and t.get("equity_pct") is not None]
+    closed_pnl_trades = [t for t in trades_data if t["status"] == "CLOSED" and t.get("equity_pct") is not None]
+    open_pnl_sum = sum(float(t.get("equity_pct", 0.0)) for t in open_pnl_trades)
+    closed_pnl_sum = sum(float(t.get("equity_pct", 0.0)) for t in closed_pnl_trades)
+    open_pnl_count = len(open_pnl_trades)
+    closed_pnl_count = len(closed_pnl_trades)
 
     table_rows_html = ""
     ledger_cards_html = ""
@@ -866,7 +872,7 @@ tr:hover {
         <div class="summary-grid">
             <div class="card">
                 <div class="card-title">Total Realized P&amp;L <span style="font-size:11px; color:var(--text-secondary); font-weight:400;">(Equity Impact)</span></div>
-                <div class="card-val { "val-green" if total_equity_pct > 0 else "val-rose" }">{total_equity_pct * 100:+.2f}%</div>
+                <div class="card-val { ('val-green' if total_equity_pct > 0 else 'val-rose') if total_equity_pct_count > 0 else '' }">{ (f"{total_equity_pct * 100:+.2f}%" if total_equity_pct_count > 0 else "N/A") }</div>
             </div>
             <div class="card">
                 <div class="card-title">Overall Win Rate</div>
@@ -925,7 +931,7 @@ tr:hover {
                 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
                     <div class="ledger-sum">
                         <span id="ledger-sum-label">Open Unrealized P&amp;L (Equity Impact):</span>
-                        <span id="ledger-sum-val" class="ledger-sum-val { 'val-green' if open_pnl_sum >= 0 else 'val-rose' }">{open_pnl_sum*100:+.2f}%</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val { ('val-green' if open_pnl_sum >= 0 else 'val-rose') if open_pnl_count > 0 else '' }">{ (f"{open_pnl_sum*100:+.2f}%" if open_pnl_count > 0 else "N/A") }</span>
                     </div>
                     <div class="ledger-toggle">
                         <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
@@ -1046,6 +1052,8 @@ tr:hover {
     <script>
         const openPnlSum = {open_pnl_sum};
         const closedPnlSum = {closed_pnl_sum};
+        const openPnlCount = {open_pnl_count};
+        const closedPnlCount = {closed_pnl_count};
         let ledgerStatusFilter = 'OPEN';
         let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
 
@@ -1053,9 +1061,15 @@ tr:hover {
             const label = document.getElementById("ledger-sum-label");
             const val = document.getElementById("ledger-sum-val");
             const sum = ledgerStatusFilter === 'OPEN' ? openPnlSum : closedPnlSum;
+            const count = ledgerStatusFilter === 'OPEN' ? openPnlCount : closedPnlCount;
             label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L (Equity Impact):" : "Closed Realized P&L (Equity Impact):";
-            val.innerText = (sum >= 0 ? "+" : "") + (sum * 100).toFixed(2) + "%";
-            val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
+            if (count === 0) {{
+                val.innerText = "N/A";
+                val.className = "ledger-sum-val";
+            }} else {{
+                val.innerText = (sum >= 0 ? "+" : "") + (sum * 100).toFixed(2) + "%";
+                val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
+            }}
         }}
 
         function setLedgerStatus(status) {{
