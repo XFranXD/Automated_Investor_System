@@ -22,7 +22,7 @@
         <div class="summary-grid">
             <div class="card">
                 <div class="card-title">Total Realized P&amp;L <span style="font-size:11px; color:var(--text-secondary); font-weight:400;">(Equity Impact)</span></div>
-                <div class="card-val val-rose">+0.00%</div>
+                <div class="card-val ">N/A</div>
             </div>
             <div class="card">
                 <div class="card-title">Overall Win Rate</div>
@@ -361,7 +361,7 @@
                 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
                     <div class="ledger-sum">
                         <span id="ledger-sum-label">Open Unrealized P&amp;L (Equity Impact):</span>
-                        <span id="ledger-sum-val" class="ledger-sum-val val-green">+0.00%</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val ">N/A</span>
                     </div>
                     <div class="ledger-toggle">
                         <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
@@ -607,6 +607,8 @@
     <script>
         const openPnlSum = 0;
         const closedPnlSum = 0;
+        const openPnlCount = 0;
+        const closedPnlCount = 0;
         let ledgerStatusFilter = 'OPEN';
         let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
 
@@ -614,9 +616,15 @@
             const label = document.getElementById("ledger-sum-label");
             const val = document.getElementById("ledger-sum-val");
             const sum = ledgerStatusFilter === 'OPEN' ? openPnlSum : closedPnlSum;
+            const count = ledgerStatusFilter === 'OPEN' ? openPnlCount : closedPnlCount;
             label.innerText = ledgerStatusFilter === 'OPEN' ? "Open Unrealized P&L (Equity Impact):" : "Closed Realized P&L (Equity Impact):";
-            val.innerText = (sum >= 0 ? "+" : "") + (sum * 100).toFixed(2) + "%";
-            val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
+            if (count === 0) {
+                val.innerText = "N/A";
+                val.className = "ledger-sum-val";
+            } else {
+                val.innerText = (sum >= 0 ? "+" : "") + (sum * 100).toFixed(2) + "%";
+                val.className = "ledger-sum-val " + (sum >= 0 ? "val-green" : "val-rose");
+            }
         }
 
         function setLedgerStatus(status) {
