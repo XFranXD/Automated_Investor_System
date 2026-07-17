@@ -88,32 +88,32 @@
                     
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Industrials</span>
-            <span style="font-weight:600;">7.9%</span>
+            <span style="font-weight:600;">8.1%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Consumer Defensive</span>
-            <span style="font-weight:600;">8.2%</span>
+            <span style="font-weight:600;">8.0%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Technology</span>
-            <span style="font-weight:600;">12.1%</span>
+            <span style="font-weight:600;">8.1%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Basic Materials</span>
-            <span style="font-weight:600;">18.5%</span>
+            <span style="font-weight:600;">18.4%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Consumer Cyclical</span>
-            <span style="font-weight:600;">9.2%</span>
+            <span style="font-weight:600;">9.1%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Healthcare</span>
-            <span style="font-weight:600;">15.4%</span>
+            <span style="font-weight:600;">15.7%</span>
         </div>
         
                 </div>
@@ -150,11 +150,11 @@
         // Setup Chart.js Equity Curve
         const ctx = document.getElementById('equityChart').getContext('2d');
         const chartData = {
-            labels: ["Initial"],
+            labels: ["Initial", "2026-07-17 16:34"],
             datasets: [
                 {
                     label: 'Cumulative Return (%)',
-                    data: [0.0],
+                    data: [0.0, 0.0],
                     borderColor: '#10b981',
                     backgroundColor: 'rgba(16, 185, 129, 0.05)',
                     fill: true,
@@ -162,7 +162,7 @@
                 },
                 {
                     label: 'High-Water Mark (%)',
-                    data: [0.0],
+                    data: [0.0, 0.0],
                     borderColor: '#6366f1',
                     borderDash: [5, 5],
                     fill: false,
