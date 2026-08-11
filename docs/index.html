@@ -22,15 +22,15 @@
         <div class="summary-grid">
             <div class="card">
                 <div class="card-title">Total Realized P&amp;L <span style="font-size:11px; color:var(--text-secondary); font-weight:400;">(Equity Impact)</span></div>
-                <div class="card-val val-rose">-3.57%</div>
+                <div class="card-val val-rose">-4.32%</div>
             </div>
             <div class="card">
                 <div class="card-title">Overall Win Rate</div>
-                <div class="card-val val-indigo">28.6%</div>
+                <div class="card-val val-indigo">25.0%</div>
             </div>
             <div class="card">
                 <div class="card-title">Closed Positions</div>
-                <div class="card-val">7</div>
+                <div class="card-val">8</div>
             </div>
             <div class="card">
                 <div class="card-title">Open Positions</div>
@@ -89,7 +89,7 @@
             
             <div class="calendar-day" onclick="filterDate('2026-08-11')">
                 <div class="calendar-day-num">11</div>
-                <div class="calendar-day-pnl "></div>
+                <div class="calendar-day-pnl val-rose">-0.75%</div>
             </div>
             
             <div class="calendar-day" onclick="filterDate('2026-08-12')">
@@ -109,7 +109,7 @@
             
         <div class="calendar-week-total" onclick='filterWeek(["2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14"])'>
             <div class="calendar-week-total-label">Week</div>
-            <div class="calendar-week-total-val val-green">+0.03%</div>
+            <div class="calendar-week-total-val val-rose">-0.73%</div>
         </div>
         
             <div class="calendar-day" onclick="filterDate('2026-08-17')">
@@ -222,7 +222,7 @@
             
             <div class="calendar-mobile-row" onclick="filterDate('2026-08-11')">
                 <div class="calendar-mobile-row-date">Tue 11</div>
-                <div class="calendar-mobile-row-pnl ">—</div>
+                <div class="calendar-mobile-row-pnl val-rose">-0.75%</div>
             </div>
             
             <div class="calendar-mobile-row" onclick="filterDate('2026-08-12')">
@@ -242,7 +242,7 @@
             
         <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14"])'>
             <span>Week Total</span>
-            <span class="val-green">+0.03%</span>
+            <span class="val-rose">-0.73%</span>
         </div>
         
             <div class="calendar-mobile-row" onclick="filterDate('2026-08-17')">
@@ -323,7 +323,7 @@
                 <div class="market-context-row">
                     <div class="market-chip">
                         <div class="market-chip-label">VIX</div>
-                        <div class="market-chip-val val-green">15.5</div>
+                        <div class="market-chip-val val-green">15.4</div>
                         <div class="market-chip-sub">Normal range</div>
                     </div>
                     <div class="market-chip">
@@ -341,7 +341,7 @@
                 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
                     <div class="ledger-sum">
                         <span id="ledger-sum-label">Open Unrealized P&amp;L (Equity Impact):</span>
-                        <span id="ledger-sum-val" class="ledger-sum-val val-green">+1.16%</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val val-green">+1.61%</span>
                     </div>
                     <div class="ledger-toggle">
                         <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
@@ -366,15 +366,27 @@
                     </thead>
                     <tbody id="trades-table-body">
                         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a79e61084556e32ab437827", "ticker": "UAA", "direction": "LONG", "entry_price": 5.664999961853027, "share_count": 678, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 98076.21162891388, "initial_stop": 4.580227114937522, "current_stop": 4.775681560689753, "take_profit": 7.834545655684037, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-10T14:54:08.222000", "exit_price": 5.869999885559082, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 138.98994827270508, "highest_high_since_entry": 5.869999885559082, "lowest_low_since_entry": 5.619999885559082, "reasoning_chain": {"candidate_id": "6a79e5e32f716ed92a01d935", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 0.361590948971835, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 678, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.03618710063309497, "equity_pct": 0.0014171626938303294, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "Although UAA exceeded EPS expectations for the quarter, the positive surprise is significantly undermined by a revenue miss, a lowered sales outlook, and poor forward-looking guidance. The market's negative reaction to these fundamental weaknesses suggests that the EPS beat is insufficient to support a long position.", "ai_risk_flags": ["REVENUE_MISS", "LOWERED_SALES_OUTLOOK", "WEAK_FUTURE_GUIDANCE", "SOFT_DEMAND"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7b39893a6d45cd951fb83c", "ticker": "LINC", "direction": "LONG", "entry_price": 30.604999542236328, "share_count": 77, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 97972.9719168056, "initial_stop": 21.069773413918234, "current_stop": 21.069773413918234, "take_profit": 49.675451798872515, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-11T15:02:33.288000", "exit_price": 30.649999618530273, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 3.465005874633789, "highest_high_since_entry": 30.604999542236328, "lowest_low_since_entry": 30.604999542236328, "reasoning_chain": {"candidate_id": "6a7b3878fa2662d8ba98cade", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 3.1784087094393643, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 77, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.0014703504972069386, "equity_pct": 3.5366956894766054e-05, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "While LINC reported an earnings beat, the market reaction has been negative due to concerns regarding slower student starts, which is weighing on the stock in the near term.", "ai_risk_flags": ["slower student starts", "market reaction volatility", "potential short-term headwinds"]})'>
+            <td><strong>LINC</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-08-11 15:02</td>
+            <td>OPEN</td>
+            <td>$30.60</td>
+            <td>$30.65 (live)</td>
+            <td>77</td>
+            <td class="val-green"><strong>+0.15%</strong></td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a79e61084556e32ab437827", "ticker": "UAA", "direction": "LONG", "entry_price": 5.664999961853027, "share_count": 678, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 98076.21162891388, "initial_stop": 4.580227114937522, "current_stop": 4.775681560689753, "take_profit": 7.834545655684037, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-10T14:54:08.222000", "exit_price": 5.394999980926514, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -183.05998706817627, "highest_high_since_entry": 5.869999885559082, "lowest_low_since_entry": 5.425000190734863, "reasoning_chain": {"candidate_id": "6a79e5e32f716ed92a01d935", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 0.361590948971835, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 678, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.04766107374133086, "equity_pct": -0.001866507525400872, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "Although UAA exceeded EPS expectations for the quarter, the positive surprise is significantly undermined by a revenue miss, a lowered sales outlook, and poor forward-looking guidance. The market's negative reaction to these fundamental weaknesses suggests that the EPS beat is insufficient to support a long position.", "ai_risk_flags": ["REVENUE_MISS", "LOWERED_SALES_OUTLOOK", "WEAK_FUTURE_GUIDANCE", "SOFT_DEMAND"]})'>
             <td><strong>UAA</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-10 14:54</td>
             <td>OPEN</td>
             <td>$5.66</td>
-            <td>$5.87 (live)</td>
+            <td>$5.39 (live)</td>
             <td>678</td>
-            <td class="val-green"><strong>+3.62%</strong></td>
+            <td class="val-rose"><strong>-4.77%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -390,63 +402,63 @@
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a752a2f8a6b27722b052dc2", "ticker": "MRVI", "direction": "LONG", "entry_price": 6.25, "share_count": 718, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 97881.73390960693, "initial_stop": 5.227818012237549, "current_stop": 5.227818012237549, "take_profit": 8.294363975524902, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-07T00:43:27.630000", "exit_price": 6.070000171661377, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -129.23987674713135, "highest_high_since_entry": 6.25, "lowest_low_since_entry": 5.909999847412109, "reasoning_chain": {"candidate_id": "6a7527fa2f716ed92afe84f7", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 0.3407273292541504, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 718, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.028799972534179687, "equity_pct": -0.0013203676680521763, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "While the company reported a positive earnings surprise for Q2, the market reaction was negative due to management providing full-year revenue guidance that fell below consensus expectations. This suggests that despite the immediate beat, investor sentiment is weighed down by concerns regarding future growth, contradicting the thesis for a long position.", "ai_risk_flags": ["GUIDANCE_MISS", "NEGATIVE_MARKET_REACTION", "REVENUE_OUTLOOK_CONCERNS"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a752a2f8a6b27722b052dc2", "ticker": "MRVI", "direction": "LONG", "entry_price": 6.25, "share_count": 718, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 97881.73390960693, "initial_stop": 5.227818012237549, "current_stop": 5.227818012237549, "take_profit": 8.294363975524902, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-07T00:43:27.630000", "exit_price": 6.054999828338623, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -140.01012325286865, "highest_high_since_entry": 6.25, "lowest_low_since_entry": 5.909999847412109, "reasoning_chain": {"candidate_id": "6a7527fa2f716ed92afe84f7", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 0.3407273292541504, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 718, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.03120002746582031, "equity_pct": -0.0014304009303938872, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "While the company reported a positive earnings surprise for Q2, the market reaction was negative due to management providing full-year revenue guidance that fell below consensus expectations. This suggests that despite the immediate beat, investor sentiment is weighed down by concerns regarding future growth, contradicting the thesis for a long position.", "ai_risk_flags": ["GUIDANCE_MISS", "NEGATIVE_MARKET_REACTION", "REVENUE_OUTLOOK_CONCERNS"]})'>
             <td><strong>MRVI</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-07 00:43</td>
             <td>OPEN</td>
             <td>$6.25</td>
-            <td>$6.07 (live)</td>
+            <td>$6.05 (live)</td>
             <td>718</td>
-            <td class="val-rose"><strong>-2.88%</strong></td>
+            <td class="val-rose"><strong>-3.12%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7211d66d9c764847a3541c", "ticker": "CTRI", "direction": "LONG", "entry_price": 23.0, "share_count": 367, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99764.54603767395, "initial_stop": 18.925044493241742, "current_stop": 19.699838985096324, "take_profit": 31.149911013516515, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-04T16:22:46.356000", "exit_price": 23.760000228881836, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 278.9200839996338, "highest_high_since_entry": 24.059999465942383, "lowest_low_since_entry": 21.389999389648438, "reasoning_chain": {"candidate_id": "6a720ec412482316f1c80b8b", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.3583185022527522, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 367, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.03304348821225374, "equity_pct": 0.002795783623315497, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Centuri Holdings reported a Q2 earnings beat and raised its full-year guidance, which provides strong fundamental support for the long thesis despite minor premarket share price fluctuations.", "ai_risk_flags": ["PREMARKET_VOLATILITY", "FORWARD_LOOKING_STATEMENT_DISCLAIMER"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7211d66d9c764847a3541c", "ticker": "CTRI", "direction": "LONG", "entry_price": 23.0, "share_count": 367, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99764.54603767395, "initial_stop": 18.925044493241742, "current_stop": 20.226272149519488, "take_profit": 31.149911013516515, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-04T16:22:46.356000", "exit_price": 24.450000762939453, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 532.1502799987793, "highest_high_since_entry": 24.600000381469727, "lowest_low_since_entry": 21.389999389648438, "reasoning_chain": {"candidate_id": "6a720ec412482316f1c80b8b", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.3583185022527522, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 367, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06304351143215013, "equity_pct": 0.005334062060462081, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Centuri Holdings reported a Q2 earnings beat and raised its full-year guidance, which provides strong fundamental support for the long thesis despite minor premarket share price fluctuations.", "ai_risk_flags": ["PREMARKET_VOLATILITY", "FORWARD_LOOKING_STATEMENT_DISCLAIMER"]})'>
             <td><strong>CTRI</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-04 16:22</td>
             <td>OPEN</td>
             <td>$23.00</td>
-            <td>$23.76 (live)</td>
+            <td>$24.45 (live)</td>
             <td>367</td>
-            <td class="val-green"><strong>+3.30%</strong></td>
+            <td class="val-green"><strong>+6.30%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a70ff739aa7c66920f51f3d", "ticker": "SBAC", "direction": "LONG", "entry_price": 179.5399932861328, "share_count": 84, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99594.07199027321, "initial_stop": 161.87954157049006, "current_stop": 169.17658441716975, "take_profit": 214.8608967174183, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-03T20:52:03.885000", "exit_price": 181.0500030517578, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 126.8408203125, "highest_high_since_entry": 187.92999267578125, "lowest_low_since_entry": 173.8800048828125, "reasoning_chain": {"candidate_id": "6a70ff5b12482316f1c75e45", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 5.886817238547585, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 84, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.008410436794539131, "equity_pct": 0.0012735780130055112, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "SBA Communications delivered a significant EPS beat for Q2 2026, which provides strong fundamental backing for a long position despite broader macroeconomic concerns regarding rising interest rates and operational costs in the REIT sector.", "ai_risk_flags": ["interest_rate_sensitivity", "rising_costs", "market_volatility"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a70ff739aa7c66920f51f3d", "ticker": "SBAC", "direction": "LONG", "entry_price": 179.5399932861328, "share_count": 84, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99594.07199027321, "initial_stop": 161.87954157049006, "current_stop": 169.17658441716975, "take_profit": 214.8608967174183, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-03T20:52:03.885000", "exit_price": 182.09500122070312, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 214.62066650390625, "highest_high_since_entry": 187.92999267578125, "lowest_low_since_entry": 173.8800048828125, "reasoning_chain": {"candidate_id": "6a70ff5b12482316f1c75e45", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 5.886817238547585, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 84, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.014230856801350089, "equity_pct": 0.002154954227846684, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "SBA Communications delivered a significant EPS beat for Q2 2026, which provides strong fundamental backing for a long position despite broader macroeconomic concerns regarding rising interest rates and operational costs in the REIT sector.", "ai_risk_flags": ["interest_rate_sensitivity", "rising_costs", "market_volatility"]})'>
             <td><strong>SBAC</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-03 20:52</td>
             <td>OPEN</td>
             <td>$179.54</td>
-            <td>$181.05 (live)</td>
+            <td>$182.10 (live)</td>
             <td>84</td>
-            <td class="val-green"><strong>+0.84%</strong></td>
+            <td class="val-green"><strong>+1.42%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6cc73a9fcd955ffb3f053f", "ticker": "AMCX", "direction": "SHORT", "entry_price": 11.25, "share_count": 738, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99387.01209571144, "initial_stop": 12.931363625959916, "current_stop": 12.653131354938854, "take_profit": 7.887272748080167, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-31T16:03:06.443000", "exit_price": 11.850000381469727, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -442.8002815246582, "highest_high_since_entry": 12.380000114440918, "lowest_low_since_entry": 10.899999618530273, "reasoning_chain": {"candidate_id": "6a6cc54b12482316f1c4bfcb", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 0.5604545419866388, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 738, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.05333336724175347, "equity_pct": -0.004455313347162844, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The company reported a significant earnings miss with an EPS of -$0.28 against consensus, which supports the short thesis. However, the short thesis faces a notable risk factor from the raised fiscal year 2026 sales guidance and the positive impact of a $500 million Netflix licensing deal.", "ai_risk_flags": ["EARNINGS_MISS", "VOLATILITY_RISK", "GUIDANCE_UPGRADE"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6cc73a9fcd955ffb3f053f", "ticker": "AMCX", "direction": "SHORT", "entry_price": 11.25, "share_count": 738, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99387.01209571144, "initial_stop": 12.931363625959916, "current_stop": 12.653131354938854, "take_profit": 7.887272748080167, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-31T16:03:06.443000", "exit_price": 11.8100004196167, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -413.280309677124, "highest_high_since_entry": 12.380000114440918, "lowest_low_since_entry": 10.899999618530273, "reasoning_chain": {"candidate_id": "6a6cc54b12482316f1c4bfcb", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 0.5604545419866388, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 738, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.04977781507703993, "equity_pct": -0.004158292929453677, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The company reported a significant earnings miss with an EPS of -$0.28 against consensus, which supports the short thesis. However, the short thesis faces a notable risk factor from the raised fiscal year 2026 sales guidance and the positive impact of a $500 million Netflix licensing deal.", "ai_risk_flags": ["EARNINGS_MISS", "VOLATILITY_RISK", "GUIDANCE_UPGRADE"]})'>
             <td><strong>AMCX</strong></td>
             <td class="val-rose">SHORT</td>
             <td>2026-07-31 16:03</td>
             <td>OPEN</td>
             <td>$11.25</td>
-            <td>$11.85 (live)</td>
+            <td>$11.81 (live)</td>
             <td>738</td>
-            <td class="val-rose"><strong>-5.33%</strong></td>
+            <td class="val-rose"><strong>-4.98%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6cc7339fcd955ffb3f051a", "ticker": "ALNY", "direction": "SHORT", "entry_price": 203.35000610351562, "share_count": 28, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99387.01209571144, "initial_stop": 256.44864030317825, "current_stop": 247.1200970736417, "take_profit": 97.15273770419034, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-31T16:02:59.737000", "exit_price": 216.97999572753906, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -381.63970947265625, "highest_high_since_entry": 228.77000427246094, "lowest_low_since_entry": 201.125, "reasoning_chain": {"candidate_id": "6a6cc54712482316f1c4bfc9", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 17.69954473322088, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 28, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.06702723980782706, "equity_pct": -0.0038399354344723683, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "ALNY experienced a significant negative market reaction following its Q2 2026 earnings report, characterized by a substantial stock price decline and a reduction in full-year guidance due to concerns over second-line demand normalization in their core ATTR-CM business.", "ai_risk_flags": ["REVENUE_GUIDANCE_REDUCTION", "MARKET_VOLATILITY", "NEGATIVE_INVESTOR_SENTIMENT", "DEMAND_NORMALIZATION"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6cc7339fcd955ffb3f051a", "ticker": "ALNY", "direction": "SHORT", "entry_price": 203.35000610351562, "share_count": 28, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99387.01209571144, "initial_stop": 256.44864030317825, "current_stop": 244.4449990012429, "take_profit": 97.15273770419034, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-31T16:02:59.737000", "exit_price": 218.36000061035156, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -420.27984619140625, "highest_high_since_entry": 228.77000427246094, "lowest_low_since_entry": 201.125, "reasoning_chain": {"candidate_id": "6a6cc54712482316f1c4bfc9", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 17.69954473322088, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 28, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.0738135926054267, "equity_pct": -0.00422872000404509, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "ALNY experienced a significant negative market reaction following its Q2 2026 earnings report, characterized by a substantial stock price decline and a reduction in full-year guidance due to concerns over second-line demand normalization in their core ATTR-CM business.", "ai_risk_flags": ["REVENUE_GUIDANCE_REDUCTION", "MARKET_VOLATILITY", "NEGATIVE_INVESTOR_SENTIMENT", "DEMAND_NORMALIZATION"]})'>
             <td><strong>ALNY</strong></td>
             <td class="val-rose">SHORT</td>
             <td>2026-07-31 16:02</td>
             <td>OPEN</td>
             <td>$203.35</td>
-            <td>$216.98 (live)</td>
+            <td>$218.36 (live)</td>
             <td>28</td>
-            <td class="val-rose"><strong>-6.70%</strong></td>
+            <td class="val-rose"><strong>-7.38%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -462,27 +474,27 @@
             <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6b73c4999cf41537cfe030", "ticker": "BOOT", "direction": "LONG", "entry_price": 151.75, "share_count": 62, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99300.8567497947, "initial_stop": 131.82591524991122, "current_stop": 149.85750718550247, "take_profit": 191.59816950017756, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-30T15:54:44.677000", "exit_price": 168.58999633789062, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1044.0797729492188, "highest_high_since_entry": 171.4499969482422, "lowest_low_since_entry": 148.99000549316406, "reasoning_chain": {"candidate_id": "6a6b724912482316f1c3b681", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 6.641361583362926, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 62, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.11097196927769769, "equity_pct": 0.010514307802801283, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Boot Barn delivered a significant earnings beat for Q1 2026 and raised its full-year EPS and sales guidance, signaling underlying business strength. While concerns regarding softer July sales and cautious Q2 guidance have caused some market volatility, the company's financial position was further bolstered by an expanded credit facility, supporting a long-term bullish outlook.", "ai_risk_flags": ["Soft July sales trends", "Q2 guidance missed consensus", "Operational execution risks", "Dependency on store expansion"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6b73c4999cf41537cfe030", "ticker": "BOOT", "direction": "LONG", "entry_price": 151.75, "share_count": 62, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99300.8567497947, "initial_stop": 131.82591524991122, "current_stop": 149.85750718550247, "take_profit": 191.59816950017756, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-30T15:54:44.677000", "exit_price": 169.1999969482422, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1081.8998107910156, "highest_high_since_entry": 171.4499969482422, "lowest_low_since_entry": 148.99000549316406, "reasoning_chain": {"candidate_id": "6a6b724912482316f1c3b681", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 6.641361583362926, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 62, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.11499174265727966, "equity_pct": 0.010895170960277263, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Boot Barn delivered a significant earnings beat for Q1 2026 and raised its full-year EPS and sales guidance, signaling underlying business strength. While concerns regarding softer July sales and cautious Q2 guidance have caused some market volatility, the company's financial position was further bolstered by an expanded credit facility, supporting a long-term bullish outlook.", "ai_risk_flags": ["Soft July sales trends", "Q2 guidance missed consensus", "Operational execution risks", "Dependency on store expansion"]})'>
             <td><strong>BOOT</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-30 15:54</td>
             <td>OPEN</td>
             <td>$151.75</td>
-            <td>$168.59 (live)</td>
+            <td>$169.20 (live)</td>
             <td>62</td>
-            <td class="val-green"><strong>+11.10%</strong></td>
+            <td class="val-green"><strong>+11.50%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6a59714f281ae13088a251", "ticker": "TR", "direction": "SHORT", "entry_price": 39.48500061035156, "share_count": 336, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99273.93622901222, "initial_stop": 43.167485670609906, "current_stop": 42.00295448303223, "take_profit": 32.120030489834875, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-29T19:50:09.396000", "exit_price": 39.54999923706055, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -21.83953857421875, "highest_high_since_entry": 40.04999923706055, "lowest_low_since_entry": 38.75, "reasoning_chain": {"candidate_id": "6a6a59505fae0a7bfd4b5371", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.227495020086115, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 336, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.001646159951988048, "equity_pct": -0.0002199926728384955, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Recent financial reporting indicates a year-over-year decline in both earnings per share and total sales, specifically citing higher cocoa costs as a headwind. This performance, combined with analyst commentary suggesting current pricing may be overvalued, provides moderate qualitative support for the short strategy.", "ai_risk_flags": ["EARNINGS_DECLINE", "REVENUE_CONTRACTION", "INPUT_COST_PRESSURE"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6a59714f281ae13088a251", "ticker": "TR", "direction": "SHORT", "entry_price": 39.48500061035156, "share_count": 336, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99273.93622901222, "initial_stop": 43.167485670609906, "current_stop": 41.93458279696378, "take_profit": 32.120030489834875, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-29T19:50:09.396000", "exit_price": 39.564998626708984, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -26.87933349609375, "highest_high_since_entry": 40.04999923706055, "lowest_low_since_entry": 38.75, "reasoning_chain": {"candidate_id": "6a6a59505fae0a7bfd4b5371", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.227495020086115, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 336, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.0020260355861929313, "equity_pct": -0.0002707592195607776, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Recent financial reporting indicates a year-over-year decline in both earnings per share and total sales, specifically citing higher cocoa costs as a headwind. This performance, combined with analyst commentary suggesting current pricing may be overvalued, provides moderate qualitative support for the short strategy.", "ai_risk_flags": ["EARNINGS_DECLINE", "REVENUE_CONTRACTION", "INPUT_COST_PRESSURE"]})'>
             <td><strong>TR</strong></td>
             <td class="val-rose">SHORT</td>
             <td>2026-07-29 19:50</td>
             <td>OPEN</td>
             <td>$39.49</td>
-            <td>$39.55 (live)</td>
+            <td>$39.56 (live)</td>
             <td>336</td>
-            <td class="val-rose"><strong>-0.16%</strong></td>
+            <td class="val-rose"><strong>-0.20%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -498,75 +510,75 @@
             <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a68d3275738824dd16c5f74", "ticker": "NOV", "direction": "SHORT", "entry_price": 20.1200008392334, "share_count": 898, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99980.16328135403, "initial_stop": 21.788409753279254, "current_stop": 20.956135923212226, "take_profit": 16.78318301114169, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-28T16:04:55.079000", "exit_price": 20.700000762939453, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -520.8399314880371, "highest_high_since_entry": 20.80500030517578, "lowest_low_since_entry": 19.059999465942383, "reasoning_chain": {"candidate_id": "6a68d1f15fae0a7bfd4901b3", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 0.5561363046819513, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 898, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.02882703277899831, "equity_pct": -0.005209432695387206, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings miss for the period ended March 31, 2026, with an actual EPS of 0.05 against a consensus of 0.1567. This performance, coupled with reported headwinds in logistics and drilling, as well as operational issues involving delayed shipments, provides strong qualitative support for the short strategy.", "ai_risk_flags": ["EARNINGS_MISS", "LOGISTICS_HEADWINDS", "DRILLING_HEADWINDS", "DELAYED_SHIPMENTS"]})'>
+        <tr data-close-date="2026-08-11" data-status="CLOSED" onclick='showTradeDetail({"_id": "6a68d3275738824dd16c5f74", "ticker": "NOV", "direction": "SHORT", "entry_price": 20.1200008392334, "share_count": 898, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99980.16328135403, "initial_stop": 21.788409753279254, "current_stop": 20.956135923212226, "take_profit": 16.78318301114169, "confidence_tier": "STRONG", "status": "CLOSED", "entry_timestamp": "2026-07-28T16:04:55.079000", "exit_price": 20.956135923212226, "exit_timestamp": "2026-08-11T14:41:00.049000", "exit_reason": "STOP", "realized_pnl": -750.8493054129875, "highest_high_since_entry": 20.80500030517578, "lowest_low_since_entry": 19.059999465942383, "reasoning_chain": {"candidate_id": "6a68d1f15fae0a7bfd4901b3", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 0.5561363046819513, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 898, "regime_state_at_decision": "RISK_OFF"}, "equity_pct": -0.007509982788285948, "trade_return_pct": -0.04155740800708067, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings miss for the period ended March 31, 2026, with an actual EPS of 0.05 against a consensus of 0.1567. This performance, coupled with reported headwinds in logistics and drilling, as well as operational issues involving delayed shipments, provides strong qualitative support for the short strategy.", "ai_risk_flags": ["EARNINGS_MISS", "LOGISTICS_HEADWINDS", "DRILLING_HEADWINDS", "DELAYED_SHIPMENTS"]})'>
             <td><strong>NOV</strong></td>
             <td class="val-rose">SHORT</td>
             <td>2026-07-28 16:04</td>
-            <td>OPEN</td>
+            <td>2026-08-11 14:41</td>
             <td>$20.12</td>
-            <td>$20.70 (live)</td>
+            <td>$20.96</td>
             <td>898</td>
-            <td class="val-rose"><strong>-2.88%</strong></td>
-            <td><span class="badge badge-open">Open</span></td>
+            <td class="val-rose"><strong>-4.16%</strong></td>
+            <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a638360872773f472bb4490", "ticker": "SXT", "direction": "LONG", "entry_price": 119.79000091552734, "share_count": 127, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99310.81332102689, "initial_stop": 108.07022927024147, "current_stop": 118.34607657323795, "take_profit": 143.2295442060991, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-24T15:23:12.970000", "exit_price": 129.36000061035156, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1215.3899612426758, "highest_high_since_entry": 131.0050048828125, "lowest_low_since_entry": 119.79000091552734, "reasoning_chain": {"candidate_id": "6a638275079a05e8aa1893ac", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 3.906590548428622, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 127, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.0798898040043653, "equity_pct": 0.012238243959536113, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Sensient Technologies reported a positive earnings surprise for Q2 2026 with EPS of $1.20 against consensus estimates, coupled with an upward revision of full-year guidance. The market's reaction, characterized by a 3.4% share price increase, aligns with the long strategy.", "ai_risk_flags": []})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a638360872773f472bb4490", "ticker": "SXT", "direction": "LONG", "entry_price": 119.79000091552734, "share_count": 127, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99310.81332102689, "initial_stop": 108.07022927024147, "current_stop": 118.71194194470415, "take_profit": 143.2295442060991, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-24T15:23:12.970000", "exit_price": 129.78500366210938, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1269.365348815918, "highest_high_since_entry": 131.0050048828125, "lowest_low_since_entry": 119.79000091552734, "reasoning_chain": {"candidate_id": "6a638275079a05e8aa1893ac", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 3.906590548428622, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 127, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.08343770490184933, "equity_pct": 0.012781743562129882, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Sensient Technologies reported a positive earnings surprise for Q2 2026 with EPS of $1.20 against consensus estimates, coupled with an upward revision of full-year guidance. The market's reaction, characterized by a 3.4% share price increase, aligns with the long strategy.", "ai_risk_flags": []})'>
             <td><strong>SXT</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-24 15:23</td>
             <td>OPEN</td>
             <td>$119.79</td>
-            <td>$129.36 (live)</td>
+            <td>$129.79 (live)</td>
             <td>127</td>
-            <td class="val-green"><strong>+7.99%</strong></td>
+            <td class="val-green"><strong>+8.34%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a60e2425df0ac93a6ace5a7", "ticker": "TDY", "direction": "LONG", "entry_price": 657.7150268554688, "share_count": 19, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 100053.30517664822, "initial_stop": 595.1377424760299, "current_stop": 638.0650745738636, "take_profit": 782.8695956143466, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-22T15:31:14.679000", "exit_price": 690.25, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 618.1644897460938, "highest_high_since_entry": 695.5, "lowest_low_since_entry": 629.1950073242188, "reasoning_chain": {"candidate_id": "6a60e1af079a05e8aa168528", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 20.85909479314631, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 19, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.049466671455084044, "equity_pct": 0.0061783515162712405, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Teledyne reported a strong second-quarter earnings beat with record orders and revenue, which prompted the company to raise its full-year guidance. The positive performance and outlook provided in the news evidence strongly align with the long target direction, despite some analysts noting potential valuation concerns.", "ai_risk_flags": ["valuation_concerns", "market_expectation_volatility"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a60e2425df0ac93a6ace5a7", "ticker": "TDY", "direction": "LONG", "entry_price": 657.7150268554688, "share_count": 19, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 100053.30517664822, "initial_stop": 595.1377424760299, "current_stop": 638.0650745738636, "take_profit": 782.8695956143466, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-22T15:31:14.679000", "exit_price": 681.8544921875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 458.64984130859375, "highest_high_since_entry": 695.5, "lowest_low_since_entry": 629.1950073242188, "reasoning_chain": {"candidate_id": "6a60e1af079a05e8aa168528", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 20.85909479314631, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 19, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.036702012796395844, "equity_pct": 0.004584054874537414, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Teledyne reported a strong second-quarter earnings beat with record orders and revenue, which prompted the company to raise its full-year guidance. The positive performance and outlook provided in the news evidence strongly align with the long target direction, despite some analysts noting potential valuation concerns.", "ai_risk_flags": ["valuation_concerns", "market_expectation_volatility"]})'>
             <td><strong>TDY</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-22 15:31</td>
             <td>OPEN</td>
             <td>$657.72</td>
-            <td>$690.25 (live)</td>
+            <td>$681.85 (live)</td>
             <td>19</td>
-            <td class="val-green"><strong>+4.95%</strong></td>
+            <td class="val-green"><strong>+3.67%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a5f909206b3b8ce3c83f609", "ticker": "VICR", "direction": "LONG", "entry_price": 217.8000030517578, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99196.54514780911, "initial_stop": 126.31227944113992, "current_stop": 165.86170335249466, "take_profit": 400.77545027299357, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-21T15:30:26.259000", "exit_price": 208.80999755859375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -143.840087890625, "highest_high_since_entry": 231.3800048828125, "lowest_low_since_entry": 180.7949981689453, "reasoning_chain": {"candidate_id": "6a5f902a079a05e8aa12b05e", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 30.495907870205965, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.04127642501009371, "equity_pct": -0.001450051387135451, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Vicor reported a significant EPS beat and sequential revenue growth driven by strong AI-related demand and new licensing agreements. While concerns regarding insider selling and high valuations exist, the fundamental performance and the company's strategic positioning within the AI power infrastructure market provide strong support for a long thesis.", "ai_risk_flags": ["INSIDER_SELLING", "VALUATION_CONCERNS", "VOLATILITY", "CAPACITY_CONSTRAINTS"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a5f909206b3b8ce3c83f609", "ticker": "VICR", "direction": "LONG", "entry_price": 217.8000030517578, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99196.54514780911, "initial_stop": 126.31227944113992, "current_stop": 165.86170335249466, "take_profit": 400.77545027299357, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-21T15:30:26.259000", "exit_price": 212.47999572753906, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -85.1201171875, "highest_high_since_entry": 231.3800048828125, "lowest_low_since_entry": 180.7949981689453, "reasoning_chain": {"candidate_id": "6a5f902a079a05e8aa12b05e", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 30.495907870205965, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.02442611225746635, "equity_pct": -0.0008580955824687811, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Vicor reported a significant EPS beat and sequential revenue growth driven by strong AI-related demand and new licensing agreements. While concerns regarding insider selling and high valuations exist, the fundamental performance and the company's strategic positioning within the AI power infrastructure market provide strong support for a long thesis.", "ai_risk_flags": ["INSIDER_SELLING", "VALUATION_CONCERNS", "VOLATILITY", "CAPACITY_CONSTRAINTS"]})'>
             <td><strong>VICR</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-21 15:30</td>
             <td>OPEN</td>
             <td>$217.80</td>
-            <td>$208.81 (live)</td>
+            <td>$212.48 (live)</td>
             <td>16</td>
-            <td class="val-rose"><strong>-4.13%</strong></td>
+            <td class="val-rose"><strong>-2.44%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a5f908d06b3b8ce3c83f5f4", "ticker": "MMM", "direction": "LONG", "entry_price": 173.75999450683594, "share_count": 92, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99196.54514780911, "initial_stop": 160.3545913696289, "current_stop": 170.70112679221413, "take_profit": 200.57080078125, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-21T15:30:21.278000", "exit_price": 182.0399932861328, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 761.7598876953125, "highest_high_since_entry": 184.63999938964844, "lowest_low_since_entry": 168.3300018310547, "reasoning_chain": {"candidate_id": "6a5f9000079a05e8aa12b038", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 4.468467712402344, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 92, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.047651928182877154, "equity_pct": 0.007679298573959831, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "3M reported a positive earnings surprise for Q2 2026, exceeding analyst expectations and raising its full-year guidance. Media reports confirm strong market sentiment driven by these results and the company's successful turnaround initiatives, including asset divestitures and the integration of AI.", "ai_risk_flags": ["RELIANCE_ON_TURNAROUND_STRATEGY", "ASSET_DIVESTITURE_RISKS", "MARKET_VOLATILITY"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a5f908d06b3b8ce3c83f5f4", "ticker": "MMM", "direction": "LONG", "entry_price": 173.75999450683594, "share_count": 92, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99196.54514780911, "initial_stop": 160.3545913696289, "current_stop": 170.70112679221413, "take_profit": 200.57080078125, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-21T15:30:21.278000", "exit_price": 183.50999450683594, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 897.0, "highest_high_since_entry": 184.63999938964844, "lowest_low_since_entry": 168.3300018310547, "reasoning_chain": {"candidate_id": "6a5f9000079a05e8aa12b038", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 4.468467712402344, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 92, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.056111880226932344, "equity_pct": 0.00904265363943284, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "3M reported a positive earnings surprise for Q2 2026, exceeding analyst expectations and raising its full-year guidance. Media reports confirm strong market sentiment driven by these results and the company's successful turnaround initiatives, including asset divestitures and the integration of AI.", "ai_risk_flags": ["RELIANCE_ON_TURNAROUND_STRATEGY", "ASSET_DIVESTITURE_RISKS", "MARKET_VOLATILITY"]})'>
             <td><strong>MMM</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-21 15:30</td>
             <td>OPEN</td>
             <td>$173.76</td>
-            <td>$182.04 (live)</td>
+            <td>$183.51 (live)</td>
             <td>92</td>
-            <td class="val-green"><strong>+4.77%</strong></td>
+            <td class="val-green"><strong>+5.61%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a58f78443c195ca81678f4e", "ticker": "UNH", "direction": "LONG", "entry_price": 437.2200012207031, "share_count": 36, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 101630.81196975708, "initial_stop": 402.2468192360618, "current_stop": 402.2468192360618, "take_profit": 507.1663651899858, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-16T15:23:48.762000", "exit_price": 408.739990234375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -1025.2803955078125, "highest_high_since_entry": 437.2200012207031, "lowest_low_since_entry": 403.9700012207031, "reasoning_chain": {"candidate_id": "6a58f7431d65989b8d4c9d05", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.65772732821378, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 36, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.06513885665526033, "equity_pct": -0.0100882830279159, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "UnitedHealth delivered a significant earnings beat and raised its full-year guidance, providing fundamental support for a bullish outlook. However, the qualitative assessment notes that this performance reflects a defensive strategy of prioritizing margins over core membership growth, which introduces potential long-term risks.", "ai_risk_flags": ["REGULATORY_HEADWINDS", "MEMBERSHIP_CONTRACTION", "MARGIN_DEFENSE_VERSUS_GROWTH"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a58f78443c195ca81678f4e", "ticker": "UNH", "direction": "LONG", "entry_price": 437.2200012207031, "share_count": 36, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 101630.81196975708, "initial_stop": 402.2468192360618, "current_stop": 402.2468192360618, "take_profit": 507.1663651899858, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-16T15:23:48.762000", "exit_price": 403.2349853515625, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -1223.4605712890625, "highest_high_since_entry": 437.2200012207031, "lowest_low_since_entry": 403.9700012207031, "reasoning_chain": {"candidate_id": "6a58f7431d65989b8d4c9d05", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.65772732821378, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 36, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.0777297831166361, "equity_pct": -0.01203828393748478, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "UnitedHealth delivered a significant earnings beat and raised its full-year guidance, providing fundamental support for a bullish outlook. However, the qualitative assessment notes that this performance reflects a defensive strategy of prioritizing margins over core membership growth, which introduces potential long-term risks.", "ai_risk_flags": ["REGULATORY_HEADWINDS", "MEMBERSHIP_CONTRACTION", "MARGIN_DEFENSE_VERSUS_GROWTH"]})'>
             <td><strong>UNH</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-16 15:23</td>
             <td>OPEN</td>
             <td>$437.22</td>
-            <td>$408.74 (live)</td>
+            <td>$403.23 (live)</td>
             <td>36</td>
-            <td class="val-rose"><strong>-6.51%</strong></td>
+            <td class="val-rose"><strong>-7.77%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -630,27 +642,27 @@
             <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 25.584418643604625, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 29.209999084472656, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 803.6598472595215, "highest_high_since_entry": 29.8700008392334, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.10643937524794629, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 25.62819125435569, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 29.399999618530273, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 858.0, "highest_high_since_entry": 29.8700008392334, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.11363636527836489, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
             <td><strong>HELE</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-08 15:54</td>
             <td>OPEN</td>
             <td>$26.40</td>
-            <td>$29.21 (live)</td>
+            <td>$29.40 (live)</td>
             <td>286</td>
-            <td class="val-green"><strong>+10.64%</strong></td>
+            <td class="val-green"><strong>+11.36%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 141.01426766135475, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 152.25, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 454.6799011230469, "highest_high_since_entry": 154.32000732421875, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.05854132004277935, "equity_pct": null, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 142.21318955854937, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 154.55999755859375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 579.4197692871094, "highest_high_since_entry": 155.375, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.07460192999331745, "equity_pct": null, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
             <td><strong>AZZ</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-08 15:54</td>
             <td>OPEN</td>
             <td>$143.83</td>
-            <td>$152.25 (live)</td>
+            <td>$154.56 (live)</td>
             <td>54</td>
-            <td class="val-green"><strong>+5.85%</strong></td>
+            <td class="val-green"><strong>+7.46%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -659,16 +671,29 @@
             </div>
             <div class="ledger-cards" id="ledger-cards-container">
                 
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a79e61084556e32ab437827", "ticker": "UAA", "direction": "LONG", "entry_price": 5.664999961853027, "share_count": 678, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 98076.21162891388, "initial_stop": 4.580227114937522, "current_stop": 4.775681560689753, "take_profit": 7.834545655684037, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-10T14:54:08.222000", "exit_price": 5.869999885559082, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 138.98994827270508, "highest_high_since_entry": 5.869999885559082, "lowest_low_since_entry": 5.619999885559082, "reasoning_chain": {"candidate_id": "6a79e5e32f716ed92a01d935", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 0.361590948971835, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 678, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.03618710063309497, "equity_pct": 0.0014171626938303294, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "Although UAA exceeded EPS expectations for the quarter, the positive surprise is significantly undermined by a revenue miss, a lowered sales outlook, and poor forward-looking guidance. The market's negative reaction to these fundamental weaknesses suggests that the EPS beat is insufficient to support a long position.", "ai_risk_flags": ["REVENUE_MISS", "LOWERED_SALES_OUTLOOK", "WEAK_FUTURE_GUIDANCE", "SOFT_DEMAND"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7b39893a6d45cd951fb83c", "ticker": "LINC", "direction": "LONG", "entry_price": 30.604999542236328, "share_count": 77, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 97972.9719168056, "initial_stop": 21.069773413918234, "current_stop": 21.069773413918234, "take_profit": 49.675451798872515, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-11T15:02:33.288000", "exit_price": 30.649999618530273, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 3.465005874633789, "highest_high_since_entry": 30.604999542236328, "lowest_low_since_entry": 30.604999542236328, "reasoning_chain": {"candidate_id": "6a7b3878fa2662d8ba98cade", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 3.1784087094393643, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 77, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.0014703504972069386, "equity_pct": 3.5366956894766054e-05, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "While LINC reported an earnings beat, the market reaction has been negative due to concerns regarding slower student starts, which is weighing on the stock in the near term.", "ai_risk_flags": ["slower student starts", "market reaction volatility", "potential short-term headwinds"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">LINC <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $30.60</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $30.65 (live)</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 77</div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+0.15%</strong></div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a79e61084556e32ab437827", "ticker": "UAA", "direction": "LONG", "entry_price": 5.664999961853027, "share_count": 678, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 98076.21162891388, "initial_stop": 4.580227114937522, "current_stop": 4.775681560689753, "take_profit": 7.834545655684037, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-10T14:54:08.222000", "exit_price": 5.394999980926514, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -183.05998706817627, "highest_high_since_entry": 5.869999885559082, "lowest_low_since_entry": 5.425000190734863, "reasoning_chain": {"candidate_id": "6a79e5e32f716ed92a01d935", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 0.361590948971835, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 678, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.04766107374133086, "equity_pct": -0.001866507525400872, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "Although UAA exceeded EPS expectations for the quarter, the positive surprise is significantly undermined by a revenue miss, a lowered sales outlook, and poor forward-looking guidance. The market's negative reaction to these fundamental weaknesses suggests that the EPS beat is insufficient to support a long position.", "ai_risk_flags": ["REVENUE_MISS", "LOWERED_SALES_OUTLOOK", "WEAK_FUTURE_GUIDANCE", "SOFT_DEMAND"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">UAA <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $5.66</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $5.87 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $5.39 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 678</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+3.62%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-4.77%</strong></div>
             </div>
         </div>
         
@@ -685,68 +710,68 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a752a2f8a6b27722b052dc2", "ticker": "MRVI", "direction": "LONG", "entry_price": 6.25, "share_count": 718, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 97881.73390960693, "initial_stop": 5.227818012237549, "current_stop": 5.227818012237549, "take_profit": 8.294363975524902, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-07T00:43:27.630000", "exit_price": 6.070000171661377, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -129.23987674713135, "highest_high_since_entry": 6.25, "lowest_low_since_entry": 5.909999847412109, "reasoning_chain": {"candidate_id": "6a7527fa2f716ed92afe84f7", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 0.3407273292541504, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 718, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.028799972534179687, "equity_pct": -0.0013203676680521763, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "While the company reported a positive earnings surprise for Q2, the market reaction was negative due to management providing full-year revenue guidance that fell below consensus expectations. This suggests that despite the immediate beat, investor sentiment is weighed down by concerns regarding future growth, contradicting the thesis for a long position.", "ai_risk_flags": ["GUIDANCE_MISS", "NEGATIVE_MARKET_REACTION", "REVENUE_OUTLOOK_CONCERNS"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a752a2f8a6b27722b052dc2", "ticker": "MRVI", "direction": "LONG", "entry_price": 6.25, "share_count": 718, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 97881.73390960693, "initial_stop": 5.227818012237549, "current_stop": 5.227818012237549, "take_profit": 8.294363975524902, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-07T00:43:27.630000", "exit_price": 6.054999828338623, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -140.01012325286865, "highest_high_since_entry": 6.25, "lowest_low_since_entry": 5.909999847412109, "reasoning_chain": {"candidate_id": "6a7527fa2f716ed92afe84f7", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 0.3407273292541504, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 718, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.03120002746582031, "equity_pct": -0.0014304009303938872, "ai_conviction": "MODERATE_CONTRADICTION", "ai_rationale": "While the company reported a positive earnings surprise for Q2, the market reaction was negative due to management providing full-year revenue guidance that fell below consensus expectations. This suggests that despite the immediate beat, investor sentiment is weighed down by concerns regarding future growth, contradicting the thesis for a long position.", "ai_risk_flags": ["GUIDANCE_MISS", "NEGATIVE_MARKET_REACTION", "REVENUE_OUTLOOK_CONCERNS"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">MRVI <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $6.25</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $6.07 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $6.05 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 718</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-2.88%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-3.12%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7211d66d9c764847a3541c", "ticker": "CTRI", "direction": "LONG", "entry_price": 23.0, "share_count": 367, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99764.54603767395, "initial_stop": 18.925044493241742, "current_stop": 19.699838985096324, "take_profit": 31.149911013516515, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-04T16:22:46.356000", "exit_price": 23.760000228881836, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 278.9200839996338, "highest_high_since_entry": 24.059999465942383, "lowest_low_since_entry": 21.389999389648438, "reasoning_chain": {"candidate_id": "6a720ec412482316f1c80b8b", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.3583185022527522, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 367, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.03304348821225374, "equity_pct": 0.002795783623315497, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Centuri Holdings reported a Q2 earnings beat and raised its full-year guidance, which provides strong fundamental support for the long thesis despite minor premarket share price fluctuations.", "ai_risk_flags": ["PREMARKET_VOLATILITY", "FORWARD_LOOKING_STATEMENT_DISCLAIMER"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7211d66d9c764847a3541c", "ticker": "CTRI", "direction": "LONG", "entry_price": 23.0, "share_count": 367, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99764.54603767395, "initial_stop": 18.925044493241742, "current_stop": 20.226272149519488, "take_profit": 31.149911013516515, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-04T16:22:46.356000", "exit_price": 24.450000762939453, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 532.1502799987793, "highest_high_since_entry": 24.600000381469727, "lowest_low_since_entry": 21.389999389648438, "reasoning_chain": {"candidate_id": "6a720ec412482316f1c80b8b", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.3583185022527522, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 367, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06304351143215013, "equity_pct": 0.005334062060462081, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Centuri Holdings reported a Q2 earnings beat and raised its full-year guidance, which provides strong fundamental support for the long thesis despite minor premarket share price fluctuations.", "ai_risk_flags": ["PREMARKET_VOLATILITY", "FORWARD_LOOKING_STATEMENT_DISCLAIMER"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">CTRI <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $23.00</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $23.76 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $24.45 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 367</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+3.30%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+6.30%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a70ff739aa7c66920f51f3d", "ticker": "SBAC", "direction": "LONG", "entry_price": 179.5399932861328, "share_count": 84, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99594.07199027321, "initial_stop": 161.87954157049006, "current_stop": 169.17658441716975, "take_profit": 214.8608967174183, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-03T20:52:03.885000", "exit_price": 181.0500030517578, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 126.8408203125, "highest_high_since_entry": 187.92999267578125, "lowest_low_since_entry": 173.8800048828125, "reasoning_chain": {"candidate_id": "6a70ff5b12482316f1c75e45", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 5.886817238547585, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 84, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.008410436794539131, "equity_pct": 0.0012735780130055112, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "SBA Communications delivered a significant EPS beat for Q2 2026, which provides strong fundamental backing for a long position despite broader macroeconomic concerns regarding rising interest rates and operational costs in the REIT sector.", "ai_risk_flags": ["interest_rate_sensitivity", "rising_costs", "market_volatility"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a70ff739aa7c66920f51f3d", "ticker": "SBAC", "direction": "LONG", "entry_price": 179.5399932861328, "share_count": 84, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99594.07199027321, "initial_stop": 161.87954157049006, "current_stop": 169.17658441716975, "take_profit": 214.8608967174183, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-03T20:52:03.885000", "exit_price": 182.09500122070312, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 214.62066650390625, "highest_high_since_entry": 187.92999267578125, "lowest_low_since_entry": 173.8800048828125, "reasoning_chain": {"candidate_id": "6a70ff5b12482316f1c75e45", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 5.886817238547585, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 84, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.014230856801350089, "equity_pct": 0.002154954227846684, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "SBA Communications delivered a significant EPS beat for Q2 2026, which provides strong fundamental backing for a long position despite broader macroeconomic concerns regarding rising interest rates and operational costs in the REIT sector.", "ai_risk_flags": ["interest_rate_sensitivity", "rising_costs", "market_volatility"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">SBAC <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $179.54</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $181.05 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $182.10 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 84</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+0.84%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+1.42%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6cc73a9fcd955ffb3f053f", "ticker": "AMCX", "direction": "SHORT", "entry_price": 11.25, "share_count": 738, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99387.01209571144, "initial_stop": 12.931363625959916, "current_stop": 12.653131354938854, "take_profit": 7.887272748080167, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-31T16:03:06.443000", "exit_price": 11.850000381469727, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -442.8002815246582, "highest_high_since_entry": 12.380000114440918, "lowest_low_since_entry": 10.899999618530273, "reasoning_chain": {"candidate_id": "6a6cc54b12482316f1c4bfcb", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 0.5604545419866388, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 738, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.05333336724175347, "equity_pct": -0.004455313347162844, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The company reported a significant earnings miss with an EPS of -$0.28 against consensus, which supports the short thesis. However, the short thesis faces a notable risk factor from the raised fiscal year 2026 sales guidance and the positive impact of a $500 million Netflix licensing deal.", "ai_risk_flags": ["EARNINGS_MISS", "VOLATILITY_RISK", "GUIDANCE_UPGRADE"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6cc73a9fcd955ffb3f053f", "ticker": "AMCX", "direction": "SHORT", "entry_price": 11.25, "share_count": 738, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99387.01209571144, "initial_stop": 12.931363625959916, "current_stop": 12.653131354938854, "take_profit": 7.887272748080167, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-31T16:03:06.443000", "exit_price": 11.8100004196167, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -413.280309677124, "highest_high_since_entry": 12.380000114440918, "lowest_low_since_entry": 10.899999618530273, "reasoning_chain": {"candidate_id": "6a6cc54b12482316f1c4bfcb", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 0.5604545419866388, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 738, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.04977781507703993, "equity_pct": -0.004158292929453677, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The company reported a significant earnings miss with an EPS of -$0.28 against consensus, which supports the short thesis. However, the short thesis faces a notable risk factor from the raised fiscal year 2026 sales guidance and the positive impact of a $500 million Netflix licensing deal.", "ai_risk_flags": ["EARNINGS_MISS", "VOLATILITY_RISK", "GUIDANCE_UPGRADE"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">AMCX <span class="val-rose">SHORT</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $11.25</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $11.85 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $11.81 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 738</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-5.33%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-4.98%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6cc7339fcd955ffb3f051a", "ticker": "ALNY", "direction": "SHORT", "entry_price": 203.35000610351562, "share_count": 28, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99387.01209571144, "initial_stop": 256.44864030317825, "current_stop": 247.1200970736417, "take_profit": 97.15273770419034, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-31T16:02:59.737000", "exit_price": 216.97999572753906, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -381.63970947265625, "highest_high_since_entry": 228.77000427246094, "lowest_low_since_entry": 201.125, "reasoning_chain": {"candidate_id": "6a6cc54712482316f1c4bfc9", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 17.69954473322088, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 28, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.06702723980782706, "equity_pct": -0.0038399354344723683, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "ALNY experienced a significant negative market reaction following its Q2 2026 earnings report, characterized by a substantial stock price decline and a reduction in full-year guidance due to concerns over second-line demand normalization in their core ATTR-CM business.", "ai_risk_flags": ["REVENUE_GUIDANCE_REDUCTION", "MARKET_VOLATILITY", "NEGATIVE_INVESTOR_SENTIMENT", "DEMAND_NORMALIZATION"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6cc7339fcd955ffb3f051a", "ticker": "ALNY", "direction": "SHORT", "entry_price": 203.35000610351562, "share_count": 28, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99387.01209571144, "initial_stop": 256.44864030317825, "current_stop": 244.4449990012429, "take_profit": 97.15273770419034, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-31T16:02:59.737000", "exit_price": 218.36000061035156, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -420.27984619140625, "highest_high_since_entry": 228.77000427246094, "lowest_low_since_entry": 201.125, "reasoning_chain": {"candidate_id": "6a6cc54712482316f1c4bfc9", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 17.69954473322088, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 28, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.0738135926054267, "equity_pct": -0.00422872000404509, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "ALNY experienced a significant negative market reaction following its Q2 2026 earnings report, characterized by a substantial stock price decline and a reduction in full-year guidance due to concerns over second-line demand normalization in their core ATTR-CM business.", "ai_risk_flags": ["REVENUE_GUIDANCE_REDUCTION", "MARKET_VOLATILITY", "NEGATIVE_INVESTOR_SENTIMENT", "DEMAND_NORMALIZATION"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">ALNY <span class="val-rose">SHORT</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $203.35</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $216.98 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $218.36 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 28</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-6.70%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-7.38%</strong></div>
             </div>
         </div>
         
@@ -763,29 +788,29 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6b73c4999cf41537cfe030", "ticker": "BOOT", "direction": "LONG", "entry_price": 151.75, "share_count": 62, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99300.8567497947, "initial_stop": 131.82591524991122, "current_stop": 149.85750718550247, "take_profit": 191.59816950017756, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-30T15:54:44.677000", "exit_price": 168.58999633789062, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1044.0797729492188, "highest_high_since_entry": 171.4499969482422, "lowest_low_since_entry": 148.99000549316406, "reasoning_chain": {"candidate_id": "6a6b724912482316f1c3b681", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 6.641361583362926, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 62, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.11097196927769769, "equity_pct": 0.010514307802801283, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Boot Barn delivered a significant earnings beat for Q1 2026 and raised its full-year EPS and sales guidance, signaling underlying business strength. While concerns regarding softer July sales and cautious Q2 guidance have caused some market volatility, the company's financial position was further bolstered by an expanded credit facility, supporting a long-term bullish outlook.", "ai_risk_flags": ["Soft July sales trends", "Q2 guidance missed consensus", "Operational execution risks", "Dependency on store expansion"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6b73c4999cf41537cfe030", "ticker": "BOOT", "direction": "LONG", "entry_price": 151.75, "share_count": 62, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99300.8567497947, "initial_stop": 131.82591524991122, "current_stop": 149.85750718550247, "take_profit": 191.59816950017756, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-30T15:54:44.677000", "exit_price": 169.1999969482422, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1081.8998107910156, "highest_high_since_entry": 171.4499969482422, "lowest_low_since_entry": 148.99000549316406, "reasoning_chain": {"candidate_id": "6a6b724912482316f1c3b681", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 6.641361583362926, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 62, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.11499174265727966, "equity_pct": 0.010895170960277263, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Boot Barn delivered a significant earnings beat for Q1 2026 and raised its full-year EPS and sales guidance, signaling underlying business strength. While concerns regarding softer July sales and cautious Q2 guidance have caused some market volatility, the company's financial position was further bolstered by an expanded credit facility, supporting a long-term bullish outlook.", "ai_risk_flags": ["Soft July sales trends", "Q2 guidance missed consensus", "Operational execution risks", "Dependency on store expansion"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">BOOT <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $151.75</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $168.59 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $169.20 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 62</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+11.10%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+11.50%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6a59714f281ae13088a251", "ticker": "TR", "direction": "SHORT", "entry_price": 39.48500061035156, "share_count": 336, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99273.93622901222, "initial_stop": 43.167485670609906, "current_stop": 42.00295448303223, "take_profit": 32.120030489834875, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-29T19:50:09.396000", "exit_price": 39.54999923706055, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -21.83953857421875, "highest_high_since_entry": 40.04999923706055, "lowest_low_since_entry": 38.75, "reasoning_chain": {"candidate_id": "6a6a59505fae0a7bfd4b5371", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.227495020086115, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 336, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.001646159951988048, "equity_pct": -0.0002199926728384955, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Recent financial reporting indicates a year-over-year decline in both earnings per share and total sales, specifically citing higher cocoa costs as a headwind. This performance, combined with analyst commentary suggesting current pricing may be overvalued, provides moderate qualitative support for the short strategy.", "ai_risk_flags": ["EARNINGS_DECLINE", "REVENUE_CONTRACTION", "INPUT_COST_PRESSURE"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a6a59714f281ae13088a251", "ticker": "TR", "direction": "SHORT", "entry_price": 39.48500061035156, "share_count": 336, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99273.93622901222, "initial_stop": 43.167485670609906, "current_stop": 41.93458279696378, "take_profit": 32.120030489834875, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-29T19:50:09.396000", "exit_price": 39.564998626708984, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -26.87933349609375, "highest_high_since_entry": 40.04999923706055, "lowest_low_since_entry": 38.75, "reasoning_chain": {"candidate_id": "6a6a59505fae0a7bfd4b5371", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.227495020086115, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 336, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.0020260355861929313, "equity_pct": -0.0002707592195607776, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Recent financial reporting indicates a year-over-year decline in both earnings per share and total sales, specifically citing higher cocoa costs as a headwind. This performance, combined with analyst commentary suggesting current pricing may be overvalued, provides moderate qualitative support for the short strategy.", "ai_risk_flags": ["EARNINGS_DECLINE", "REVENUE_CONTRACTION", "INPUT_COST_PRESSURE"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">TR <span class="val-rose">SHORT</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $39.49</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $39.55 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $39.56 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 336</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-0.16%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-0.20%</strong></div>
             </div>
         </div>
         
@@ -802,81 +827,81 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a68d3275738824dd16c5f74", "ticker": "NOV", "direction": "SHORT", "entry_price": 20.1200008392334, "share_count": 898, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99980.16328135403, "initial_stop": 21.788409753279254, "current_stop": 20.956135923212226, "take_profit": 16.78318301114169, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-28T16:04:55.079000", "exit_price": 20.700000762939453, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -520.8399314880371, "highest_high_since_entry": 20.80500030517578, "lowest_low_since_entry": 19.059999465942383, "reasoning_chain": {"candidate_id": "6a68d1f15fae0a7bfd4901b3", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 0.5561363046819513, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 898, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": -0.02882703277899831, "equity_pct": -0.005209432695387206, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings miss for the period ended March 31, 2026, with an actual EPS of 0.05 against a consensus of 0.1567. This performance, coupled with reported headwinds in logistics and drilling, as well as operational issues involving delayed shipments, provides strong qualitative support for the short strategy.", "ai_risk_flags": ["EARNINGS_MISS", "LOGISTICS_HEADWINDS", "DRILLING_HEADWINDS", "DELAYED_SHIPMENTS"]})'>
+        <div class="ledger-card" data-close-date="2026-08-11" data-status="CLOSED" onclick='showTradeDetail({"_id": "6a68d3275738824dd16c5f74", "ticker": "NOV", "direction": "SHORT", "entry_price": 20.1200008392334, "share_count": 898, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99980.16328135403, "initial_stop": 21.788409753279254, "current_stop": 20.956135923212226, "take_profit": 16.78318301114169, "confidence_tier": "STRONG", "status": "CLOSED", "entry_timestamp": "2026-07-28T16:04:55.079000", "exit_price": 20.956135923212226, "exit_timestamp": "2026-08-11T14:41:00.049000", "exit_reason": "STOP", "realized_pnl": -750.8493054129875, "highest_high_since_entry": 20.80500030517578, "lowest_low_since_entry": 19.059999465942383, "reasoning_chain": {"candidate_id": "6a68d1f15fae0a7bfd4901b3", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 0.5561363046819513, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 898, "regime_state_at_decision": "RISK_OFF"}, "equity_pct": -0.007509982788285948, "trade_return_pct": -0.04155740800708067, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings miss for the period ended March 31, 2026, with an actual EPS of 0.05 against a consensus of 0.1567. This performance, coupled with reported headwinds in logistics and drilling, as well as operational issues involving delayed shipments, provides strong qualitative support for the short strategy.", "ai_risk_flags": ["EARNINGS_MISS", "LOGISTICS_HEADWINDS", "DRILLING_HEADWINDS", "DELAYED_SHIPMENTS"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">NOV <span class="val-rose">SHORT</span></span>
-                <span class="badge badge-open">Open</span>
+                <span class="badge badge-closed">Closed</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $20.12</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $20.70 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $20.96</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 898</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-2.88%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-4.16%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a638360872773f472bb4490", "ticker": "SXT", "direction": "LONG", "entry_price": 119.79000091552734, "share_count": 127, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99310.81332102689, "initial_stop": 108.07022927024147, "current_stop": 118.34607657323795, "take_profit": 143.2295442060991, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-24T15:23:12.970000", "exit_price": 129.36000061035156, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1215.3899612426758, "highest_high_since_entry": 131.0050048828125, "lowest_low_since_entry": 119.79000091552734, "reasoning_chain": {"candidate_id": "6a638275079a05e8aa1893ac", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 3.906590548428622, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 127, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.0798898040043653, "equity_pct": 0.012238243959536113, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Sensient Technologies reported a positive earnings surprise for Q2 2026 with EPS of $1.20 against consensus estimates, coupled with an upward revision of full-year guidance. The market's reaction, characterized by a 3.4% share price increase, aligns with the long strategy.", "ai_risk_flags": []})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a638360872773f472bb4490", "ticker": "SXT", "direction": "LONG", "entry_price": 119.79000091552734, "share_count": 127, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99310.81332102689, "initial_stop": 108.07022927024147, "current_stop": 118.71194194470415, "take_profit": 143.2295442060991, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-24T15:23:12.970000", "exit_price": 129.78500366210938, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1269.365348815918, "highest_high_since_entry": 131.0050048828125, "lowest_low_since_entry": 119.79000091552734, "reasoning_chain": {"candidate_id": "6a638275079a05e8aa1893ac", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 3.906590548428622, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 127, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.08343770490184933, "equity_pct": 0.012781743562129882, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Sensient Technologies reported a positive earnings surprise for Q2 2026 with EPS of $1.20 against consensus estimates, coupled with an upward revision of full-year guidance. The market's reaction, characterized by a 3.4% share price increase, aligns with the long strategy.", "ai_risk_flags": []})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">SXT <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $119.79</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $129.36 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $129.79 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 127</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+7.99%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+8.34%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a60e2425df0ac93a6ace5a7", "ticker": "TDY", "direction": "LONG", "entry_price": 657.7150268554688, "share_count": 19, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 100053.30517664822, "initial_stop": 595.1377424760299, "current_stop": 638.0650745738636, "take_profit": 782.8695956143466, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-22T15:31:14.679000", "exit_price": 690.25, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 618.1644897460938, "highest_high_since_entry": 695.5, "lowest_low_since_entry": 629.1950073242188, "reasoning_chain": {"candidate_id": "6a60e1af079a05e8aa168528", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 20.85909479314631, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 19, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.049466671455084044, "equity_pct": 0.0061783515162712405, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Teledyne reported a strong second-quarter earnings beat with record orders and revenue, which prompted the company to raise its full-year guidance. The positive performance and outlook provided in the news evidence strongly align with the long target direction, despite some analysts noting potential valuation concerns.", "ai_risk_flags": ["valuation_concerns", "market_expectation_volatility"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a60e2425df0ac93a6ace5a7", "ticker": "TDY", "direction": "LONG", "entry_price": 657.7150268554688, "share_count": 19, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 100053.30517664822, "initial_stop": 595.1377424760299, "current_stop": 638.0650745738636, "take_profit": 782.8695956143466, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-22T15:31:14.679000", "exit_price": 681.8544921875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 458.64984130859375, "highest_high_since_entry": 695.5, "lowest_low_since_entry": 629.1950073242188, "reasoning_chain": {"candidate_id": "6a60e1af079a05e8aa168528", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 20.85909479314631, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 19, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.036702012796395844, "equity_pct": 0.004584054874537414, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Teledyne reported a strong second-quarter earnings beat with record orders and revenue, which prompted the company to raise its full-year guidance. The positive performance and outlook provided in the news evidence strongly align with the long target direction, despite some analysts noting potential valuation concerns.", "ai_risk_flags": ["valuation_concerns", "market_expectation_volatility"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">TDY <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $657.72</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $690.25 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $681.85 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 19</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+4.95%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+3.67%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a5f909206b3b8ce3c83f609", "ticker": "VICR", "direction": "LONG", "entry_price": 217.8000030517578, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99196.54514780911, "initial_stop": 126.31227944113992, "current_stop": 165.86170335249466, "take_profit": 400.77545027299357, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-21T15:30:26.259000", "exit_price": 208.80999755859375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -143.840087890625, "highest_high_since_entry": 231.3800048828125, "lowest_low_since_entry": 180.7949981689453, "reasoning_chain": {"candidate_id": "6a5f902a079a05e8aa12b05e", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 30.495907870205965, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.04127642501009371, "equity_pct": -0.001450051387135451, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Vicor reported a significant EPS beat and sequential revenue growth driven by strong AI-related demand and new licensing agreements. While concerns regarding insider selling and high valuations exist, the fundamental performance and the company's strategic positioning within the AI power infrastructure market provide strong support for a long thesis.", "ai_risk_flags": ["INSIDER_SELLING", "VALUATION_CONCERNS", "VOLATILITY", "CAPACITY_CONSTRAINTS"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a5f909206b3b8ce3c83f609", "ticker": "VICR", "direction": "LONG", "entry_price": 217.8000030517578, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99196.54514780911, "initial_stop": 126.31227944113992, "current_stop": 165.86170335249466, "take_profit": 400.77545027299357, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-21T15:30:26.259000", "exit_price": 212.47999572753906, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -85.1201171875, "highest_high_since_entry": 231.3800048828125, "lowest_low_since_entry": 180.7949981689453, "reasoning_chain": {"candidate_id": "6a5f902a079a05e8aa12b05e", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 30.495907870205965, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.02442611225746635, "equity_pct": -0.0008580955824687811, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Vicor reported a significant EPS beat and sequential revenue growth driven by strong AI-related demand and new licensing agreements. While concerns regarding insider selling and high valuations exist, the fundamental performance and the company's strategic positioning within the AI power infrastructure market provide strong support for a long thesis.", "ai_risk_flags": ["INSIDER_SELLING", "VALUATION_CONCERNS", "VOLATILITY", "CAPACITY_CONSTRAINTS"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">VICR <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $217.80</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $208.81 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $212.48 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 16</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-4.13%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-2.44%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a5f908d06b3b8ce3c83f5f4", "ticker": "MMM", "direction": "LONG", "entry_price": 173.75999450683594, "share_count": 92, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99196.54514780911, "initial_stop": 160.3545913696289, "current_stop": 170.70112679221413, "take_profit": 200.57080078125, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-21T15:30:21.278000", "exit_price": 182.0399932861328, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 761.7598876953125, "highest_high_since_entry": 184.63999938964844, "lowest_low_since_entry": 168.3300018310547, "reasoning_chain": {"candidate_id": "6a5f9000079a05e8aa12b038", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 4.468467712402344, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 92, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.047651928182877154, "equity_pct": 0.007679298573959831, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "3M reported a positive earnings surprise for Q2 2026, exceeding analyst expectations and raising its full-year guidance. Media reports confirm strong market sentiment driven by these results and the company's successful turnaround initiatives, including asset divestitures and the integration of AI.", "ai_risk_flags": ["RELIANCE_ON_TURNAROUND_STRATEGY", "ASSET_DIVESTITURE_RISKS", "MARKET_VOLATILITY"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a5f908d06b3b8ce3c83f5f4", "ticker": "MMM", "direction": "LONG", "entry_price": 173.75999450683594, "share_count": 92, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 99196.54514780911, "initial_stop": 160.3545913696289, "current_stop": 170.70112679221413, "take_profit": 200.57080078125, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-21T15:30:21.278000", "exit_price": 183.50999450683594, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 897.0, "highest_high_since_entry": 184.63999938964844, "lowest_low_since_entry": 168.3300018310547, "reasoning_chain": {"candidate_id": "6a5f9000079a05e8aa12b038", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 4.468467712402344, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 92, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.056111880226932344, "equity_pct": 0.00904265363943284, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "3M reported a positive earnings surprise for Q2 2026, exceeding analyst expectations and raising its full-year guidance. Media reports confirm strong market sentiment driven by these results and the company's successful turnaround initiatives, including asset divestitures and the integration of AI.", "ai_risk_flags": ["RELIANCE_ON_TURNAROUND_STRATEGY", "ASSET_DIVESTITURE_RISKS", "MARKET_VOLATILITY"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">MMM <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $173.76</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $182.04 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $183.51 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 92</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+4.77%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+5.61%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a58f78443c195ca81678f4e", "ticker": "UNH", "direction": "LONG", "entry_price": 437.2200012207031, "share_count": 36, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 101630.81196975708, "initial_stop": 402.2468192360618, "current_stop": 402.2468192360618, "take_profit": 507.1663651899858, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-16T15:23:48.762000", "exit_price": 408.739990234375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -1025.2803955078125, "highest_high_since_entry": 437.2200012207031, "lowest_low_since_entry": 403.9700012207031, "reasoning_chain": {"candidate_id": "6a58f7431d65989b8d4c9d05", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.65772732821378, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 36, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.06513885665526033, "equity_pct": -0.0100882830279159, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "UnitedHealth delivered a significant earnings beat and raised its full-year guidance, providing fundamental support for a bullish outlook. However, the qualitative assessment notes that this performance reflects a defensive strategy of prioritizing margins over core membership growth, which introduces potential long-term risks.", "ai_risk_flags": ["REGULATORY_HEADWINDS", "MEMBERSHIP_CONTRACTION", "MARGIN_DEFENSE_VERSUS_GROWTH"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a58f78443c195ca81678f4e", "ticker": "UNH", "direction": "LONG", "entry_price": 437.2200012207031, "share_count": 36, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 101630.81196975708, "initial_stop": 402.2468192360618, "current_stop": 402.2468192360618, "take_profit": 507.1663651899858, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-16T15:23:48.762000", "exit_price": 403.2349853515625, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -1223.4605712890625, "highest_high_since_entry": 437.2200012207031, "lowest_low_since_entry": 403.9700012207031, "reasoning_chain": {"candidate_id": "6a58f7431d65989b8d4c9d05", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.65772732821378, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 36, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.0777297831166361, "equity_pct": -0.01203828393748478, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "UnitedHealth delivered a significant earnings beat and raised its full-year guidance, providing fundamental support for a bullish outlook. However, the qualitative assessment notes that this performance reflects a defensive strategy of prioritizing margins over core membership growth, which introduces potential long-term risks.", "ai_risk_flags": ["REGULATORY_HEADWINDS", "MEMBERSHIP_CONTRACTION", "MARGIN_DEFENSE_VERSUS_GROWTH"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">UNH <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $437.22</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $408.74 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $403.23 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 36</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-6.51%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-7.77%</strong></div>
             </div>
         </div>
         
@@ -945,29 +970,29 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 25.584418643604625, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 29.209999084472656, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 803.6598472595215, "highest_high_since_entry": 29.8700008392334, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.10643937524794629, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bfd8c6329d87cb44f8", "ticker": "HELE", "direction": "LONG", "entry_price": 26.399999618530273, "share_count": 286, "combined_score": 2.0, "risk_pct_used": 1.5, "initial_stop": 21.17236345464533, "current_stop": 25.62819125435569, "take_profit": 36.855271946300164, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:39.444000", "exit_price": 29.399999618530273, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 858.0, "highest_high_since_entry": 29.8700008392334, "lowest_low_since_entry": 25.174999237060547, "reasoning_chain": {"candidate_id": "6a4e72ad0105d061e8bdf24a", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.7425453879616477, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 286, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.11363636527836489, "equity_pct": null, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Helen of Troy reported a significant earnings beat for Q1 fiscal 2027, with actual EPS of $0.17 against a consensus loss, driving positive market sentiment. Furthermore, the company is successfully executing strategic initiatives, including tariff mitigation and debt reduction, which support a favorable long-term outlook.", "ai_risk_flags": ["CYBERSECURITY_THREATS", "SUPPLY_CHAIN_DEPENDENCE", "TARIFF_IMPACT", "CONSUMER_DEMAND_FLUCTUATIONS", "FOREIGN_EXCHANGE_VOLATILITY", "REGULATORY_COMPLIANCE_BURDEN"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">HELE <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $26.40</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $29.21 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $29.40 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 286</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+10.64%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+11.36%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 141.01426766135475, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 152.25, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 454.6799011230469, "highest_high_since_entry": 154.32000732421875, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.05854132004277935, "equity_pct": null, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a4e72bdd8c6329d87cb44ed", "ticker": "AZZ", "direction": "LONG", "entry_price": 143.8300018310547, "share_count": 54, "combined_score": 1.0, "risk_pct_used": 1.0, "initial_stop": 125.35681568492542, "current_stop": 142.21318955854937, "take_profit": 180.77637412331322, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-07-08T15:54:37.395000", "exit_price": 154.55999755859375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 579.4197692871094, "highest_high_since_entry": 155.375, "lowest_low_since_entry": 137.05999755859375, "reasoning_chain": {"candidate_id": "6a4e729d0105d061e8bdf238", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "MODERATE", "combined_score": 1.0, "atr_22": 6.157728715376421, "risk_pct_allocated": 1.0, "is_sized_down": false, "original_shares": 54, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.07460192999331745, "equity_pct": null, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The reported earnings surprise of approximately 8.86% demonstrates positive operational performance. While the provided 8-K document notes these results are not filed for liability purposes, the quantitative beat aligns with the long thesis.", "ai_risk_flags": ["REGULATORY_FILING_DISCLAIMER", "FORWARD_LOOKING_UNCERTAINTY"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">AZZ <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $143.83</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $152.25 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $154.56 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 54</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+5.85%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+7.46%</strong></div>
             </div>
         </div>
         
@@ -1060,10 +1085,10 @@
     </div>
 
     <script>
-        const openPnlSum = 0.011614361290030002;
-        const closedPnlSum = -0.035703005826625604;
+        const openPnlSum = 0.016077957493047704;
+        const closedPnlSum = -0.04321298861491155;
         const openPnlCount = 15;
-        const closedPnlCount = 4;
+        const closedPnlCount = 5;
         let ledgerStatusFilter = 'OPEN';
         let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
 
