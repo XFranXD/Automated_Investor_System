@@ -187,42 +187,32 @@
                     
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Consumer Defensive</span>
-            <span style="font-weight:600;">11.1%</span>
-        </div>
-        
-        <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
-            <span>Industrials</span>
-            <span style="font-weight:600;">17.8%</span>
+            <span style="font-weight:600;">10.9%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Basic Materials</span>
-            <span style="font-weight:600;">18.3%</span>
+            <span style="font-weight:600;">18.5%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Consumer Cyclical</span>
-            <span style="font-weight:600;">23.3%</span>
+            <span style="font-weight:600;">23.4%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Real Estate</span>
-            <span style="font-weight:600;">17.0%</span>
-        </div>
-        
-        <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
-            <span>Utilities</span>
-            <span style="font-weight:600;">8.4%</span>
+            <span style="font-weight:600;">17.3%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Technology</span>
-            <span style="font-weight:600;">12.9%</span>
+            <span style="font-weight:600;">12.5%</span>
         </div>
         
         <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border-color);">
             <span>Healthcare</span>
-            <span style="font-weight:600;">23.9%</span>
+            <span style="font-weight:600;">24.4%</span>
         </div>
         
                 </div>
@@ -274,11 +264,11 @@
         // Setup Chart.js Equity Curve
         const ctx = document.getElementById('equityChart').getContext('2d');
         const chartData = {
-            labels: ["Initial", "2026-07-17 16:34", "2026-07-20 16:43", "2026-07-21 15:24", "2026-07-29 15:33", "2026-08-04 15:59", "2026-08-07 00:17", "2026-08-10 20:21", "2026-08-11 14:41", "2026-08-11 20:22", "2026-08-19 18:55", "2026-08-20 14:18", "2026-08-20 15:47", "2026-08-20 15:47", "2026-08-21 14:16", "2026-08-24 14:23", "2026-08-24 17:17", "2026-08-27 23:03"],
+            labels: ["Initial", "2026-07-17 16:34", "2026-07-20 16:43", "2026-07-21 15:24", "2026-07-29 15:33", "2026-08-04 15:59", "2026-08-07 00:17", "2026-08-10 20:21", "2026-08-11 14:41", "2026-08-11 20:22", "2026-08-19 18:55", "2026-08-20 14:18", "2026-08-20 15:47", "2026-08-20 15:47", "2026-08-21 14:16", "2026-08-24 14:23", "2026-08-24 17:17", "2026-08-27 23:03", "2026-08-28 23:11", "2026-08-28 23:11"],
             datasets: [
                 {
                     label: 'Cumulative Return (%)',
-                    data: [0.0, 0.0, 0.0, 0.0, -1.0421566272276381, -2.204118791574208, -3.5957093839464367, -3.57030058266256, -4.3212988614911545, -5.560130399924347, -6.582273987784772, -6.582273987784772, -6.843816653747392, -7.639499290292305, -6.13988002958077, -6.432859475435663, -7.474757121928605, -8.442368742834327],
+                    data: [0.0, 0.0, 0.0, 0.0, -1.0421566272276381, -2.204118791574208, -3.5957093839464367, -3.57030058266256, -4.3212988614911545, -5.560130399924347, -6.582273987784772, -6.582273987784772, -6.843816653747392, -7.639499290292305, -6.13988002958077, -6.432859475435663, -7.474757121928605, -8.442368742834327, -8.344226457096685, -9.151625739900028],
                     borderColor: '#10b981',
                     backgroundColor: 'rgba(16, 185, 129, 0.05)',
                     fill: true,
@@ -286,7 +276,7 @@
                 },
                 {
                     label: 'High-Water Mark (%)',
-                    data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
                     borderColor: '#6366f1',
                     borderDash: [5, 5],
                     fill: false,
