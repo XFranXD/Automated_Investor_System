@@ -22,19 +22,19 @@
         <div class="summary-grid">
             <div class="card">
                 <div class="card-title">Total Realized P&amp;L <span style="font-size:11px; color:var(--text-secondary); font-weight:400;">(Equity Impact)</span></div>
-                <div class="card-val val-rose">-10.59%</div>
+                <div class="card-val val-rose">-10.63%</div>
             </div>
             <div class="card">
                 <div class="card-title">Overall Win Rate</div>
-                <div class="card-val val-indigo">23.1%</div>
+                <div class="card-val val-indigo">22.2%</div>
             </div>
             <div class="card">
                 <div class="card-title">Closed Positions</div>
-                <div class="card-val">26</div>
+                <div class="card-val">27</div>
             </div>
             <div class="card">
                 <div class="card-title">Open Positions</div>
-                <div class="card-val val-green">9</div>
+                <div class="card-val val-green">8</div>
             </div>
         </div>
 
@@ -99,12 +99,12 @@
             
             <div class="calendar-day" onclick="filterDate('2026-09-11')">
                 <div class="calendar-day-num">11</div>
-                <div class="calendar-day-pnl "></div>
+                <div class="calendar-day-pnl val-rose">-0.04%</div>
             </div>
             
         <div class="calendar-week-total" onclick='filterWeek(["2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11"])'>
             <div class="calendar-week-total-label">Week</div>
-            <div class="calendar-week-total-val val-rose">-0.60%</div>
+            <div class="calendar-week-total-val val-rose">-0.64%</div>
         </div>
         
             <div class="calendar-day" onclick="filterDate('2026-09-14')">
@@ -237,12 +237,12 @@
             
             <div class="calendar-mobile-row" onclick="filterDate('2026-09-11')">
                 <div class="calendar-mobile-row-date">Fri 11</div>
-                <div class="calendar-mobile-row-pnl ">—</div>
+                <div class="calendar-mobile-row-pnl val-rose">-0.04%</div>
             </div>
             
         <div class="calendar-mobile-week-total" onclick='filterWeek(["2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11"])'>
             <span>Week Total</span>
-            <span class="val-rose">-0.60%</span>
+            <span class="val-rose">-0.64%</span>
         </div>
         
             <div class="calendar-mobile-row" onclick="filterDate('2026-09-14')">
@@ -333,13 +333,13 @@
                 <div class="market-context-row">
                     <div class="market-chip">
                         <div class="market-chip-label">VIX</div>
-                        <div class="market-chip-val val-green">17.8</div>
+                        <div class="market-chip-val val-green">15.8</div>
                         <div class="market-chip-sub">Normal range</div>
                     </div>
                     <div class="market-chip">
                         <div class="market-chip-label">SPY vs 50-SMA</div>
-                        <div class="market-chip-val val-rose">-0.1%</div>
-                        <div class="market-chip-sub">Below SMA</div>
+                        <div class="market-chip-val val-green">+0.9%</div>
+                        <div class="market-chip-sub">Above SMA</div>
                     </div>
                 </div>
             </div>
@@ -351,7 +351,7 @@
                 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
                     <div class="ledger-sum">
                         <span id="ledger-sum-label">Open Unrealized P&amp;L (Equity Impact):</span>
-                        <span id="ledger-sum-val" class="ledger-sum-val val-green">+2.57%</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val val-green">+4.30%</span>
                     </div>
                     <div class="ledger-toggle">
                         <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
@@ -376,27 +376,27 @@
                     </thead>
                     <tbody id="trades-table-body">
                         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a99ab53e90d8c9ef8acecd0", "ticker": "VSXY", "direction": "LONG", "entry_price": 73.15499877929688, "share_count": 103, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93538.56161605073, "initial_stop": 59.610547846013844, "current_stop": 65.25541270862927, "take_profit": 100.24390064586294, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-03T17:16:03.555000", "exit_price": 73.38999938964844, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 24.205062866210938, "highest_high_since_entry": 78.47000122070312, "lowest_low_since_entry": 72.01000213623047, "reasoning_chain": {"candidate_id": "6a99aae4d0b87cc4de44aadd", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 4.514816977761009, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 103, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.0032123657203596114, "equity_pct": 0.000258770954438725, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise for Q2 2026, with an actual EPS of $0.60 against a consensus of $0.305. The filing confirms the release of updated full-year guidance, which, combined with the strong earnings beat, supports a positive outlook for the company's operational momentum.", "ai_risk_flags": ["RELIANCE_ON_HISTORICAL_PERFORMANCE", "MARKET_VOLATILITY", "OPERATIONAL_GUIDANCE_DEPENDENCY"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a99ab53e90d8c9ef8acecd0", "ticker": "VSXY", "direction": "LONG", "entry_price": 73.15499877929688, "share_count": 103, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93538.56161605073, "initial_stop": 59.610547846013844, "current_stop": 65.63450449163264, "take_profit": 100.24390064586294, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-03T17:16:03.555000", "exit_price": 75.36499786376953, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 227.6299057006836, "highest_high_since_entry": 78.47000122070312, "lowest_low_since_entry": 72.01000213623047, "reasoning_chain": {"candidate_id": "6a99aae4d0b87cc4de44aadd", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 4.514816977761009, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 103, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.030209816435648604, "equity_pct": 0.002433540796094768, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise for Q2 2026, with an actual EPS of $0.60 against a consensus of $0.305. The filing confirms the release of updated full-year guidance, which, combined with the strong earnings beat, supports a positive outlook for the company's operational momentum.", "ai_risk_flags": ["RELIANCE_ON_HISTORICAL_PERFORMANCE", "MARKET_VOLATILITY", "OPERATIONAL_GUIDANCE_DEPENDENCY"]})'>
             <td><strong>VSXY</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-09-03 17:16</td>
             <td>OPEN</td>
             <td>$73.15</td>
-            <td>$73.39 (live)</td>
+            <td>$75.36 (live)</td>
             <td>103</td>
-            <td class="val-green"><strong>+0.32%</strong></td>
+            <td class="val-green"><strong>+3.02%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a985b9275b730b573890b45", "ticker": "OLLI", "direction": "LONG", "entry_price": 75.1449966430664, "share_count": 121, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93536.96600394441, "initial_stop": 65.53681390935725, "current_stop": 67.4338607788086, "take_profit": 94.36136211048473, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-02T17:23:30.893000", "exit_price": 71.91999816894531, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -390.22481536865234, "highest_high_since_entry": 77.26499938964844, "lowest_low_since_entry": 71.87000274658203, "reasoning_chain": {"candidate_id": "6a985b42d0b87cc4de43b819", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 3.202727577903054, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 121, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.042917008692403245, "equity_pct": -0.0041718780503549446, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "OLLI delivered a significant EPS beat, which supports the long thesis; however, the revenue miss, slightly underwhelming forward guidance, and broader macroeconomic concerns regarding inflation and rising oil prices suggest a cautious outlook despite the earnings performance.", "ai_risk_flags": ["REVENUE_MISS", "SAME_STORE_SALES_PRESSURE", "REVENUE_GUIDANCE_MISS", "INFLATION_CONCERNS", "MACROECONOMIC_VOLATILITY"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a985b9275b730b573890b45", "ticker": "OLLI", "direction": "LONG", "entry_price": 75.1449966430664, "share_count": 121, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93536.96600394441, "initial_stop": 65.53681390935725, "current_stop": 67.4338607788086, "take_profit": 94.36136211048473, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-02T17:23:30.893000", "exit_price": 73.5199966430664, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -196.625, "highest_high_since_entry": 77.26499938964844, "lowest_low_since_entry": 71.87000274658203, "reasoning_chain": {"candidate_id": "6a985b42d0b87cc4de43b819", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 3.202727577903054, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 121, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.021624859572735612, "equity_pct": -0.002102110089734025, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "OLLI delivered a significant EPS beat, which supports the long thesis; however, the revenue miss, slightly underwhelming forward guidance, and broader macroeconomic concerns regarding inflation and rising oil prices suggest a cautious outlook despite the earnings performance.", "ai_risk_flags": ["REVENUE_MISS", "SAME_STORE_SALES_PRESSURE", "REVENUE_GUIDANCE_MISS", "INFLATION_CONCERNS", "MACROECONOMIC_VOLATILITY"]})'>
             <td><strong>OLLI</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-09-02 17:23</td>
             <td>OPEN</td>
             <td>$75.14</td>
-            <td>$71.92 (live)</td>
+            <td>$73.52 (live)</td>
             <td>121</td>
-            <td class="val-rose"><strong>-4.29%</strong></td>
+            <td class="val-rose"><strong>-2.16%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -412,75 +412,75 @@
             <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a970ba61811f35529efaab3", "ticker": "DELL", "direction": "LONG", "entry_price": 431.3550109863281, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92094.37040953829, "initial_stop": 347.18316650390625, "current_stop": 456.2686753706499, "take_profit": 599.6986999511719, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-01T17:30:14.258000", "exit_price": 506.6199951171875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1204.23974609375, "highest_high_since_entry": 542.89501953125, "lowest_low_since_entry": 425.0, "reasoning_chain": {"candidate_id": "6a970b63d0b87cc4de42efe0", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 28.057281494140625, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.17448501168158428, "equity_pct": 0.013076149396956255, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise, with an EPS of $4.86 against a consensus of $2.99, confirming strong operational performance. While broader market risks such as rising bond yields and geopolitical tensions exist, the specific evidence regarding Dell's AI-driven demand and financial results supports a bullish outlook.", "ai_risk_flags": ["geopolitical_instability", "market_volatility", "rising_bond_yields", "valuation_concerns"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a970ba61811f35529efaab3", "ticker": "DELL", "direction": "LONG", "entry_price": 431.3550109863281, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92094.37040953829, "initial_stop": 347.18316650390625, "current_stop": 466.00729231400925, "take_profit": 599.6986999511719, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-01T17:30:14.258000", "exit_price": 559.0576171875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 2043.24169921875, "highest_high_since_entry": 558.260009765625, "lowest_low_since_entry": 425.0, "reasoning_chain": {"candidate_id": "6a970b63d0b87cc4de42efe0", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 28.057281494140625, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.2960498961381474, "equity_pct": 0.022186390874193218, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise, with an EPS of $4.86 against a consensus of $2.99, confirming strong operational performance. While broader market risks such as rising bond yields and geopolitical tensions exist, the specific evidence regarding Dell's AI-driven demand and financial results supports a bullish outlook.", "ai_risk_flags": ["geopolitical_instability", "market_volatility", "rising_bond_yields", "valuation_concerns"]})'>
             <td><strong>DELL</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-09-01 17:30</td>
             <td>OPEN</td>
             <td>$431.36</td>
-            <td>$506.62 (live)</td>
+            <td>$559.06 (live)</td>
             <td>16</td>
-            <td class="val-green"><strong>+17.45%</strong></td>
+            <td class="val-green"><strong>+29.60%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a95e9798ad0274ac31cc8c7", "ticker": "MYE", "direction": "SHORT", "entry_price": 32.09000015258789, "share_count": 167, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92648.95215277864, "initial_stop": 36.22863630814986, "current_stop": 33.28204475749623, "take_profit": 23.812727841463953, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-31T20:52:09.336000", "exit_price": 30.190000534057617, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 317.29993629455566, "highest_high_since_entry": 32.13999938964844, "lowest_low_since_entry": 30.084999084472656, "reasoning_chain": {"candidate_id": "6a95e925d0b87cc4de41fd12", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 1.3795453851873225, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 167, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.05920846399176625, "equity_pct": 0.0034247547211470487, "ai_conviction": "NEUTRAL", "ai_rationale": "The divestiture of the Myers Tire Supply business aligns with a strategic pivot toward engineered plastics, which is viewed by some market analysts as a transformation effort rather than an immediate negative catalyst. As the sale is a planned strategic realignment, the impact on future financial performance is speculative and does not inherently justify a short position based solely on this filing.", "ai_risk_flags": ["divestiture_execution_risk", "market_segment_transition_uncertainty", "non-compete_restrictions", "forward_looking_statement_limitations"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a95e9798ad0274ac31cc8c7", "ticker": "MYE", "direction": "SHORT", "entry_price": 32.09000015258789, "share_count": 167, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92648.95215277864, "initial_stop": 36.22863630814986, "current_stop": 33.24454480951483, "take_profit": 23.812727841463953, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-31T20:52:09.336000", "exit_price": 30.110000610351562, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 330.6599235534668, "highest_high_since_entry": 32.13999938964844, "lowest_low_since_entry": 30.084999084472656, "reasoning_chain": {"candidate_id": "6a95e925d0b87cc4de41fd12", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 1.3795453851873225, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 167, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06170145007234135, "equity_pct": 0.003568954811363724, "ai_conviction": "NEUTRAL", "ai_rationale": "The divestiture of the Myers Tire Supply business aligns with a strategic pivot toward engineered plastics, which is viewed by some market analysts as a transformation effort rather than an immediate negative catalyst. As the sale is a planned strategic realignment, the impact on future financial performance is speculative and does not inherently justify a short position based solely on this filing.", "ai_risk_flags": ["divestiture_execution_risk", "market_segment_transition_uncertainty", "non-compete_restrictions", "forward_looking_statement_limitations"]})'>
             <td><strong>MYE</strong></td>
             <td class="val-rose">SHORT</td>
             <td>2026-08-31 20:52</td>
             <td>OPEN</td>
             <td>$32.09</td>
-            <td>$30.19 (live)</td>
+            <td>$30.11 (live)</td>
             <td>167</td>
-            <td class="val-green"><strong>+5.92%</strong></td>
+            <td class="val-green"><strong>+6.17%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a90c39b6e31ec23880fb6fd", "ticker": "PAHC", "direction": "LONG", "entry_price": 36.349998474121094, "share_count": 318, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92514.63606669684, "initial_stop": 31.99290865117853, "current_stop": 36.229271626111334, "take_profit": 45.06417812000622, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-27T23:09:15.999000", "exit_price": 36.58000183105469, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 73.14106750488281, "highest_high_since_entry": 40.58000183105469, "lowest_low_since_entry": 36.349998474121094, "reasoning_chain": {"candidate_id": "6a90c354d0b87cc4de3eb60c", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.4523632743141868, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 318, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.006327465380702606, "equity_pct": 0.0007905891501551497, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Phibro Animal Health reported an earnings beat with adjusted EPS guidance for FY2027 exceeding analyst estimates. While there are operational adjustments like a facility closure, the positive earnings surprise and favorable forward-looking guidance support a long outlook.", "ai_risk_flags": ["facility_closure_impact", "execution_risk", "valuation_concerns_after_historical_gains"]})'>
+        <tr data-close-date="2026-09-11" data-status="CLOSED" onclick='showTradeDetail({"_id": "6a90c39b6e31ec23880fb6fd", "ticker": "PAHC", "direction": "LONG", "entry_price": 36.349998474121094, "share_count": 318, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92514.63606669684, "initial_stop": 31.99290865117853, "current_stop": 36.229271626111334, "take_profit": 45.06417812000622, "confidence_tier": "STRONG", "status": "CLOSED", "entry_timestamp": "2026-08-27T23:09:15.999000", "exit_price": 36.229271626111334, "exit_timestamp": "2026-09-11T17:11:36.720000", "exit_reason": "STOP", "realized_pnl": -38.391137667103564, "highest_high_since_entry": 40.58000183105469, "lowest_low_since_entry": 36.349998474121094, "reasoning_chain": {"candidate_id": "6a90c354d0b87cc4de3eb60c", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.4523632743141868, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 318, "regime_state_at_decision": "RISK_ON"}, "equity_pct": -0.00041497366578220266, "trade_return_pct": -0.0033212339223537943, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Phibro Animal Health reported an earnings beat with adjusted EPS guidance for FY2027 exceeding analyst estimates. While there are operational adjustments like a facility closure, the positive earnings surprise and favorable forward-looking guidance support a long outlook.", "ai_risk_flags": ["facility_closure_impact", "execution_risk", "valuation_concerns_after_historical_gains"]})'>
             <td><strong>PAHC</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-27 23:09</td>
-            <td>OPEN</td>
+            <td>2026-09-11 17:11</td>
             <td>$36.35</td>
-            <td>$36.58 (live)</td>
+            <td>$36.23</td>
             <td>318</td>
-            <td class="val-green"><strong>+0.63%</strong></td>
-            <td><span class="badge badge-open">Open</span></td>
+            <td class="val-rose"><strong>-0.33%</strong></td>
+            <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a8da663d2e3244be918c42b", "ticker": "SMTC", "direction": "LONG", "entry_price": 124.74019622802734, "share_count": 34, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93120.47615640813, "initial_stop": 91.21793885664506, "current_stop": 132.89363965121183, "take_profit": 191.7847109707919, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-25T14:27:47.312000", "exit_price": 159.1300048828125, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1169.2534942626953, "highest_high_since_entry": 165.25, "lowest_low_since_entry": 124.63500213623047, "reasoning_chain": {"candidate_id": "6a8da62f8f9cb5a2526f8127", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.17408579046076, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 34, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.2756914747185419, "equity_pct": 0.012556352185085263, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Semtech reported an earnings surprise for the first quarter of fiscal 2027 and is undergoing a strategic pivot toward AI data-center networking and LoRa IoT, which has garnered positive sentiment from analysts. While the company faces risks regarding its high valuation after a substantial multi-year stock price rally, the fundamental transition and positive earnings momentum support a long-term constructive outlook.", "ai_risk_flags": ["VALUATION_CONCERNS", "HIGH_HISTORICAL_VOLATILITY", "SIGNIFICANT_PRICE_APPRECIATION_PRE_EVENT"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a8da663d2e3244be918c42b", "ticker": "SMTC", "direction": "LONG", "entry_price": 124.74019622802734, "share_count": 34, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93120.47615640813, "initial_stop": 91.21793885664506, "current_stop": 136.01038603349167, "take_profit": 191.7847109707919, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-25T14:27:47.312000", "exit_price": 169.32009887695312, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1515.7166900634766, "highest_high_since_entry": 169.22000122070312, "lowest_low_since_entry": 124.63500213623047, "reasoning_chain": {"candidate_id": "6a8da62f8f9cb5a2526f8127", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.17408579046076, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 34, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.35738201475515485, "equity_pct": 0.016276943080892652, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Semtech reported an earnings surprise for the first quarter of fiscal 2027 and is undergoing a strategic pivot toward AI data-center networking and LoRa IoT, which has garnered positive sentiment from analysts. While the company faces risks regarding its high valuation after a substantial multi-year stock price rally, the fundamental transition and positive earnings momentum support a long-term constructive outlook.", "ai_risk_flags": ["VALUATION_CONCERNS", "HIGH_HISTORICAL_VOLATILITY", "SIGNIFICANT_PRICE_APPRECIATION_PRE_EVENT"]})'>
             <td><strong>SMTC</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-25 14:27</td>
             <td>OPEN</td>
             <td>$124.74</td>
-            <td>$159.13 (live)</td>
+            <td>$169.32 (live)</td>
             <td>34</td>
-            <td class="val-green"><strong>+27.57%</strong></td>
+            <td class="val-green"><strong>+35.74%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a885e84a688b731c9e0a099", "ticker": "PSNL", "direction": "LONG", "entry_price": 17.565000534057617, "share_count": 630, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93633.22790770096, "initial_stop": 15.336682666431773, "current_stop": 16.148164055564187, "take_profit": 22.021636269309305, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-21T14:19:48.561000", "exit_price": 16.329999923706055, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -778.0503845214844, "highest_high_since_entry": 18.540800094604492, "lowest_low_since_entry": 16.30500030517578, "reasoning_chain": {"candidate_id": "6a885e6bfa2662d8baa40720", "trigger_type": "MATERIAL_FILING", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 0.7427726225419478, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 630, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.07031030872768611, "equity_pct": -0.00830955422457985, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Personalis secured a new task order worth up to $18.3 million from the U.S. Department of Veterans Affairs, further strengthening their long-standing partnership with the Million Veteran Program. This recurring revenue stream validation, combined with significant cumulative contract value growth, provides a strong fundamental basis for a bullish outlook.", "ai_risk_flags": ["Revenue dependency on specific government contracts", "Performance-based revenue realization risks", "Dependency on timely receipt of samples from third parties"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a885e84a688b731c9e0a099", "ticker": "PSNL", "direction": "LONG", "entry_price": 17.565000534057617, "share_count": 630, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93633.22790770096, "initial_stop": 15.336682666431773, "current_stop": 16.15457326715643, "take_profit": 22.021636269309305, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-21T14:19:48.561000", "exit_price": 16.309999465942383, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -790.6506729125977, "highest_high_since_entry": 18.540800094604492, "lowest_low_since_entry": 16.30500030517578, "reasoning_chain": {"candidate_id": "6a885e6bfa2662d8baa40720", "trigger_type": "MATERIAL_FILING", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 0.7427726225419478, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 630, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.07144896270750764, "equity_pct": -0.008444124917833466, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Personalis secured a new task order worth up to $18.3 million from the U.S. Department of Veterans Affairs, further strengthening their long-standing partnership with the Million Veteran Program. This recurring revenue stream validation, combined with significant cumulative contract value growth, provides a strong fundamental basis for a bullish outlook.", "ai_risk_flags": ["Revenue dependency on specific government contracts", "Performance-based revenue realization risks", "Dependency on timely receipt of samples from third parties"]})'>
             <td><strong>PSNL</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-21 14:19</td>
             <td>OPEN</td>
             <td>$17.57</td>
-            <td>$16.33 (live)</td>
+            <td>$16.31 (live)</td>
             <td>630</td>
-            <td class="val-rose"><strong>-7.03%</strong></td>
+            <td class="val-rose"><strong>-7.14%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7f3d6fe6e355d0b7627e50", "ticker": "WWW", "direction": "LONG", "entry_price": 20.709999084472656, "share_count": 429, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 96133.56480295007, "initial_stop": 17.90908986871893, "current_stop": 18.575999780134723, "take_profit": 26.311817515980113, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-14T16:08:15.135000", "exit_price": 19.290000915527344, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -609.1792144775391, "highest_high_since_entry": 21.111000061035156, "lowest_low_since_entry": 19.21500015258789, "reasoning_chain": {"candidate_id": "6a7f3d58fa2662d8ba9d1438", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 0.9336364052512429, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 429, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.06856582480536938, "equity_pct": -0.006336800426845765, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Wolverine World Wide reported a positive earnings surprise for Q2 2026 and concurrently raised its full-year 2026 guidance for both sales and adjusted EPS. Analyst sentiment remains positive, highlighted by a price target increase from Needham, providing strong qualitative support for a long position.", "ai_risk_flags": ["wholesale_inventory_risks", "consumer_spending_volatility"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7f3d6fe6e355d0b7627e50", "ticker": "WWW", "direction": "LONG", "entry_price": 20.709999084472656, "share_count": 429, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 96133.56480295007, "initial_stop": 17.90908986871893, "current_stop": 18.575999780134723, "take_profit": 26.311817515980113, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-14T16:08:15.135000", "exit_price": 19.959999084472656, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -321.75, "highest_high_since_entry": 21.111000061035156, "lowest_low_since_entry": 19.21500015258789, "reasoning_chain": {"candidate_id": "6a7f3d58fa2662d8ba9d1438", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 0.9336364052512429, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 429, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.036214390784899325, "equity_pct": -0.003346905949649403, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Wolverine World Wide reported a positive earnings surprise for Q2 2026 and concurrently raised its full-year 2026 guidance for both sales and adjusted EPS. Analyst sentiment remains positive, highlighted by a price target increase from Needham, providing strong qualitative support for a long position.", "ai_risk_flags": ["wholesale_inventory_risks", "consumer_spending_volatility"]})'>
             <td><strong>WWW</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-14 16:08</td>
             <td>OPEN</td>
             <td>$20.71</td>
-            <td>$19.29 (live)</td>
+            <td>$19.96 (live)</td>
             <td>429</td>
-            <td class="val-rose"><strong>-6.86%</strong></td>
+            <td class="val-rose"><strong>-3.62%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -652,15 +652,15 @@
             <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a638360872773f472bb4490", "ticker": "SXT", "direction": "LONG", "entry_price": 119.79000091552734, "share_count": 127, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99310.81332102689, "initial_stop": 108.07022927024147, "current_stop": 127.55022569136186, "take_profit": 143.2295442060991, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-24T15:23:12.970000", "exit_price": 131.05999755859375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1431.2895736694336, "highest_high_since_entry": 137.5, "lowest_low_since_entry": 119.79000091552734, "reasoning_chain": {"candidate_id": "6a638275079a05e8aa1893ac", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 3.906590548428622, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 127, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.09408128021481277, "equity_pct": 0.014412222856767094, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Sensient Technologies reported a positive earnings surprise for Q2 2026 with EPS of $1.20 against consensus estimates, coupled with an upward revision of full-year guidance. The market's reaction, characterized by a 3.4% share price increase, aligns with the long strategy.", "ai_risk_flags": []})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a638360872773f472bb4490", "ticker": "SXT", "direction": "LONG", "entry_price": 119.79000091552734, "share_count": 127, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99310.81332102689, "initial_stop": 108.07022927024147, "current_stop": 127.55022569136186, "take_profit": 143.2295442060991, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-24T15:23:12.970000", "exit_price": 129.49000549316406, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1231.9005813598633, "highest_high_since_entry": 137.5, "lowest_low_since_entry": 119.79000091552734, "reasoning_chain": {"candidate_id": "6a638275079a05e8aa1893ac", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 3.906590548428622, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 127, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.08097507724769865, "equity_pct": 0.012404495947260915, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Sensient Technologies reported a positive earnings surprise for Q2 2026 with EPS of $1.20 against consensus estimates, coupled with an upward revision of full-year guidance. The market's reaction, characterized by a 3.4% share price increase, aligns with the long strategy.", "ai_risk_flags": []})'>
             <td><strong>SXT</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-07-24 15:23</td>
             <td>OPEN</td>
             <td>$119.79</td>
-            <td>$131.06 (live)</td>
+            <td>$129.49 (live)</td>
             <td>127</td>
-            <td class="val-green"><strong>+9.41%</strong></td>
+            <td class="val-green"><strong>+8.10%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -801,29 +801,29 @@
             </div>
             <div class="ledger-cards" id="ledger-cards-container">
                 
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a99ab53e90d8c9ef8acecd0", "ticker": "VSXY", "direction": "LONG", "entry_price": 73.15499877929688, "share_count": 103, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93538.56161605073, "initial_stop": 59.610547846013844, "current_stop": 65.25541270862927, "take_profit": 100.24390064586294, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-03T17:16:03.555000", "exit_price": 73.38999938964844, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 24.205062866210938, "highest_high_since_entry": 78.47000122070312, "lowest_low_since_entry": 72.01000213623047, "reasoning_chain": {"candidate_id": "6a99aae4d0b87cc4de44aadd", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 4.514816977761009, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 103, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.0032123657203596114, "equity_pct": 0.000258770954438725, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise for Q2 2026, with an actual EPS of $0.60 against a consensus of $0.305. The filing confirms the release of updated full-year guidance, which, combined with the strong earnings beat, supports a positive outlook for the company's operational momentum.", "ai_risk_flags": ["RELIANCE_ON_HISTORICAL_PERFORMANCE", "MARKET_VOLATILITY", "OPERATIONAL_GUIDANCE_DEPENDENCY"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a99ab53e90d8c9ef8acecd0", "ticker": "VSXY", "direction": "LONG", "entry_price": 73.15499877929688, "share_count": 103, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93538.56161605073, "initial_stop": 59.610547846013844, "current_stop": 65.63450449163264, "take_profit": 100.24390064586294, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-03T17:16:03.555000", "exit_price": 75.36499786376953, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 227.6299057006836, "highest_high_since_entry": 78.47000122070312, "lowest_low_since_entry": 72.01000213623047, "reasoning_chain": {"candidate_id": "6a99aae4d0b87cc4de44aadd", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 4.514816977761009, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 103, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.030209816435648604, "equity_pct": 0.002433540796094768, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise for Q2 2026, with an actual EPS of $0.60 against a consensus of $0.305. The filing confirms the release of updated full-year guidance, which, combined with the strong earnings beat, supports a positive outlook for the company's operational momentum.", "ai_risk_flags": ["RELIANCE_ON_HISTORICAL_PERFORMANCE", "MARKET_VOLATILITY", "OPERATIONAL_GUIDANCE_DEPENDENCY"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">VSXY <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $73.15</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $73.39 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $75.36 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 103</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+0.32%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+3.02%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a985b9275b730b573890b45", "ticker": "OLLI", "direction": "LONG", "entry_price": 75.1449966430664, "share_count": 121, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93536.96600394441, "initial_stop": 65.53681390935725, "current_stop": 67.4338607788086, "take_profit": 94.36136211048473, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-02T17:23:30.893000", "exit_price": 71.91999816894531, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -390.22481536865234, "highest_high_since_entry": 77.26499938964844, "lowest_low_since_entry": 71.87000274658203, "reasoning_chain": {"candidate_id": "6a985b42d0b87cc4de43b819", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 3.202727577903054, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 121, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.042917008692403245, "equity_pct": -0.0041718780503549446, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "OLLI delivered a significant EPS beat, which supports the long thesis; however, the revenue miss, slightly underwhelming forward guidance, and broader macroeconomic concerns regarding inflation and rising oil prices suggest a cautious outlook despite the earnings performance.", "ai_risk_flags": ["REVENUE_MISS", "SAME_STORE_SALES_PRESSURE", "REVENUE_GUIDANCE_MISS", "INFLATION_CONCERNS", "MACROECONOMIC_VOLATILITY"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a985b9275b730b573890b45", "ticker": "OLLI", "direction": "LONG", "entry_price": 75.1449966430664, "share_count": 121, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93536.96600394441, "initial_stop": 65.53681390935725, "current_stop": 67.4338607788086, "take_profit": 94.36136211048473, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-02T17:23:30.893000", "exit_price": 73.5199966430664, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -196.625, "highest_high_since_entry": 77.26499938964844, "lowest_low_since_entry": 71.87000274658203, "reasoning_chain": {"candidate_id": "6a985b42d0b87cc4de43b819", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 3.202727577903054, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 121, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.021624859572735612, "equity_pct": -0.002102110089734025, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "OLLI delivered a significant EPS beat, which supports the long thesis; however, the revenue miss, slightly underwhelming forward guidance, and broader macroeconomic concerns regarding inflation and rising oil prices suggest a cautious outlook despite the earnings performance.", "ai_risk_flags": ["REVENUE_MISS", "SAME_STORE_SALES_PRESSURE", "REVENUE_GUIDANCE_MISS", "INFLATION_CONCERNS", "MACROECONOMIC_VOLATILITY"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">OLLI <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $75.14</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $71.92 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $73.52 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 121</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-4.29%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-2.16%</strong></div>
             </div>
         </div>
         
@@ -840,81 +840,81 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a970ba61811f35529efaab3", "ticker": "DELL", "direction": "LONG", "entry_price": 431.3550109863281, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92094.37040953829, "initial_stop": 347.18316650390625, "current_stop": 456.2686753706499, "take_profit": 599.6986999511719, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-01T17:30:14.258000", "exit_price": 506.6199951171875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1204.23974609375, "highest_high_since_entry": 542.89501953125, "lowest_low_since_entry": 425.0, "reasoning_chain": {"candidate_id": "6a970b63d0b87cc4de42efe0", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 28.057281494140625, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.17448501168158428, "equity_pct": 0.013076149396956255, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise, with an EPS of $4.86 against a consensus of $2.99, confirming strong operational performance. While broader market risks such as rising bond yields and geopolitical tensions exist, the specific evidence regarding Dell's AI-driven demand and financial results supports a bullish outlook.", "ai_risk_flags": ["geopolitical_instability", "market_volatility", "rising_bond_yields", "valuation_concerns"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a970ba61811f35529efaab3", "ticker": "DELL", "direction": "LONG", "entry_price": 431.3550109863281, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92094.37040953829, "initial_stop": 347.18316650390625, "current_stop": 466.00729231400925, "take_profit": 599.6986999511719, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-01T17:30:14.258000", "exit_price": 559.0576171875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 2043.24169921875, "highest_high_since_entry": 558.260009765625, "lowest_low_since_entry": 425.0, "reasoning_chain": {"candidate_id": "6a970b63d0b87cc4de42efe0", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 28.057281494140625, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.2960498961381474, "equity_pct": 0.022186390874193218, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise, with an EPS of $4.86 against a consensus of $2.99, confirming strong operational performance. While broader market risks such as rising bond yields and geopolitical tensions exist, the specific evidence regarding Dell's AI-driven demand and financial results supports a bullish outlook.", "ai_risk_flags": ["geopolitical_instability", "market_volatility", "rising_bond_yields", "valuation_concerns"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">DELL <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $431.36</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $506.62 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $559.06 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 16</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+17.45%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+29.60%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a95e9798ad0274ac31cc8c7", "ticker": "MYE", "direction": "SHORT", "entry_price": 32.09000015258789, "share_count": 167, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92648.95215277864, "initial_stop": 36.22863630814986, "current_stop": 33.28204475749623, "take_profit": 23.812727841463953, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-31T20:52:09.336000", "exit_price": 30.190000534057617, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 317.29993629455566, "highest_high_since_entry": 32.13999938964844, "lowest_low_since_entry": 30.084999084472656, "reasoning_chain": {"candidate_id": "6a95e925d0b87cc4de41fd12", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 1.3795453851873225, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 167, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.05920846399176625, "equity_pct": 0.0034247547211470487, "ai_conviction": "NEUTRAL", "ai_rationale": "The divestiture of the Myers Tire Supply business aligns with a strategic pivot toward engineered plastics, which is viewed by some market analysts as a transformation effort rather than an immediate negative catalyst. As the sale is a planned strategic realignment, the impact on future financial performance is speculative and does not inherently justify a short position based solely on this filing.", "ai_risk_flags": ["divestiture_execution_risk", "market_segment_transition_uncertainty", "non-compete_restrictions", "forward_looking_statement_limitations"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a95e9798ad0274ac31cc8c7", "ticker": "MYE", "direction": "SHORT", "entry_price": 32.09000015258789, "share_count": 167, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92648.95215277864, "initial_stop": 36.22863630814986, "current_stop": 33.24454480951483, "take_profit": 23.812727841463953, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-31T20:52:09.336000", "exit_price": 30.110000610351562, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 330.6599235534668, "highest_high_since_entry": 32.13999938964844, "lowest_low_since_entry": 30.084999084472656, "reasoning_chain": {"candidate_id": "6a95e925d0b87cc4de41fd12", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 1.3795453851873225, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 167, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06170145007234135, "equity_pct": 0.003568954811363724, "ai_conviction": "NEUTRAL", "ai_rationale": "The divestiture of the Myers Tire Supply business aligns with a strategic pivot toward engineered plastics, which is viewed by some market analysts as a transformation effort rather than an immediate negative catalyst. As the sale is a planned strategic realignment, the impact on future financial performance is speculative and does not inherently justify a short position based solely on this filing.", "ai_risk_flags": ["divestiture_execution_risk", "market_segment_transition_uncertainty", "non-compete_restrictions", "forward_looking_statement_limitations"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">MYE <span class="val-rose">SHORT</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $32.09</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $30.19 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $30.11 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 167</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+5.92%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+6.17%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a90c39b6e31ec23880fb6fd", "ticker": "PAHC", "direction": "LONG", "entry_price": 36.349998474121094, "share_count": 318, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92514.63606669684, "initial_stop": 31.99290865117853, "current_stop": 36.229271626111334, "take_profit": 45.06417812000622, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-27T23:09:15.999000", "exit_price": 36.58000183105469, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 73.14106750488281, "highest_high_since_entry": 40.58000183105469, "lowest_low_since_entry": 36.349998474121094, "reasoning_chain": {"candidate_id": "6a90c354d0b87cc4de3eb60c", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.4523632743141868, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 318, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.006327465380702606, "equity_pct": 0.0007905891501551497, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Phibro Animal Health reported an earnings beat with adjusted EPS guidance for FY2027 exceeding analyst estimates. While there are operational adjustments like a facility closure, the positive earnings surprise and favorable forward-looking guidance support a long outlook.", "ai_risk_flags": ["facility_closure_impact", "execution_risk", "valuation_concerns_after_historical_gains"]})'>
+        <div class="ledger-card" data-close-date="2026-09-11" data-status="CLOSED" onclick='showTradeDetail({"_id": "6a90c39b6e31ec23880fb6fd", "ticker": "PAHC", "direction": "LONG", "entry_price": 36.349998474121094, "share_count": 318, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92514.63606669684, "initial_stop": 31.99290865117853, "current_stop": 36.229271626111334, "take_profit": 45.06417812000622, "confidence_tier": "STRONG", "status": "CLOSED", "entry_timestamp": "2026-08-27T23:09:15.999000", "exit_price": 36.229271626111334, "exit_timestamp": "2026-09-11T17:11:36.720000", "exit_reason": "STOP", "realized_pnl": -38.391137667103564, "highest_high_since_entry": 40.58000183105469, "lowest_low_since_entry": 36.349998474121094, "reasoning_chain": {"candidate_id": "6a90c354d0b87cc4de3eb60c", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 1.4523632743141868, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 318, "regime_state_at_decision": "RISK_ON"}, "equity_pct": -0.00041497366578220266, "trade_return_pct": -0.0033212339223537943, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Phibro Animal Health reported an earnings beat with adjusted EPS guidance for FY2027 exceeding analyst estimates. While there are operational adjustments like a facility closure, the positive earnings surprise and favorable forward-looking guidance support a long outlook.", "ai_risk_flags": ["facility_closure_impact", "execution_risk", "valuation_concerns_after_historical_gains"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">PAHC <span class="val-green">LONG</span></span>
-                <span class="badge badge-open">Open</span>
+                <span class="badge badge-closed">Closed</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $36.35</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $36.58 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $36.23</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 318</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+0.63%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-0.33%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a8da663d2e3244be918c42b", "ticker": "SMTC", "direction": "LONG", "entry_price": 124.74019622802734, "share_count": 34, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93120.47615640813, "initial_stop": 91.21793885664506, "current_stop": 132.89363965121183, "take_profit": 191.7847109707919, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-25T14:27:47.312000", "exit_price": 159.1300048828125, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1169.2534942626953, "highest_high_since_entry": 165.25, "lowest_low_since_entry": 124.63500213623047, "reasoning_chain": {"candidate_id": "6a8da62f8f9cb5a2526f8127", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.17408579046076, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 34, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.2756914747185419, "equity_pct": 0.012556352185085263, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Semtech reported an earnings surprise for the first quarter of fiscal 2027 and is undergoing a strategic pivot toward AI data-center networking and LoRa IoT, which has garnered positive sentiment from analysts. While the company faces risks regarding its high valuation after a substantial multi-year stock price rally, the fundamental transition and positive earnings momentum support a long-term constructive outlook.", "ai_risk_flags": ["VALUATION_CONCERNS", "HIGH_HISTORICAL_VOLATILITY", "SIGNIFICANT_PRICE_APPRECIATION_PRE_EVENT"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a8da663d2e3244be918c42b", "ticker": "SMTC", "direction": "LONG", "entry_price": 124.74019622802734, "share_count": 34, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93120.47615640813, "initial_stop": 91.21793885664506, "current_stop": 136.01038603349167, "take_profit": 191.7847109707919, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-25T14:27:47.312000", "exit_price": 169.32009887695312, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1515.7166900634766, "highest_high_since_entry": 169.22000122070312, "lowest_low_since_entry": 124.63500213623047, "reasoning_chain": {"candidate_id": "6a8da62f8f9cb5a2526f8127", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.17408579046076, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 34, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.35738201475515485, "equity_pct": 0.016276943080892652, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Semtech reported an earnings surprise for the first quarter of fiscal 2027 and is undergoing a strategic pivot toward AI data-center networking and LoRa IoT, which has garnered positive sentiment from analysts. While the company faces risks regarding its high valuation after a substantial multi-year stock price rally, the fundamental transition and positive earnings momentum support a long-term constructive outlook.", "ai_risk_flags": ["VALUATION_CONCERNS", "HIGH_HISTORICAL_VOLATILITY", "SIGNIFICANT_PRICE_APPRECIATION_PRE_EVENT"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">SMTC <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $124.74</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $159.13 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $169.32 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 34</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+27.57%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+35.74%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a885e84a688b731c9e0a099", "ticker": "PSNL", "direction": "LONG", "entry_price": 17.565000534057617, "share_count": 630, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93633.22790770096, "initial_stop": 15.336682666431773, "current_stop": 16.148164055564187, "take_profit": 22.021636269309305, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-21T14:19:48.561000", "exit_price": 16.329999923706055, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -778.0503845214844, "highest_high_since_entry": 18.540800094604492, "lowest_low_since_entry": 16.30500030517578, "reasoning_chain": {"candidate_id": "6a885e6bfa2662d8baa40720", "trigger_type": "MATERIAL_FILING", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 0.7427726225419478, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 630, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.07031030872768611, "equity_pct": -0.00830955422457985, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Personalis secured a new task order worth up to $18.3 million from the U.S. Department of Veterans Affairs, further strengthening their long-standing partnership with the Million Veteran Program. This recurring revenue stream validation, combined with significant cumulative contract value growth, provides a strong fundamental basis for a bullish outlook.", "ai_risk_flags": ["Revenue dependency on specific government contracts", "Performance-based revenue realization risks", "Dependency on timely receipt of samples from third parties"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a885e84a688b731c9e0a099", "ticker": "PSNL", "direction": "LONG", "entry_price": 17.565000534057617, "share_count": 630, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93633.22790770096, "initial_stop": 15.336682666431773, "current_stop": 16.15457326715643, "take_profit": 22.021636269309305, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-21T14:19:48.561000", "exit_price": 16.309999465942383, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -790.6506729125977, "highest_high_since_entry": 18.540800094604492, "lowest_low_since_entry": 16.30500030517578, "reasoning_chain": {"candidate_id": "6a885e6bfa2662d8baa40720", "trigger_type": "MATERIAL_FILING", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 0.7427726225419478, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 630, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.07144896270750764, "equity_pct": -0.008444124917833466, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Personalis secured a new task order worth up to $18.3 million from the U.S. Department of Veterans Affairs, further strengthening their long-standing partnership with the Million Veteran Program. This recurring revenue stream validation, combined with significant cumulative contract value growth, provides a strong fundamental basis for a bullish outlook.", "ai_risk_flags": ["Revenue dependency on specific government contracts", "Performance-based revenue realization risks", "Dependency on timely receipt of samples from third parties"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">PSNL <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $17.57</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $16.33 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $16.31 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 630</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-7.03%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-7.14%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7f3d6fe6e355d0b7627e50", "ticker": "WWW", "direction": "LONG", "entry_price": 20.709999084472656, "share_count": 429, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 96133.56480295007, "initial_stop": 17.90908986871893, "current_stop": 18.575999780134723, "take_profit": 26.311817515980113, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-14T16:08:15.135000", "exit_price": 19.290000915527344, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -609.1792144775391, "highest_high_since_entry": 21.111000061035156, "lowest_low_since_entry": 19.21500015258789, "reasoning_chain": {"candidate_id": "6a7f3d58fa2662d8ba9d1438", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 0.9336364052512429, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 429, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.06856582480536938, "equity_pct": -0.006336800426845765, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Wolverine World Wide reported a positive earnings surprise for Q2 2026 and concurrently raised its full-year 2026 guidance for both sales and adjusted EPS. Analyst sentiment remains positive, highlighted by a price target increase from Needham, providing strong qualitative support for a long position.", "ai_risk_flags": ["wholesale_inventory_risks", "consumer_spending_volatility"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a7f3d6fe6e355d0b7627e50", "ticker": "WWW", "direction": "LONG", "entry_price": 20.709999084472656, "share_count": 429, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 96133.56480295007, "initial_stop": 17.90908986871893, "current_stop": 18.575999780134723, "take_profit": 26.311817515980113, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-14T16:08:15.135000", "exit_price": 19.959999084472656, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -321.75, "highest_high_since_entry": 21.111000061035156, "lowest_low_since_entry": 19.21500015258789, "reasoning_chain": {"candidate_id": "6a7f3d58fa2662d8ba9d1438", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 0.9336364052512429, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 429, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.036214390784899325, "equity_pct": -0.003346905949649403, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Wolverine World Wide reported a positive earnings surprise for Q2 2026 and concurrently raised its full-year 2026 guidance for both sales and adjusted EPS. Analyst sentiment remains positive, highlighted by a price target increase from Needham, providing strong qualitative support for a long position.", "ai_risk_flags": ["wholesale_inventory_risks", "consumer_spending_volatility"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">WWW <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $20.71</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $19.29 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $19.96 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 429</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-6.86%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-3.62%</strong></div>
             </div>
         </div>
         
@@ -1100,16 +1100,16 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a638360872773f472bb4490", "ticker": "SXT", "direction": "LONG", "entry_price": 119.79000091552734, "share_count": 127, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99310.81332102689, "initial_stop": 108.07022927024147, "current_stop": 127.55022569136186, "take_profit": 143.2295442060991, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-24T15:23:12.970000", "exit_price": 131.05999755859375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1431.2895736694336, "highest_high_since_entry": 137.5, "lowest_low_since_entry": 119.79000091552734, "reasoning_chain": {"candidate_id": "6a638275079a05e8aa1893ac", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 3.906590548428622, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 127, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.09408128021481277, "equity_pct": 0.014412222856767094, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Sensient Technologies reported a positive earnings surprise for Q2 2026 with EPS of $1.20 against consensus estimates, coupled with an upward revision of full-year guidance. The market's reaction, characterized by a 3.4% share price increase, aligns with the long strategy.", "ai_risk_flags": []})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a638360872773f472bb4490", "ticker": "SXT", "direction": "LONG", "entry_price": 119.79000091552734, "share_count": 127, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 99310.81332102689, "initial_stop": 108.07022927024147, "current_stop": 127.55022569136186, "take_profit": 143.2295442060991, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-07-24T15:23:12.970000", "exit_price": 129.49000549316406, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1231.9005813598633, "highest_high_since_entry": 137.5, "lowest_low_since_entry": 119.79000091552734, "reasoning_chain": {"candidate_id": "6a638275079a05e8aa1893ac", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 3.906590548428622, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 127, "regime_state_at_decision": "RISK_OFF"}, "trade_return_pct": 0.08097507724769865, "equity_pct": 0.012404495947260915, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Sensient Technologies reported a positive earnings surprise for Q2 2026 with EPS of $1.20 against consensus estimates, coupled with an upward revision of full-year guidance. The market's reaction, characterized by a 3.4% share price increase, aligns with the long strategy.", "ai_risk_flags": []})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">SXT <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $119.79</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $131.06 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $129.49 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 127</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+9.41%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+8.10%</strong></div>
             </div>
         </div>
         
@@ -1345,10 +1345,10 @@
     </div>
 
     <script>
-        const openPnlSum = 0.02570060656276897;
-        const closedPnlSum = -0.10589628331676489;
-        const openPnlCount = 9;
-        const closedPnlCount = 21;
+        const openPnlSum = 0.042977184552588386;
+        const closedPnlSum = -0.10631125698254709;
+        const openPnlCount = 8;
+        const closedPnlCount = 22;
         let ledgerStatusFilter = 'OPEN';
         let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
 
