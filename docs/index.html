@@ -34,7 +34,7 @@
             </div>
             <div class="card">
                 <div class="card-title">Open Positions</div>
-                <div class="card-val val-green">7</div>
+                <div class="card-val val-green">8</div>
             </div>
         </div>
 
@@ -333,12 +333,12 @@
                 <div class="market-context-row">
                     <div class="market-chip">
                         <div class="market-chip-label">VIX</div>
-                        <div class="market-chip-val val-green">15.0</div>
+                        <div class="market-chip-val val-green">14.9</div>
                         <div class="market-chip-sub">Normal range</div>
                     </div>
                     <div class="market-chip">
                         <div class="market-chip-label">SPY vs 50-SMA</div>
-                        <div class="market-chip-val val-green">+2.1%</div>
+                        <div class="market-chip-val val-green">+2.0%</div>
                         <div class="market-chip-sub">Above SMA</div>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
                 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
                     <div class="ledger-sum">
                         <span id="ledger-sum-label">Open Unrealized P&amp;L (Equity Impact):</span>
-                        <span id="ledger-sum-val" class="ledger-sum-val val-green">+5.82%</span>
+                        <span id="ledger-sum-val" class="ledger-sum-val val-green">+5.57%</span>
                     </div>
                     <div class="ledger-toggle">
                         <button id="toggle-open-btn" class="ledger-toggle-btn active" onclick="toggleLedgerView('OPEN')">Open</button>
@@ -376,51 +376,63 @@
                     </thead>
                     <tbody id="trades-table-body">
                         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6aada5fc8df20949c40fb4c0", "ticker": "MRCY", "direction": "SHORT", "entry_price": 85.27999877929688, "share_count": 53, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92260.01196162567, "initial_stop": 98.11726726185192, "current_stop": 96.85999540849166, "take_profit": 59.60546181418679, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-09-18T20:58:36.807000", "exit_price": 86.29000091552734, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -53.530113220214844, "highest_high_since_entry": 86.44999694824219, "lowest_low_since_entry": 85.27999877929688, "reasoning_chain": {"candidate_id": "6aada5e75e9677818030f934", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 4.279089494185015, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 53, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.011843364806375482, "equity_pct": -0.0005802092594837294, "ai_conviction": "NEUTRAL", "ai_rationale": "The filing reports on a procedural development regarding a previously disclosed derivative settlement, which does not introduce new material negative news or financial impairment. While legal issues pose a recurring risk, the settlement was already anticipated and disclosed in the company's annual report.", "ai_risk_flags": ["LEGAL_SETTLEMENT_PROCEEDINGS", "DERIVATIVE_LITIGATION"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6ab18cbd5d939a5bf9f0e8d5", "ticker": "ALKS", "direction": "LONG", "entry_price": 44.150001525878906, "share_count": 269, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 92657.67721240387, "initial_stop": 39.84909231012518, "current_stop": 39.84909231012518, "take_profit": 52.75181995738636, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-21T19:59:57.671000", "exit_price": 44.18000030517578, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 8.069671630859375, "highest_high_since_entry": 44.150001525878906, "lowest_low_since_entry": 44.150001525878906, "reasoning_chain": {"candidate_id": "6ab18cb45e967781803360f6", "trigger_type": "MATERIAL_FILING", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.433636405251243, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 269, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.0006794740262758758, "equity_pct": 8.70912359734732e-05, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Alkermes reported positive topline Phase 1 proof-of-concept results for ALKS 7290, an investigational ADHD treatment, which serves as a significant positive catalyst for the company's pipeline. While the drug is in early development stages, the successful demonstration of safety and efficacy in the initial study provides strong qualitative momentum for a long position.", "ai_risk_flags": ["CLINICAL_TRIAL_RISK", "PHASE_1_EARLY_STAGE", "REGULATORY_UNCERTAINTY", "DEVELOPMENTAL_FAILURE_RISK"]})'>
+            <td><strong>ALKS</strong></td>
+            <td class="val-green">LONG</td>
+            <td>2026-09-21 19:59</td>
+            <td>OPEN</td>
+            <td>$44.15</td>
+            <td>$44.18 (live)</td>
+            <td>269</td>
+            <td class="val-green"><strong>+0.07%</strong></td>
+            <td><span class="badge badge-open">Open</span></td>
+        </tr>
+        
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6aada5fc8df20949c40fb4c0", "ticker": "MRCY", "direction": "SHORT", "entry_price": 85.27999877929688, "share_count": 53, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92260.01196162567, "initial_stop": 98.11726726185192, "current_stop": 96.85999540849166, "take_profit": 59.60546181418679, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-09-18T20:58:36.807000", "exit_price": 85.6500015258789, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -19.610145568847656, "highest_high_since_entry": 86.44999694824219, "lowest_low_since_entry": 85.27999877929688, "reasoning_chain": {"candidate_id": "6aada5e75e9677818030f934", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 4.279089494185015, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 53, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.004338681424463804, "equity_pct": -0.0002125530351871647, "ai_conviction": "NEUTRAL", "ai_rationale": "The filing reports on a procedural development regarding a previously disclosed derivative settlement, which does not introduce new material negative news or financial impairment. While legal issues pose a recurring risk, the settlement was already anticipated and disclosed in the company's annual report.", "ai_risk_flags": ["LEGAL_SETTLEMENT_PROCEEDINGS", "DERIVATIVE_LITIGATION"]})'>
             <td><strong>MRCY</strong></td>
             <td class="val-rose">SHORT</td>
             <td>2026-09-18 20:58</td>
             <td>OPEN</td>
             <td>$85.28</td>
-            <td>$86.29 (live)</td>
+            <td>$85.65 (live)</td>
             <td>53</td>
-            <td class="val-rose"><strong>-1.18%</strong></td>
+            <td class="val-rose"><strong>-0.43%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6aaad5aafa9eb77012d63c98", "ticker": "GIS", "direction": "LONG", "entry_price": 36.94499969482422, "share_count": 320, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 92079.44290225372, "initial_stop": 33.357271714644, "current_stop": 33.634090250188656, "take_profit": 44.12045565518466, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-16T17:45:14.631000", "exit_price": 35.8650016784668, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -345.599365234375, "highest_high_since_entry": 36.94499969482422, "lowest_low_since_entry": 35.869998931884766, "reasoning_chain": {"candidate_id": "6aaad5925e967781802ca5a6", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.19590932672674, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 320, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.0292325896678441, "equity_pct": -0.0037532738507252217, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The company reported a significant positive earnings surprise, which provides fundamental support for a long position. However, this is partially tempered by news indicating investor concerns regarding recent stock performance and analyst expectations for revenue and EPS declines in upcoming quarters.", "ai_risk_flags": ["RECENT_PRICE_DECLINE", "ANALYST_EXPECTATIONS_OF_DECLINE", "CONSUMER_PREFERENCE_SHIFT"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6aaad5aafa9eb77012d63c98", "ticker": "GIS", "direction": "LONG", "entry_price": 36.94499969482422, "share_count": 320, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 92079.44290225372, "initial_stop": 33.357271714644, "current_stop": 33.634090250188656, "take_profit": 44.12045565518466, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-16T17:45:14.631000", "exit_price": 35.41999816894531, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -488.00048828125, "highest_high_since_entry": 36.94499969482422, "lowest_low_since_entry": 35.474998474121094, "reasoning_chain": {"candidate_id": "6aaad5925e967781802ca5a6", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.19590932672674, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 320, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.041277616415640414, "equity_pct": -0.005299776724314932, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The company reported a significant positive earnings surprise, which provides fundamental support for a long position. However, this is partially tempered by news indicating investor concerns regarding recent stock performance and analyst expectations for revenue and EPS declines in upcoming quarters.", "ai_risk_flags": ["RECENT_PRICE_DECLINE", "ANALYST_EXPECTATIONS_OF_DECLINE", "CONSUMER_PREFERENCE_SHIFT"]})'>
             <td><strong>GIS</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-09-16 17:45</td>
             <td>OPEN</td>
             <td>$36.94</td>
-            <td>$35.87 (live)</td>
+            <td>$35.42 (live)</td>
             <td>320</td>
-            <td class="val-rose"><strong>-2.92%</strong></td>
+            <td class="val-rose"><strong>-4.13%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a99ab53e90d8c9ef8acecd0", "ticker": "VSXY", "direction": "LONG", "entry_price": 73.15499877929688, "share_count": 103, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93538.56161605073, "initial_stop": 59.610547846013844, "current_stop": 69.71227784590288, "take_profit": 100.24390064586294, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-03T17:16:03.555000", "exit_price": 82.05999755859375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 917.2148742675781, "highest_high_since_entry": 82.16500091552734, "lowest_low_since_entry": 72.01000213623047, "reasoning_chain": {"candidate_id": "6a99aae4d0b87cc4de44aadd", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 4.514816977761009, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 103, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.12172782349655402, "equity_pct": 0.009805740631681777, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise for Q2 2026, with an actual EPS of $0.60 against a consensus of $0.305. The filing confirms the release of updated full-year guidance, which, combined with the strong earnings beat, supports a positive outlook for the company's operational momentum.", "ai_risk_flags": ["RELIANCE_ON_HISTORICAL_PERFORMANCE", "MARKET_VOLATILITY", "OPERATIONAL_GUIDANCE_DEPENDENCY"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a99ab53e90d8c9ef8acecd0", "ticker": "VSXY", "direction": "LONG", "entry_price": 73.15499877929688, "share_count": 103, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93538.56161605073, "initial_stop": 59.610547846013844, "current_stop": 69.71227784590288, "take_profit": 100.24390064586294, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-03T17:16:03.555000", "exit_price": 81.66000366210938, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 876.0155029296875, "highest_high_since_entry": 82.16500091552734, "lowest_low_since_entry": 72.01000213623047, "reasoning_chain": {"candidate_id": "6a99aae4d0b87cc4de44aadd", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 4.514816977761009, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 103, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.11626006458521665, "equity_pct": 0.009365287297504988, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise for Q2 2026, with an actual EPS of $0.60 against a consensus of $0.305. The filing confirms the release of updated full-year guidance, which, combined with the strong earnings beat, supports a positive outlook for the company's operational momentum.", "ai_risk_flags": ["RELIANCE_ON_HISTORICAL_PERFORMANCE", "MARKET_VOLATILITY", "OPERATIONAL_GUIDANCE_DEPENDENCY"]})'>
             <td><strong>VSXY</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-09-03 17:16</td>
             <td>OPEN</td>
             <td>$73.15</td>
-            <td>$82.06 (live)</td>
+            <td>$81.66 (live)</td>
             <td>103</td>
-            <td class="val-green"><strong>+12.17%</strong></td>
+            <td class="val-green"><strong>+11.63%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a985b9275b730b573890b45", "ticker": "OLLI", "direction": "LONG", "entry_price": 75.1449966430664, "share_count": 121, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93536.96600394441, "initial_stop": 65.53681390935725, "current_stop": 69.16941174593839, "take_profit": 94.36136211048473, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-02T17:23:30.893000", "exit_price": 79.87999725341797, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 572.9350738525391, "highest_high_since_entry": 79.87000274658203, "lowest_low_since_entry": 71.87000274658203, "reasoning_chain": {"candidate_id": "6a985b42d0b87cc4de43b819", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 3.202727577903054, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 121, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06301152201579689, "equity_pct": 0.0061252261894872515, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "OLLI delivered a significant EPS beat, which supports the long thesis; however, the revenue miss, slightly underwhelming forward guidance, and broader macroeconomic concerns regarding inflation and rising oil prices suggest a cautious outlook despite the earnings performance.", "ai_risk_flags": ["REVENUE_MISS", "SAME_STORE_SALES_PRESSURE", "REVENUE_GUIDANCE_MISS", "INFLATION_CONCERNS", "MACROECONOMIC_VOLATILITY"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a985b9275b730b573890b45", "ticker": "OLLI", "direction": "LONG", "entry_price": 75.1449966430664, "share_count": 121, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93536.96600394441, "initial_stop": 65.53681390935725, "current_stop": 69.16941174593839, "take_profit": 94.36136211048473, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-02T17:23:30.893000", "exit_price": 79.70999908447266, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 552.3652954101562, "highest_high_since_entry": 79.87000274658203, "lowest_low_since_entry": 71.87000274658203, "reasoning_chain": {"candidate_id": "6a985b42d0b87cc4de43b819", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 3.202727577903054, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 121, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06074925338129562, "equity_pct": 0.005905315502609559, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "OLLI delivered a significant EPS beat, which supports the long thesis; however, the revenue miss, slightly underwhelming forward guidance, and broader macroeconomic concerns regarding inflation and rising oil prices suggest a cautious outlook despite the earnings performance.", "ai_risk_flags": ["REVENUE_MISS", "SAME_STORE_SALES_PRESSURE", "REVENUE_GUIDANCE_MISS", "INFLATION_CONCERNS", "MACROECONOMIC_VOLATILITY"]})'>
             <td><strong>OLLI</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-09-02 17:23</td>
             <td>OPEN</td>
             <td>$75.14</td>
-            <td>$79.88 (live)</td>
+            <td>$79.71 (live)</td>
             <td>121</td>
-            <td class="val-green"><strong>+6.30%</strong></td>
+            <td class="val-green"><strong>+6.07%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -436,27 +448,27 @@
             <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a970ba61811f35529efaab3", "ticker": "DELL", "direction": "LONG", "entry_price": 431.3550109863281, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92094.37040953829, "initial_stop": 347.18316650390625, "current_stop": 498.60501514781606, "take_profit": 599.6986999511719, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-01T17:30:14.258000", "exit_price": 580.5, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 2386.31982421875, "highest_high_since_entry": 591.3125, "lowest_low_since_entry": 425.0, "reasoning_chain": {"candidate_id": "6a970b63d0b87cc4de42efe0", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 28.057281494140625, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.3457592591138325, "equity_pct": 0.02591167965649719, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise, with an EPS of $4.86 against a consensus of $2.99, confirming strong operational performance. While broader market risks such as rising bond yields and geopolitical tensions exist, the specific evidence regarding Dell's AI-driven demand and financial results supports a bullish outlook.", "ai_risk_flags": ["geopolitical_instability", "market_volatility", "rising_bond_yields", "valuation_concerns"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a970ba61811f35529efaab3", "ticker": "DELL", "direction": "LONG", "entry_price": 431.3550109863281, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92094.37040953829, "initial_stop": 347.18316650390625, "current_stop": 498.60501514781606, "take_profit": 599.6986999511719, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-01T17:30:14.258000", "exit_price": 575.5, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 2306.31982421875, "highest_high_since_entry": 591.3125, "lowest_low_since_entry": 425.0, "reasoning_chain": {"candidate_id": "6a970b63d0b87cc4de42efe0", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 28.057281494140625, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.33416787875970816, "equity_pct": 0.025043005494936123, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise, with an EPS of $4.86 against a consensus of $2.99, confirming strong operational performance. While broader market risks such as rising bond yields and geopolitical tensions exist, the specific evidence regarding Dell's AI-driven demand and financial results supports a bullish outlook.", "ai_risk_flags": ["geopolitical_instability", "market_volatility", "rising_bond_yields", "valuation_concerns"]})'>
             <td><strong>DELL</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-09-01 17:30</td>
             <td>OPEN</td>
             <td>$431.36</td>
-            <td>$580.50 (live)</td>
+            <td>$575.50 (live)</td>
             <td>16</td>
-            <td class="val-green"><strong>+34.58%</strong></td>
+            <td class="val-green"><strong>+33.42%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a95e9798ad0274ac31cc8c7", "ticker": "MYE", "direction": "SHORT", "entry_price": 32.09000015258789, "share_count": 167, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92648.95215277864, "initial_stop": 36.22863630814986, "current_stop": 32.57931882684881, "take_profit": 23.812727841463953, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-31T20:52:09.336000", "exit_price": 31.3700008392334, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 120.2398853302002, "highest_high_since_entry": 32.13999938964844, "lowest_low_since_entry": 29.520000457763672, "reasoning_chain": {"candidate_id": "6a95e925d0b87cc4de41fd12", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 1.3795453851873225, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 167, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.022436874725175967, "equity_pct": 0.0012978008119500796, "ai_conviction": "NEUTRAL", "ai_rationale": "The divestiture of the Myers Tire Supply business aligns with a strategic pivot toward engineered plastics, which is viewed by some market analysts as a transformation effort rather than an immediate negative catalyst. As the sale is a planned strategic realignment, the impact on future financial performance is speculative and does not inherently justify a short position based solely on this filing.", "ai_risk_flags": ["divestiture_execution_risk", "market_segment_transition_uncertainty", "non-compete_restrictions", "forward_looking_statement_limitations"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a95e9798ad0274ac31cc8c7", "ticker": "MYE", "direction": "SHORT", "entry_price": 32.09000015258789, "share_count": 167, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92648.95215277864, "initial_stop": 36.22863630814986, "current_stop": 32.57931882684881, "take_profit": 23.812727841463953, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-31T20:52:09.336000", "exit_price": 31.190000534057617, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 150.29993629455566, "highest_high_since_entry": 32.13999938964844, "lowest_low_since_entry": 29.520000457763672, "reasoning_chain": {"candidate_id": "6a95e925d0b87cc4de41fd12", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 1.3795453851873225, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 167, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.028046108265839108, "equity_pct": 0.0016222518744379345, "ai_conviction": "NEUTRAL", "ai_rationale": "The divestiture of the Myers Tire Supply business aligns with a strategic pivot toward engineered plastics, which is viewed by some market analysts as a transformation effort rather than an immediate negative catalyst. As the sale is a planned strategic realignment, the impact on future financial performance is speculative and does not inherently justify a short position based solely on this filing.", "ai_risk_flags": ["divestiture_execution_risk", "market_segment_transition_uncertainty", "non-compete_restrictions", "forward_looking_statement_limitations"]})'>
             <td><strong>MYE</strong></td>
             <td class="val-rose">SHORT</td>
             <td>2026-08-31 20:52</td>
             <td>OPEN</td>
             <td>$32.09</td>
-            <td>$31.37 (live)</td>
+            <td>$31.19 (live)</td>
             <td>167</td>
-            <td class="val-green"><strong>+2.24%</strong></td>
+            <td class="val-green"><strong>+2.80%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -472,15 +484,15 @@
             <td><span class="badge badge-closed">Closed</span></td>
         </tr>
         
-        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a8da663d2e3244be918c42b", "ticker": "SMTC", "direction": "LONG", "entry_price": 124.74019622802734, "share_count": 34, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93120.47615640813, "initial_stop": 91.21793885664506, "current_stop": 151.42182367498225, "take_profit": 191.7847109707919, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-25T14:27:47.312000", "exit_price": 177.86000061035156, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1806.0733489990234, "highest_high_since_entry": 185.0, "lowest_low_since_entry": 124.63500213623047, "reasoning_chain": {"candidate_id": "6a8da62f8f9cb5a2526f8127", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.17408579046076, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 34, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.4258435210829735, "equity_pct": 0.019395018405677877, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Semtech reported an earnings surprise for the first quarter of fiscal 2027 and is undergoing a strategic pivot toward AI data-center networking and LoRa IoT, which has garnered positive sentiment from analysts. While the company faces risks regarding its high valuation after a substantial multi-year stock price rally, the fundamental transition and positive earnings momentum support a long-term constructive outlook.", "ai_risk_flags": ["VALUATION_CONCERNS", "HIGH_HISTORICAL_VOLATILITY", "SIGNIFICANT_PRICE_APPRECIATION_PRE_EVENT"]})'>
+        <tr data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a8da663d2e3244be918c42b", "ticker": "SMTC", "direction": "LONG", "entry_price": 124.74019622802734, "share_count": 34, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93120.47615640813, "initial_stop": 91.21793885664506, "current_stop": 151.42182367498225, "take_profit": 191.7847109707919, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-25T14:27:47.312000", "exit_price": 177.3699951171875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1789.4131622314453, "highest_high_since_entry": 185.0, "lowest_low_since_entry": 124.63500213623047, "reasoning_chain": {"candidate_id": "6a8da62f8f9cb5a2526f8127", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.17408579046076, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 34, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.42191531263067705, "equity_pct": 0.019216108380136394, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Semtech reported an earnings surprise for the first quarter of fiscal 2027 and is undergoing a strategic pivot toward AI data-center networking and LoRa IoT, which has garnered positive sentiment from analysts. While the company faces risks regarding its high valuation after a substantial multi-year stock price rally, the fundamental transition and positive earnings momentum support a long-term constructive outlook.", "ai_risk_flags": ["VALUATION_CONCERNS", "HIGH_HISTORICAL_VOLATILITY", "SIGNIFICANT_PRICE_APPRECIATION_PRE_EVENT"]})'>
             <td><strong>SMTC</strong></td>
             <td class="val-green">LONG</td>
             <td>2026-08-25 14:27</td>
             <td>OPEN</td>
             <td>$124.74</td>
-            <td>$177.86 (live)</td>
+            <td>$177.37 (live)</td>
             <td>34</td>
-            <td class="val-green"><strong>+42.58%</strong></td>
+            <td class="val-green"><strong>+42.19%</strong></td>
             <td><span class="badge badge-open">Open</span></td>
         </tr>
         
@@ -825,55 +837,68 @@
             </div>
             <div class="ledger-cards" id="ledger-cards-container">
                 
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6aada5fc8df20949c40fb4c0", "ticker": "MRCY", "direction": "SHORT", "entry_price": 85.27999877929688, "share_count": 53, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92260.01196162567, "initial_stop": 98.11726726185192, "current_stop": 96.85999540849166, "take_profit": 59.60546181418679, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-09-18T20:58:36.807000", "exit_price": 86.29000091552734, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -53.530113220214844, "highest_high_since_entry": 86.44999694824219, "lowest_low_since_entry": 85.27999877929688, "reasoning_chain": {"candidate_id": "6aada5e75e9677818030f934", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 4.279089494185015, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 53, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.011843364806375482, "equity_pct": -0.0005802092594837294, "ai_conviction": "NEUTRAL", "ai_rationale": "The filing reports on a procedural development regarding a previously disclosed derivative settlement, which does not introduce new material negative news or financial impairment. While legal issues pose a recurring risk, the settlement was already anticipated and disclosed in the company's annual report.", "ai_risk_flags": ["LEGAL_SETTLEMENT_PROCEEDINGS", "DERIVATIVE_LITIGATION"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6ab18cbd5d939a5bf9f0e8d5", "ticker": "ALKS", "direction": "LONG", "entry_price": 44.150001525878906, "share_count": 269, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 92657.67721240387, "initial_stop": 39.84909231012518, "current_stop": 39.84909231012518, "take_profit": 52.75181995738636, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-21T19:59:57.671000", "exit_price": 44.18000030517578, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 8.069671630859375, "highest_high_since_entry": 44.150001525878906, "lowest_low_since_entry": 44.150001525878906, "reasoning_chain": {"candidate_id": "6ab18cb45e967781803360f6", "trigger_type": "MATERIAL_FILING", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.433636405251243, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 269, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.0006794740262758758, "equity_pct": 8.70912359734732e-05, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "Alkermes reported positive topline Phase 1 proof-of-concept results for ALKS 7290, an investigational ADHD treatment, which serves as a significant positive catalyst for the company's pipeline. While the drug is in early development stages, the successful demonstration of safety and efficacy in the initial study provides strong qualitative momentum for a long position.", "ai_risk_flags": ["CLINICAL_TRIAL_RISK", "PHASE_1_EARLY_STAGE", "REGULATORY_UNCERTAINTY", "DEVELOPMENTAL_FAILURE_RISK"]})'>
+            <div class="ledger-card-top">
+                <span class="ledger-card-ticker">ALKS <span class="val-green">LONG</span></span>
+                <span class="badge badge-open">Open</span>
+            </div>
+            <div class="ledger-card-grid">
+                <div><span class="ledger-card-grid-label">Entry</span> $44.15</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $44.18 (live)</div>
+                <div><span class="ledger-card-grid-label">Shares</span> 269</div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+0.07%</strong></div>
+            </div>
+        </div>
+        
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6aada5fc8df20949c40fb4c0", "ticker": "MRCY", "direction": "SHORT", "entry_price": 85.27999877929688, "share_count": 53, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92260.01196162567, "initial_stop": 98.11726726185192, "current_stop": 96.85999540849166, "take_profit": 59.60546181418679, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-09-18T20:58:36.807000", "exit_price": 85.6500015258789, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -19.610145568847656, "highest_high_since_entry": 86.44999694824219, "lowest_low_since_entry": 85.27999877929688, "reasoning_chain": {"candidate_id": "6aada5e75e9677818030f934", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 4.279089494185015, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 53, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.004338681424463804, "equity_pct": -0.0002125530351871647, "ai_conviction": "NEUTRAL", "ai_rationale": "The filing reports on a procedural development regarding a previously disclosed derivative settlement, which does not introduce new material negative news or financial impairment. While legal issues pose a recurring risk, the settlement was already anticipated and disclosed in the company's annual report.", "ai_risk_flags": ["LEGAL_SETTLEMENT_PROCEEDINGS", "DERIVATIVE_LITIGATION"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">MRCY <span class="val-rose">SHORT</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $85.28</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $86.29 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $85.65 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 53</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-1.18%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-0.43%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6aaad5aafa9eb77012d63c98", "ticker": "GIS", "direction": "LONG", "entry_price": 36.94499969482422, "share_count": 320, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 92079.44290225372, "initial_stop": 33.357271714644, "current_stop": 33.634090250188656, "take_profit": 44.12045565518466, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-16T17:45:14.631000", "exit_price": 35.8650016784668, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -345.599365234375, "highest_high_since_entry": 36.94499969482422, "lowest_low_since_entry": 35.869998931884766, "reasoning_chain": {"candidate_id": "6aaad5925e967781802ca5a6", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.19590932672674, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 320, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.0292325896678441, "equity_pct": -0.0037532738507252217, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The company reported a significant positive earnings surprise, which provides fundamental support for a long position. However, this is partially tempered by news indicating investor concerns regarding recent stock performance and analyst expectations for revenue and EPS declines in upcoming quarters.", "ai_risk_flags": ["RECENT_PRICE_DECLINE", "ANALYST_EXPECTATIONS_OF_DECLINE", "CONSUMER_PREFERENCE_SHIFT"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6aaad5aafa9eb77012d63c98", "ticker": "GIS", "direction": "LONG", "entry_price": 36.94499969482422, "share_count": 320, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 92079.44290225372, "initial_stop": 33.357271714644, "current_stop": 33.634090250188656, "take_profit": 44.12045565518466, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-16T17:45:14.631000", "exit_price": 35.41999816894531, "exit_timestamp": null, "exit_reason": null, "realized_pnl": -488.00048828125, "highest_high_since_entry": 36.94499969482422, "lowest_low_since_entry": 35.474998474121094, "reasoning_chain": {"candidate_id": "6aaad5925e967781802ca5a6", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 1.19590932672674, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 320, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": -0.041277616415640414, "equity_pct": -0.005299776724314932, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "The company reported a significant positive earnings surprise, which provides fundamental support for a long position. However, this is partially tempered by news indicating investor concerns regarding recent stock performance and analyst expectations for revenue and EPS declines in upcoming quarters.", "ai_risk_flags": ["RECENT_PRICE_DECLINE", "ANALYST_EXPECTATIONS_OF_DECLINE", "CONSUMER_PREFERENCE_SHIFT"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">GIS <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $36.94</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $35.87 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $35.42 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 320</div>
-                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-2.92%</strong></div>
+                <div class="val-rose"><span class="ledger-card-grid-label">Trade Return</span> <strong>-4.13%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a99ab53e90d8c9ef8acecd0", "ticker": "VSXY", "direction": "LONG", "entry_price": 73.15499877929688, "share_count": 103, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93538.56161605073, "initial_stop": 59.610547846013844, "current_stop": 69.71227784590288, "take_profit": 100.24390064586294, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-03T17:16:03.555000", "exit_price": 82.05999755859375, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 917.2148742675781, "highest_high_since_entry": 82.16500091552734, "lowest_low_since_entry": 72.01000213623047, "reasoning_chain": {"candidate_id": "6a99aae4d0b87cc4de44aadd", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 4.514816977761009, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 103, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.12172782349655402, "equity_pct": 0.009805740631681777, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise for Q2 2026, with an actual EPS of $0.60 against a consensus of $0.305. The filing confirms the release of updated full-year guidance, which, combined with the strong earnings beat, supports a positive outlook for the company's operational momentum.", "ai_risk_flags": ["RELIANCE_ON_HISTORICAL_PERFORMANCE", "MARKET_VOLATILITY", "OPERATIONAL_GUIDANCE_DEPENDENCY"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a99ab53e90d8c9ef8acecd0", "ticker": "VSXY", "direction": "LONG", "entry_price": 73.15499877929688, "share_count": 103, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 93538.56161605073, "initial_stop": 59.610547846013844, "current_stop": 69.71227784590288, "take_profit": 100.24390064586294, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-03T17:16:03.555000", "exit_price": 81.66000366210938, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 876.0155029296875, "highest_high_since_entry": 82.16500091552734, "lowest_low_since_entry": 72.01000213623047, "reasoning_chain": {"candidate_id": "6a99aae4d0b87cc4de44aadd", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 4.514816977761009, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 103, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.11626006458521665, "equity_pct": 0.009365287297504988, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise for Q2 2026, with an actual EPS of $0.60 against a consensus of $0.305. The filing confirms the release of updated full-year guidance, which, combined with the strong earnings beat, supports a positive outlook for the company's operational momentum.", "ai_risk_flags": ["RELIANCE_ON_HISTORICAL_PERFORMANCE", "MARKET_VOLATILITY", "OPERATIONAL_GUIDANCE_DEPENDENCY"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">VSXY <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $73.15</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $82.06 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $81.66 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 103</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+12.17%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+11.63%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a985b9275b730b573890b45", "ticker": "OLLI", "direction": "LONG", "entry_price": 75.1449966430664, "share_count": 121, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93536.96600394441, "initial_stop": 65.53681390935725, "current_stop": 69.16941174593839, "take_profit": 94.36136211048473, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-02T17:23:30.893000", "exit_price": 79.87999725341797, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 572.9350738525391, "highest_high_since_entry": 79.87000274658203, "lowest_low_since_entry": 71.87000274658203, "reasoning_chain": {"candidate_id": "6a985b42d0b87cc4de43b819", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 3.202727577903054, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 121, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06301152201579689, "equity_pct": 0.0061252261894872515, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "OLLI delivered a significant EPS beat, which supports the long thesis; however, the revenue miss, slightly underwhelming forward guidance, and broader macroeconomic concerns regarding inflation and rising oil prices suggest a cautious outlook despite the earnings performance.", "ai_risk_flags": ["REVENUE_MISS", "SAME_STORE_SALES_PRESSURE", "REVENUE_GUIDANCE_MISS", "INFLATION_CONCERNS", "MACROECONOMIC_VOLATILITY"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a985b9275b730b573890b45", "ticker": "OLLI", "direction": "LONG", "entry_price": 75.1449966430664, "share_count": 121, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93536.96600394441, "initial_stop": 65.53681390935725, "current_stop": 69.16941174593839, "take_profit": 94.36136211048473, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-02T17:23:30.893000", "exit_price": 79.70999908447266, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 552.3652954101562, "highest_high_since_entry": 79.87000274658203, "lowest_low_since_entry": 71.87000274658203, "reasoning_chain": {"candidate_id": "6a985b42d0b87cc4de43b819", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 3.202727577903054, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 121, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.06074925338129562, "equity_pct": 0.005905315502609559, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "OLLI delivered a significant EPS beat, which supports the long thesis; however, the revenue miss, slightly underwhelming forward guidance, and broader macroeconomic concerns regarding inflation and rising oil prices suggest a cautious outlook despite the earnings performance.", "ai_risk_flags": ["REVENUE_MISS", "SAME_STORE_SALES_PRESSURE", "REVENUE_GUIDANCE_MISS", "INFLATION_CONCERNS", "MACROECONOMIC_VOLATILITY"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">OLLI <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $75.14</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $79.88 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $79.71 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 121</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+6.30%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+6.07%</strong></div>
             </div>
         </div>
         
@@ -890,29 +915,29 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a970ba61811f35529efaab3", "ticker": "DELL", "direction": "LONG", "entry_price": 431.3550109863281, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92094.37040953829, "initial_stop": 347.18316650390625, "current_stop": 498.60501514781606, "take_profit": 599.6986999511719, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-01T17:30:14.258000", "exit_price": 580.5, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 2386.31982421875, "highest_high_since_entry": 591.3125, "lowest_low_since_entry": 425.0, "reasoning_chain": {"candidate_id": "6a970b63d0b87cc4de42efe0", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 28.057281494140625, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.3457592591138325, "equity_pct": 0.02591167965649719, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise, with an EPS of $4.86 against a consensus of $2.99, confirming strong operational performance. While broader market risks such as rising bond yields and geopolitical tensions exist, the specific evidence regarding Dell's AI-driven demand and financial results supports a bullish outlook.", "ai_risk_flags": ["geopolitical_instability", "market_volatility", "rising_bond_yields", "valuation_concerns"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a970ba61811f35529efaab3", "ticker": "DELL", "direction": "LONG", "entry_price": 431.3550109863281, "share_count": 16, "combined_score": 2.0, "risk_pct_used": 1.5, "equity_at_entry": 92094.37040953829, "initial_stop": 347.18316650390625, "current_stop": 498.60501514781606, "take_profit": 599.6986999511719, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-09-01T17:30:14.258000", "exit_price": 575.5, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 2306.31982421875, "highest_high_since_entry": 591.3125, "lowest_low_since_entry": 425.0, "reasoning_chain": {"candidate_id": "6a970b63d0b87cc4de42efe0", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 2.0, "atr_22": 28.057281494140625, "risk_pct_allocated": 1.5, "is_sized_down": false, "original_shares": 16, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.33416787875970816, "equity_pct": 0.025043005494936123, "ai_conviction": "STRONG_SUPPORT", "ai_rationale": "The company reported a significant earnings surprise, with an EPS of $4.86 against a consensus of $2.99, confirming strong operational performance. While broader market risks such as rising bond yields and geopolitical tensions exist, the specific evidence regarding Dell's AI-driven demand and financial results supports a bullish outlook.", "ai_risk_flags": ["geopolitical_instability", "market_volatility", "rising_bond_yields", "valuation_concerns"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">DELL <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $431.36</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $580.50 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $575.50 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 16</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+34.58%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+33.42%</strong></div>
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a95e9798ad0274ac31cc8c7", "ticker": "MYE", "direction": "SHORT", "entry_price": 32.09000015258789, "share_count": 167, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92648.95215277864, "initial_stop": 36.22863630814986, "current_stop": 32.57931882684881, "take_profit": 23.812727841463953, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-31T20:52:09.336000", "exit_price": 31.3700008392334, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 120.2398853302002, "highest_high_since_entry": 32.13999938964844, "lowest_low_since_entry": 29.520000457763672, "reasoning_chain": {"candidate_id": "6a95e925d0b87cc4de41fd12", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 1.3795453851873225, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 167, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.022436874725175967, "equity_pct": 0.0012978008119500796, "ai_conviction": "NEUTRAL", "ai_rationale": "The divestiture of the Myers Tire Supply business aligns with a strategic pivot toward engineered plastics, which is viewed by some market analysts as a transformation effort rather than an immediate negative catalyst. As the sale is a planned strategic realignment, the impact on future financial performance is speculative and does not inherently justify a short position based solely on this filing.", "ai_risk_flags": ["divestiture_execution_risk", "market_segment_transition_uncertainty", "non-compete_restrictions", "forward_looking_statement_limitations"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a95e9798ad0274ac31cc8c7", "ticker": "MYE", "direction": "SHORT", "entry_price": 32.09000015258789, "share_count": 167, "combined_score": 0.5, "risk_pct_used": 0.75, "equity_at_entry": 92648.95215277864, "initial_stop": 36.22863630814986, "current_stop": 32.57931882684881, "take_profit": 23.812727841463953, "confidence_tier": "MODERATE", "status": "OPEN", "entry_timestamp": "2026-08-31T20:52:09.336000", "exit_price": 31.190000534057617, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 150.29993629455566, "highest_high_since_entry": 32.13999938964844, "lowest_low_since_entry": 29.520000457763672, "reasoning_chain": {"candidate_id": "6a95e925d0b87cc4de41fd12", "trigger_type": "MATERIAL_FILING", "confidence_tier": "MODERATE", "combined_score": 0.5, "atr_22": 1.3795453851873225, "risk_pct_allocated": 0.75, "is_sized_down": false, "original_shares": 167, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.028046108265839108, "equity_pct": 0.0016222518744379345, "ai_conviction": "NEUTRAL", "ai_rationale": "The divestiture of the Myers Tire Supply business aligns with a strategic pivot toward engineered plastics, which is viewed by some market analysts as a transformation effort rather than an immediate negative catalyst. As the sale is a planned strategic realignment, the impact on future financial performance is speculative and does not inherently justify a short position based solely on this filing.", "ai_risk_flags": ["divestiture_execution_risk", "market_segment_transition_uncertainty", "non-compete_restrictions", "forward_looking_statement_limitations"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">MYE <span class="val-rose">SHORT</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $32.09</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $31.37 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $31.19 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 167</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+2.24%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+2.80%</strong></div>
             </div>
         </div>
         
@@ -929,16 +954,16 @@
             </div>
         </div>
         
-        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a8da663d2e3244be918c42b", "ticker": "SMTC", "direction": "LONG", "entry_price": 124.74019622802734, "share_count": 34, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93120.47615640813, "initial_stop": 91.21793885664506, "current_stop": 151.42182367498225, "take_profit": 191.7847109707919, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-25T14:27:47.312000", "exit_price": 177.86000061035156, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1806.0733489990234, "highest_high_since_entry": 185.0, "lowest_low_since_entry": 124.63500213623047, "reasoning_chain": {"candidate_id": "6a8da62f8f9cb5a2526f8127", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.17408579046076, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 34, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.4258435210829735, "equity_pct": 0.019395018405677877, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Semtech reported an earnings surprise for the first quarter of fiscal 2027 and is undergoing a strategic pivot toward AI data-center networking and LoRa IoT, which has garnered positive sentiment from analysts. While the company faces risks regarding its high valuation after a substantial multi-year stock price rally, the fundamental transition and positive earnings momentum support a long-term constructive outlook.", "ai_risk_flags": ["VALUATION_CONCERNS", "HIGH_HISTORICAL_VOLATILITY", "SIGNIFICANT_PRICE_APPRECIATION_PRE_EVENT"]})'>
+        <div class="ledger-card" data-close-date="" data-status="OPEN" onclick='showTradeDetail({"_id": "6a8da663d2e3244be918c42b", "ticker": "SMTC", "direction": "LONG", "entry_price": 124.74019622802734, "share_count": 34, "combined_score": 1.5, "risk_pct_used": 1.25, "equity_at_entry": 93120.47615640813, "initial_stop": 91.21793885664506, "current_stop": 151.42182367498225, "take_profit": 191.7847109707919, "confidence_tier": "STRONG", "status": "OPEN", "entry_timestamp": "2026-08-25T14:27:47.312000", "exit_price": 177.3699951171875, "exit_timestamp": null, "exit_reason": null, "realized_pnl": 1789.4131622314453, "highest_high_since_entry": 185.0, "lowest_low_since_entry": 124.63500213623047, "reasoning_chain": {"candidate_id": "6a8da62f8f9cb5a2526f8127", "trigger_type": "EARNINGS_SURPRISE", "confidence_tier": "STRONG", "combined_score": 1.5, "atr_22": 11.17408579046076, "risk_pct_allocated": 1.25, "is_sized_down": false, "original_shares": 34, "regime_state_at_decision": "RISK_ON"}, "trade_return_pct": 0.42191531263067705, "equity_pct": 0.019216108380136394, "ai_conviction": "MODERATE_SUPPORT", "ai_rationale": "Semtech reported an earnings surprise for the first quarter of fiscal 2027 and is undergoing a strategic pivot toward AI data-center networking and LoRa IoT, which has garnered positive sentiment from analysts. While the company faces risks regarding its high valuation after a substantial multi-year stock price rally, the fundamental transition and positive earnings momentum support a long-term constructive outlook.", "ai_risk_flags": ["VALUATION_CONCERNS", "HIGH_HISTORICAL_VOLATILITY", "SIGNIFICANT_PRICE_APPRECIATION_PRE_EVENT"]})'>
             <div class="ledger-card-top">
                 <span class="ledger-card-ticker">SMTC <span class="val-green">LONG</span></span>
                 <span class="badge badge-open">Open</span>
             </div>
             <div class="ledger-card-grid">
                 <div><span class="ledger-card-grid-label">Entry</span> $124.74</div>
-                <div><span class="ledger-card-grid-label">Exit</span> $177.86 (live)</div>
+                <div><span class="ledger-card-grid-label">Exit</span> $177.37 (live)</div>
                 <div><span class="ledger-card-grid-label">Shares</span> 34</div>
-                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+42.58%</strong></div>
+                <div class="val-green"><span class="ledger-card-grid-label">Trade Return</span> <strong>+42.19%</strong></div>
             </div>
         </div>
         
@@ -1395,9 +1420,9 @@
     </div>
 
     <script>
-        const openPnlSum = 0.05820198258508523;
+        const openPnlSum = 0.05572673002609638;
         const closedPnlSum = -0.11379324387093874;
-        const openPnlCount = 7;
+        const openPnlCount = 8;
         const closedPnlCount = 25;
         let ledgerStatusFilter = 'OPEN';
         let ledgerDateFilter = null; // null = no date restriction, otherwise a Set of "YYYY-MM-DD" strings
